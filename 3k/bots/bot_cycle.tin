@@ -20,7 +20,7 @@
 	#delay {2} {..}
 }
 
-#alias {nextarea} {
+#alias {nextarea_orig} {
 	#if {$cycle < &botcycle[]} {
 		#math cycle {$cycle+1}
 	} {
@@ -30,6 +30,21 @@
 	go $currentarea;
 	#delay {1} {- $currentarea};
 	#delay {2} {..}
+}
+
+#alias {nextarea} {
+	#math cycle {$cycle+1};
+	#if {$cycle <= &botcycle[]} {
+		#list {botcycle} {get} {$cycle} {currentarea};
+		go $currentarea;
+		#delay {1} {- $currentarea};
+		#delay {2} {..}
+	} {
+		#var cycle 0;
+		killbot;
+		go home
+	}
+
 }
 
 #alias {botclear} {

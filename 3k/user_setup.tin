@@ -1,0 +1,42 @@
+#class {user_setup} {open}
+
+#NOP Print all the roomnotes stored in the map
+#alias {notes} {
+	#map list {roomnote} {{\w+}} {variable} {noterooms};
+	#foreach {*noterooms[]} {room} {#map get {roomnote} {notes[$room]} {$room}};
+	#var notes
+}
+
+#NOP Remove High Mortal-only portals from the fantasy exit
+#alias {fixportal} {
+	#NOP #map run 148;
+	#map at 148 {#map exitflag {portal road} avoid};
+	#map at 148 {#map exitflag {portal desert} avoid};
+	#map at 148 {#map exitflag {portal wforest} avoid};
+	#map at 148 {#map exitflag {portal eforest} avoid};
+	#map at 148 {#map exitflag {efor} avoid};
+	#map at 148 {#map exitflag {home} avoid};
+	#map at 148 {#map exitflag {portal ice} avoid};
+}
+
+#NOP Prevent using Inix's house
+#NOP #map goto 152
+#map at 152 {#map roomflag block on}
+findhere
+
+#NOP Set correct home location by character
+#map set {roomnote} {} 19771
+#map set {roomnote} {} 152
+#map set {roomnote} {} 6691
+
+#if {"$guild" == "jedi"} {
+	#map set {roomnote} {home} 19771;
+	#showme {Set home location to Jedi Chambers}
+} 
+
+#if {"$guild" == "changeling"} {
+	#map set {roomnote} {home} 6691;
+	#showme {Set home location to Pinnacle}
+}
+
+#class {user_setup} {close}

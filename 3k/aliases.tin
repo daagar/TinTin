@@ -89,5 +89,10 @@
         n
 }
 
+/* Custom */
+#alias {startup} {
+        #read .tt/3k/user_setup.tin
+        fixportal
+}
 
 #class {aliases} {close}
