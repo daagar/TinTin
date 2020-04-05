@@ -4,7 +4,7 @@
 #regex {"$world"} {3s} {
 	#map read .tt/map/3s.map
 } {
-	#map read .tt/map/3k.map
+	#map read .tt/map/daagar.map
 }
 
 #var map[height] 17
@@ -96,7 +96,7 @@
 				#map at {$eachexit} {
 					#map get {roomarea} {eacharea};
 					#if {"$eacharea" == ""} {
-						#map set {roomcolor} {<118>}
+						#map set {roomcolor} {<g09>}
 					}
 				}
 			}
@@ -178,7 +178,7 @@
 	#loop 1 20000 {cnt} {
 		#map at {$cnt} {
 			#map get {roomarea} {cntarea};
-			#if {"$cntarea" == ""} {#map set roomcolor <118>}
+			#if {"$cntarea" == ""} {#map set roomcolor <g09>}
 		}
 	};
 	#map get {roomvnum} {gonum};
@@ -228,7 +228,11 @@
 	#map write .tt/map/3k.map
 }
 
-#alias {mapsave} {#map write .tt/map/3k.map}
+#alias {mapsave} {
+	#map write .tt/map/daagar.map;
+	#echo {<128>Saved map to .tt/map/daagar.map<088>}
+}
+
 #alias {mapon} {
 	!brief off yes;
 	#map flag static off;
@@ -236,12 +240,14 @@
 	#var area %1;
 	#var mapping on;
 }
-#alias {mapoff}{
+
+#alias {mapoff} {
 	!brief on yes;
 	#map flag static on;
 	#unvar mapstatic;
 	#unvar mapping;
 }
+
 #map flag static on
 #unvar mapstatic
 
@@ -258,6 +264,7 @@
 #alias {sn} {
 	#var noun_cnt &nouns[];
 	#loop 1 &nouns[] cnt {
+		#echo {<128>Examining: $nouns[$cnt]<088>};
 		exa $nouns[$cnt];
 		search $nouns[$cnt]
 	};
@@ -283,161 +290,161 @@
 
 /* Transports */
 #NOP Abyss
-#act {Abyssmal Portal (s,portal)} {#map goto 5159} {1}
+#NOP #act {Abyssmal Portal (s,portal)} {#map goto 5159} {1}
 
 #NOP Android
-#act {BING! The button light goes off and the elevator doors open.} {enter elevator}
-#act {The elevator jerks to a halt and the doors open.} {out}
-#act {The elevator is already here. How about you enter it?} {enter elevator}
+#NOP #act {BING! The button light goes off and the elevator doors open.} {enter elevator}
+#NOP #act {The elevator jerks to a halt and the doors open.} {out}
+#NOP #act {The elevator is already here. How about you enter it?} {enter elevator}
 
 #NOP Ao
-#act {** The Docks of Ao ** (se)} {#map goto 15463} {1}
+#NOP #act {** The Docks of Ao ** (se)} {#map goto 15463} {1}
 
 #NOP Ascended
-#act {Arid environment (sw,n,s,e,climb)} {#map goto 16718} {1}
+#NOP #act {Arid environment (sw,n,s,e,climb)} {#map goto 16718} {1}
 
 #NOP Ashridge Acres
-#act {AREA NAME: Ashridge Acres} {
-	#map get {roomvnum} {ashridge_room};
-	#map goto 22486
-} {4}
+#NOP #act {AREA NAME: Ashridge Acres} {
+#NOP 	#map get {roomvnum} {ashridge_room};
+#NOP 	#map goto 22486
+#NOP } {4}
 
 #NOP Calvin and Hobbes
-#act {^on the snow calls to you, and you dread another day at school.} {#map goto 23824}
-#act {^and eagerly await the freedom of the afternoon.} {#map goto 23814}
+#NOP #act {^on the snow calls to you, and you dread another day at school.} {#map goto 23824}
+#NOP #act {^and eagerly await the freedom of the afternoon.} {#map goto 23814}
 
 #NOP Chaos TV
-#act {AREA NAME: Simpsons [Doh]} {
-	#if {"$area" != "Simpsons"} {
-		#var {area} {Simpsons};
-		#map get {roomvnum} {tvroom};
-		#map goto 8315;
-	}
-} {4}
+#NOP #act {AREA NAME: Simpsons [Doh]} {
+#NOP 	#if {"$area" != "Simpsons"} {
+#NOP 		#var {area} {Simpsons};
+#NOP 		#map get {roomvnum} {tvroom};
+#NOP 		#map goto 8315;
+#NOP 	}
+#NOP } {4}
 
-#act {AREA NAME: Simpsons Expansion [Lostar]} {
-	#var {area} {Simpsons};
-} {4}
+#NOP #act {AREA NAME: Simpsons Expansion [Lostar]} {
+#NOP 	#var {area} {Simpsons};
+#NOP } {4}
 
-#act {AREA NAME: Simpsons Expansion [Frank]} {
-	#var {area} {Simpsons Expansion};
-	#map get {roomvnum} {tvroom};
-	#map goto 8227
-} {4}
-#act {^   You dive cleanly through the computer screen!} {
-	#map goto $tvroom
-}
+#NOP #act {AREA NAME: Simpsons Expansion [Frank]} {
+#NOP 	#var {area} {Simpsons Expansion};
+#NOP 	#map get {roomvnum} {tvroom};
+#NOP 	#map goto 8227
+#NOP } {4}
+#NOP #act {^   You dive cleanly through the computer screen!} {
+#NOP 	#map goto $tvroom
+#NOP }
 
 #NOP Death
 #act {^You die.$} {#map goto 6247}
 
 #NOP Death Taco
-#act {^You shoot through a graceful arc, and feel weightless for the} {#map goto {roomnote} roaches}
+#NOP #act {^You shoot through a graceful arc, and feel weightless for the} {#map goto {roomnote} roaches}
 
 #NOP Dragon Realms
 #act {^You have to retreat against the onslaught of fire!} {#map move vortex}
 
 #NOP Einstein
-#act {^Standing on the bench, you relax and the stagedive through the rift} {#map goto 7039}
+#NOP #act {^Standing on the bench, you relax and the stagedive through the rift} {#map goto 7039}
 
 #NOP Funkytown
-#act {^The intense gravity of the sun pulls the coaster to its surface where you} {#map goto 17497}
+#NOP #act {^The intense gravity of the sun pulls the coaster to its surface where you} {#map goto 17497}
 
 #NOP Global Merc Training Theatre
-#act {^You have exited the simulation, thank you for playing.} {#map goto 15144}
+#NOP #act {^You have exited the simulation, thank you for playing.} {#map goto 15144}
 
 #NOP Greenhouse
-#act {^You embrace the plant and lose yourself among the vines.} {
-	#map get {roomvnum} {greenhouse_room};
-	#map goto 22315
-}
-#act {^You follow the trail away from the field.} {
-	#map goto $greenhouse_room
-}
+#NOP #act {^You embrace the plant and lose yourself among the vines.} {
+#NOP 	#map get {roomvnum} {greenhouse_room};
+#NOP 	#map goto 22315
+#NOP }
+#NOP #act {^You follow the trail away from the field.} {
+#NOP 	#map goto $greenhouse_room
+#NOP }
 
 #NOP Kayos Portal
-#act {^You leap into the unknown!} {
-	#map get {roomvnum} {num};
-	#if {$num == 10278} {
-		#map goto $plungeroom
-	} {
-		#var plungeroom $num;
-		#map goto 10278
-	}
-}
-#act {^You touch the beacon, and a friendly ship belonging to The Vigilant swings by.} {#map goto 10278}
+#NOP #act {^You leap into the unknown!} {
+#NOP 	#map get {roomvnum} {num};
+#NOP 	#if {$num == 10278} {
+#NOP 		#map goto $plungeroom
+#NOP 	} {
+#NOP 		#var plungeroom $num;
+#NOP 		#map goto 10278
+#NOP 	}
+#NOP }
+#NOP #act {^You touch the beacon, and a friendly ship belonging to The Vigilant swings by.} {#map goto 10278}
 
 #NOP Lost City
-#act {^With a final THUD, you fly out into a pile of metal!} {#map goto 24299}
-#act {^With a bit of difficulty you make your way back up the shaft} {#map goto 24297}
+#NOP #act {^With a final THUD, you fly out into a pile of metal!} {#map goto 24299}
+#NOP #act {^With a bit of difficulty you make your way back up the shaft} {#map goto 24297}
 
 #NOP The Lost Village of Willothorn
-#act {^You swim for your life for the surface and end up back where} {#map goto 14087}
+#NOP #act {^You swim for your life for the surface and end up back where} {#map goto 14087}
 
 #NOP Necromancers
-#act {^You tumble down the river and find yourself on a rocky bank inside} {#map goto 7613}
+#NOP #act {^You tumble down the river and find yourself on a rocky bank inside} {#map goto 7613}
 
 #NOP Night of Colour
-#act {^The balloon softly touches down, basket bumps lightly.} {exit}
-#act {^You step out of the basket, into forest.} {
-	#map get {roomarea} {area};
-	#if {"$area" == "Night of Colour"} {
-		#map goto 16359
-	} {
-		#map goto  16530
-	}
-}
-#act {^You step out of the basket, into chaos.} {
-	#map get {roomarea} {area};
-	#if {"$area" == "Night of Colour"} {
-		#map goto 16307
-	} {
-		#map goto 16527
-	}
-}
+#NOP #act {^The balloon softly touches down, basket bumps lightly.} {exit}
+#NOP #act {^You step out of the basket, into forest.} {
+#NOP 	#map get {roomarea} {area};
+#NOP 	#if {"$area" == "Night of Colour"} {
+#NOP 		#map goto 16359
+#NOP 	} {
+#NOP 		#map goto  16530
+#NOP 	}
+#NOP }
+#NOP #act {^You step out of the basket, into chaos.} {
+#NOP 	#map get {roomarea} {area};
+#NOP 	#if {"$area" == "Night of Colour"} {
+#NOP 		#map goto 16307
+#NOP 	} {
+#NOP 		#map goto 16527
+#NOP 	}
+#NOP }
 
 #NOP PG
-#act {^You eat the hamburger and your environment changes!} {
-	#map get {roomvnum} {pg_room};
-	#map goto 22330
-}
-#act {^As you exit the joint you seem to reappear back in CHAOS!} {
-	#map goto $pg_room
-}
+#NOP #act {^You eat the hamburger and your environment changes!} {
+#NOP 	#map get {roomvnum} {pg_room};
+#NOP 	#map goto 22330
+#NOP }
+#NOP #act {^As you exit the joint you seem to reappear back in CHAOS!} {
+#NOP 	#map goto $pg_room
+#NOP }
 
 #NOP The Princess Bride
-#act {^At last, the Cliffs of Insanity tower above you!} {#map goto 23763}
-#act {^At last, the shore of Florin!} {#map goto 23737}
+#NOP #act {^At last, the Cliffs of Insanity tower above you!} {#map goto 23763}
+#NOP #act {^At last, the shore of Florin!} {#map goto 23737}
 
 #NOP Puddle
-#act {^You sink deep into the mud puddle!  The mud presses in on you from all} {
-	#map get {roomvnum} {puddle_room};
-	#map goto 22485
-}
+#NOP #act {^You sink deep into the mud puddle!  The mud presses in on you from all} {
+#NOP 	#map get {roomvnum} {puddle_room};
+#NOP 	#map goto 22485
+#NOP }
 
 #NOP Ravenloft Castle
-#act {^You warily step out onto the cold, damp ground.} {#map goto 20756}
-#act {^You then step out of the coach and find yourself back} {#map goto 4631}
+#NOP #act {^You warily step out onto the cold, damp ground.} {#map goto 20756}
+#NOP #act {^You then step out of the coach and find yourself back} {#map goto 4631}
 
 #NOP Sausage Dimensions
-#act {^The frankfurter SMACKS you so hard you wake up somewhere else!} {#map goto 17561}
+#NOP #act {^The frankfurter SMACKS you so hard you wake up somewhere else!} {#map goto 17561}
 
 #NOP Science Shuttle
-#act {^The captain announces: Welcome to Midway Space Station.$} {exit}
-#act {^The captain announces: Welcome to Houston Transport Center.$} {exit2}
+#NOP #act {^The captain announces: Welcome to Midway Space Station.$} {exit}
+#NOP #act {^The captain announces: Welcome to Houston Transport Center.$} {exit2}
 
 #NOP Serinth
-#act {^The World of Serinth Board containing } {#map goto 16722}
+#NOP #act {^The World of Serinth Board containing } {#map goto 16722}
 
 #NOP Starcraft:Broodwar
-#act {^Door number: 3, Access Code: %1$} {#var starcraft_code %1}
+#NOP #act {^Door number: 3, Access Code: %1$} {#var starcraft_code %1}
 
 #NOP Xaxis
-#act {^Welcome to Xaxis!} {#map goto 15875}
-#act {^Here we are folks. Welcome to the Isle of Equinity!} {#map goto 15913}
+#NOP #act {^Welcome to Xaxis!} {#map goto 15875}
+#NOP #act {^Here we are folks. Welcome to the Isle of Equinity!} {#map goto 15913}
 
 #NOP Wayhaven Ferry
-#act {^The ferryman says: Well, here you are.} {#map goto 7354}
+#NOP #act {^The ferryman says: Well, here you are.} {#map goto 7354}
 
 
 /* Blocked Exits */
@@ -505,6 +512,10 @@
 #NOP Fallout Shelter
 #act {^Core Guard jumps in your way, blocking your path!} {#map undo}
 
+#NOP Fantasy
+#NOP #act {^You begin to climb up the dune but slip back down.} {#map undo}
+#NOP #act {^The sand dunes are too steep in that direction.} {#map undo}
+
 #NOP Ice Fishing
 #act {^You are unable to climb the bank here.  It is very steep, and with all} {#map undo}
 #act {^You can't go through a solid wall.  Try going around the shack, and} {#map undo}
@@ -512,6 +523,9 @@
 #NOP Ice Mountains (Verbeeg)
 #act {^The magical barrier is impenetrable.$} {#map undo}
 #act {^The cryohydra snaps one of its heads at you as you try and approach} {#map undo}
+
+#NOP Icyblue (Land of the Ice People)
+#act {^You jump high!  But not high enough to reach the portal...}
 
 #NOP Land
 #act {^You are caught like a fly in a spider web, burning and twisting as} {#map undo}
@@ -528,6 +542,10 @@
 
 #NOP The Princess Bride
 #act {^The guard won't allow you to pass!} {#map undo}
+
+#NOP Pinnacle
+#act {^Chavee says: Sorry, %1, but only members of the Crafter's Union are} {#map undo}
+#act {^A magical force pushes you back.} {#map undo}
 
 #NOP Rabbit Fields
 #act {^The rabbit prevents you from going that way.} {#map undo}
