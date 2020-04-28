@@ -1,0 +1,59 @@
+#class {exits} {kill}
+#class {exits} {open}
+
+#NOP Must wait for a prompt to be able to 'see' mobile exits in the room
+#act {^>$} {
+    show_exits
+}
+
+#NOP Create a list of all exits to other areas from the current room
+#alias {show_exits} {
+    #var area_exits {};
+    #var current_exits {};
+    #var current_area {};
+
+    #map get roomexits current_exits;
+    #map get {roomarea} {current_area};
+    
+    #NOP Special handling for 'moving' rooms;
+    #foreach {*mobile_areas[]} {mobile_area} {
+        #format {command} {%+12s} {$mobile_areas[$mobile_area]};
+        #var {area_exits[$mobile_area]} {<140>[<120>$command<140>]: <130>$mobile_area<099>};
+    };
+
+    #NOP Find all adjacent rooms, and check if the room area differs from current room;
+    #NOP If it is a void room, follow it to the 'real' room;
+    #foreach {*current_exits[]} {this_exit} {
+        
+        #map at {$this_exit} {#map roomflag void get {is_void}};
+        #if {$is_void} {
+            #map at {$this_exit} {#map get {roomexits} {void_exits}};
+            #map at {$void_exits[$this_exit]} {#map get {roomarea} {this_area}};
+        } {    
+            #map at $this_exit {#map get {roomarea} {this_area}};
+        };
+        
+        #if {{$this_area} != {$current_area}} {
+            #format {this_exit} {%+12s} {$this_exit};
+            #var {area_exits[$this_exit]} {<140>[<120>$this_exit<140>]: <130>$this_area<099>};
+        };
+        
+    }
+
+    #if {"$draw[exitpanel]" == "on"} {
+		#draw {tile} $chat[height]+$caption[height]+1 -$exitpanel[width]+1 $chat[height]+$caption[height]+$exitpanel[height] -2 $area_exits[%*];
+	};
+
+    #var mobile_areas {};
+    #var mobile_area {};
+}
+
+#class {exits} {close}
+
+#NOP List of all moving areas, in the format of {direction}{area}
+#class {mobile} {open}
+
+    #act {^A {tasty-looking|bendy} frankfurter.} {#var mobile_areas[The Sausage Dimension] {smack frankfurter}}
+    #act {^The Good Humor, Ice Cream Truck.} {#var mobile_areas[Good Humor Truck] {enter truck}}
+
+#class {mobile} {close}

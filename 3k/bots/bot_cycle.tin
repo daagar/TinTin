@@ -78,15 +78,15 @@
 
 #alias {botdraw} {
 	#if {"$draw[canvas]" == "on"} {
-	#NOP Clear previous drawing;
-	#screen clear square $chat[height]+$caption[height]+1 -$canvas[width]+1 -$status[height]-2 -1;
+		#NOP Clear previous drawing;
+		#screen clear square $chat[height]+$caption[height]+$exitpanel[height]+2 -$right_split+1 -$status[height]-2 -1;
 
-	#if {&botcycle[] == 0} {
-		#var botareas {
-			<178>            No areas loaded<088>
-		};
-		#var botheight 1;
-	} {
+		#if {&botcycle[] == 0} {
+			#var botareas {
+				<178>            No areas loaded<088>
+			};
+			#var botheight 1;
+		} {
 			#var botheight &botcycle[];
 			#var botareas {};
 			#var cnt 0;
@@ -106,14 +106,14 @@
 				}
 			}
 		};
-		#draw green rounded box $chat[height]+$caption[height]+2 -$canvas[width]+2 $chat[height]+$caption[height]+4 -3 {
+		#draw green rounded box $chat[height]+$caption[height]+$exitpanel[height]+2 -$right_split+2 $chat[height]+$caption[height]+$exitpanel[height]+4 -3 {
 			<138>              Area Cycler    <088>
 		};
-		#draw green rounded box $chat[height]+$caption[height]+4 -$canvas[width]+2 $chat[height]+$caption[height]+5+$botheight -3 {
+		#draw green rounded box $chat[height]+$caption[height]+$exitpanel[height]+4 -$right_split+2 $chat[height]+$caption[height]+$exitpanel[height]+5+$botheight -3 {
 			$botareas
 		};
-		#showme {<228>\u251C} $chat[height]+$caption[height]+4 -$canvas[width]+2;
-		#showme {<228>\u2524} $chat[height]+$caption[height]+4 -3
+		#showme {<228>\u251C} $chat[height]+$caption[height]+$exitpanel[height]+4 -$right_split+2;
+		#showme {<228>\u2524} $chat[height]+$caption[height]+$exitpanel[height]+4 -3
 	}
 }
 
