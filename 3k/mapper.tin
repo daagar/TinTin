@@ -30,7 +30,8 @@
 	#if {"$draw[map]" == "on"} {
 		#draw {tile} $map[height]-1 -$map[width] $map[height]-1 -1 {<020>$roomarea <140>(<120>$room_cnt<140>)<099>};
 		#draw {tile} $map[height] -$map[width] $map[height] -1 {<140>[<030>$roomvnum<140>] <130>$name_trunc<099>}
-	}
+	};
+	
 }
 
 #event {MAP UPDATED VTMAP} {
@@ -40,7 +41,7 @@
 #event {MAP ENTER ROOM} {
 	#if {"$mapping" == "on"} {
 		mapupdate
-	}
+	};
 }
 
 #event {MAP EXIT ROOM} {
@@ -304,10 +305,10 @@
 #NOP #act {Arid environment (sw,n,s,e,climb)} {#map goto 16718} {1}
 
 #NOP Ashridge Acres
-#NOP #act {AREA NAME: Ashridge Acres} {
+#act {AREA NAME: Ashridge Acres} {
 #NOP 	#map get {roomvnum} {ashridge_room};
-#NOP 	#map goto 22486
-#NOP } {4}
+ 	#map goto 3741
+} {4}
 
 #NOP Calvin and Hobbes
 #NOP #act {^on the snow calls to you, and you dread another day at school.} {#map goto 23824}
@@ -352,6 +353,9 @@
 
 #NOP Global Merc Training Theatre
 #NOP #act {^You have exited the simulation, thank you for playing.} {#map goto 15144}
+
+#NOP Good Humor Truck
+#act {^You enter the truck with one thing on your mind... ICE CREAM!} {#map goto 3739}
 
 #NOP Greenhouse
 #NOP #act {^You embrace the plant and lose yourself among the vines.} {
@@ -404,10 +408,10 @@
 #NOP }
 
 #NOP PG
-#NOP #act {^You eat the hamburger and your environment changes!} {
+#act {^You eat the hamburger and your environment changes!} {
 #NOP 	#map get {roomvnum} {pg_room};
-#NOP 	#map goto 22330
-#NOP }
+	 	#map goto 3743
+}
 #NOP #act {^As you exit the joint you seem to reappear back in CHAOS!} {
 #NOP 	#map goto $pg_room
 #NOP }
@@ -427,7 +431,7 @@
 #NOP #act {^You then step out of the coach and find yourself back} {#map goto 4631}
 
 #NOP Sausage Dimensions
-#NOP #act {^The frankfurter SMACKS you so hard you wake up somewhere else!} {#map goto 17561}
+#act {^The frankfurter SMACKS you so hard you wake up somewhere else!} {#map goto 3735}
 
 #NOP Science Shuttle
 #NOP #act {^The captain announces: Welcome to Midway Space Station.$} {exit}
@@ -445,6 +449,9 @@
 
 #NOP Wayhaven Ferry
 #NOP #act {^The ferryman says: Well, here you are.} {#map goto 7354}
+
+#NOP The Zodiac
+#act {^Cool!  It has your sign!} {#map goto 3741}
 
 
 /* Blocked Exits */

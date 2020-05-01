@@ -18,7 +18,7 @@ F 8455
 
 G 0
 
-I 36
+I 166
 
 L {ASCII NESW LINE} {NO EXITS} {x}
 L {ASCII NESW LINE} {N} {o}
@@ -216,7 +216,7 @@ L {MUDFONT CURVED} {N E} {\u2818}
 L {MUDFONT CURVED} {S E} {\u28A0}
 L {MUDFONT CURVED} {S W} {\u2844}
 L {MUDFONT CURVED} {N W} {\u2803}
-L {UNICODE GRAPHICS} {NO DIAGONAL} {}
+L {UNICODE GRAPHICS} {NO DIAGONAL} { }
 L {UNICODE GRAPHICS} {SE} {\u2E0C}
 L {UNICODE GRAPHICS} {NE} {\u2E1D}
 L {UNICODE GRAPHICS} {SE NE} {>}
@@ -256,10 +256,10 @@ R {    1} {0} {} {The Center of Town (d,n,s,w,e,omp,jump)} { } {This is the cent
 E {    2} {d} {d} {32} {0} {} {1.000} {}
 E {    3} {n} {n} {1} {0} {} {1.000} {}
 E {    4} {s} {s} {4} {0} {} {1.000} {}
-E {    6} {e} {e} {2} {0} {} {1.000} {}
 E {    7} {omp} {omp} {0} {0} {} {1.000} {}
 E {    8} {jump} {jump} {0} {0} {} {1.000} {}
 E {  165} {w} {w} {8} {0} {} {1.000} {}
+E {    6} {e} {e} {2} {0} {} {1.000} {}
 
 R {    2} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 E {    1} {u} {u} {16} {0} {} {1.000} {}
@@ -269,8 +269,6 @@ E {    1} {s} {s} {4} {0} {} {1.000} {}
 E {    9} {n} {n} {1} {0} {} {1.000} {}
 E {   10} {w} {w} {8} {0} {} {1.000} {}
 E {   11} {e} {e} {2} {0} {} {1.000} {}
-E {   19} {omp} {omp} {0} {0} {} {1.000} {}
-E {   20} {jump} {jump} {0} {0} {} {1.000} {}
 
 R {    4} {0} {} {Southview street (n,s,w,e)} { } {You are standing at the intersection of Main Street and Southview street.  Main leads north and Southview runs to west and east. Just north of here is the center of town.  To the south lies a slightly disreputable looking, noisy, and gin-smelling building with a large garish tankard of ale painted over the door. } {Pinnacle} {} {} {} {1.000} {}
 E {    1} {n} {n} {1} {0} {} {1.000} {}
@@ -293,7 +291,8 @@ E { 1549} {d} {d} {32} {0} {} {1.000} {}
 
 R {    7} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 
-R {    8} {0} {} {The Center of Town (d,n,s,w,e,omp,jump)} { } {} {Pinnacle} {} {} {} {1.000} {}
+R {    8} {0} {} {Entrance Building to Pinnacle (jump)} { } {		Login Room You are standing in an enormous enclosed chamber.  A single iron door sits in the floor of this structure surrounded by a granite doorframe. The ceiling is a dome completely covering the building.  People seem to appear here from nowhere, perhaps from another dimension, some call it 'reality'. } {Pinnacle} {} {} {} {1.000} {}
+E { 3779} {jump} {jump} {0} {0} {} {1.000} {}
 
 R {    9} {0} {} {Town Bank (d,s)} {B} {You have entered the lobby of the austere and conservative Bank of Pinnacle.  Its owners are a shadowy consortium of whom little is known\; however, they have a reputation of never taking advantage of their customers.  They also do their best to find the heirs of the MANY who never return to get their savings.  There is an automatic teller machine here, and a small staircase which leads up to the second floor of the bank.  There seems to be construction blocking the staircase. There's a second machine here selling money bags.  No, not bags with money in them, but bags you can put money in. } {Pinnacle} {bank} {} {} {1.000} {}
 E {    3} {s} {s} {4} {0} {} {1.000} {}
@@ -419,9 +418,9 @@ E {   37} {e} {e} {2} {0} {} {1.000} {}
 R {   36} {0} {} {The center of Chaos (n,s,w,e,vortex)} {<daf>V<088>} {This is the dead center of the Realm of Chaos.  All around you lies a bleak and desolate land tormented by the wrath of unknown forces. You are standing at the edge of a raging vortex that seems to fall into infinity.  There are paths leading away from the vortex in several directions.  What you might find there is so changeable that you aren't certain how to proceed.  Some hard-won experience is related on the plaque.  But don't trust it.  This is CHAOS! } {Chaos} {vortex} {} {} {1.000} {}
 E {   39} {n} {n} {1} {0} {} {1.000} {}
 E {   40} {s} {s} {4} {0} {} {1.000} {}
-E {   41} {w} {w} {8} {0} {} {1.000} {}
 E {   42} {e} {e} {2} {0} {} {1.000} {}
 E {   33} {vortex} {vortex} {0} {0} {} {1.000} {}
+E {   41} {w} {w} {8} {0} {} {1.000} {}
 
 R {   37} {0} {} {A Weird Path (u,w,e)} { } {You are on a shiny black path about four feet wide.  It narrows sharply as it continues to the west.  To the east it broadens further as it comes to an end at the entrance to a building. In all directions you see nothing but pitch black nothingness. You shiver and consider the building.  Its door is wide open. } {Pinnacle} {} {} {} {1.000} {}
 E {   35} {w} {w} {8} {0} {} {1.000} {}
@@ -441,17 +440,18 @@ E { 3384} {leap haze} {leap haze} {0} {0} {} {1.000} {}
 E { 3434} {enter fog} {enter fog} {0} {0} {} {1.000} {}
 E { 3484} {push brick} {push brick} {0} {0} {} {1.000} {}
 
-R {   40} {0} {} {The center of Chaos (n,s,w,e,vortex)} { } {This is the dead center of the Realm of Chaos.  All around you lies a bleak and desolate land tormented by the wrath of unknown forces. You are standing at the edge of a raging vortex that seems to fall into infinity.  There are paths leading away from the vortex in several directions.  What you might find there is so changeable that you aren't certain how to proceed.  Some hard-won experience is related on the plaque.  But don't trust it.  This is CHAOS! } {Chaos} {} {} {} {1.000} {}
+R {   40} {0} {} {A road heading south \x7Bmaybe\x7D (n,s,e)} {R} {Well, for some unexplained reason you are now standing in a vast pasture.  The sun is shining, and grass is growing.  This is too weird.  You look back north but the vortex is no longer visible.  Come to mention it, nothing is very visible there, except for a lush green hill further to the east. } {Chaos} {} {} {} {1.000} {}
 E {   36} {n} {n} {1} {0} {} {1.000} {}
 E {   86} {s} {s} {4} {0} {} {1.000} {}
 E {  260} {e} {e} {2} {0} {} {1.000} {}
-E {   89} {vortex} {vortex} {0} {0} {} {1.000} {}
+E { 3714} {turn flag} {turn flag} {0} {0} {} {1.000} {}
 
-R {   41} {0} {} {Eastwick (n,s,w,e)} { } {This is the Eastwick road.  It leads to you know not where. At the northern edge of the road, there is a ladder that  climbs up to the sky. Follow your feet and see where you go. } {Chaos} {} {} {} {1.000} {}
+R {   41} {0} {} {Eastwick (n,s,w,e)} {L} {This is the Eastwick road.  It leads to you know not where. At the northern edge of the road, there is a ladder that  climbs up to the sky. Follow your feet and see where you go. } {Chaos} {} {} {} {1.000} {}
 E {   36} {e} {e} {2} {0} {} {1.000} {}
 E {   87} {s} {s} {4} {0} {} {1.000} {}
 E { 1563} {w} {w} {8} {0} {} {1.000} {}
 E { 2889} {n} {n} {1} {0} {} {1.000} {}
+E { 3695} {climb ladder} {climb ladder} {0} {0} {} {1.000} {}
 
 R {   42} {0} {} {A road leading north-south (n,s,w,e)} { } {You are on a road moving east-west.  Looking to the south you can see a huge range of mountains in the distance.  To the north the ground is all charred.  You can see an occasional geyser of fire shoot up from the ground.  The land to the east seems to phase in and out periodically.  You can't be sure but it just might be the remains of the old Kingdom capital now called, aptly enough, Kayos. } {Chaos} {} {} {} {1.000} {}
 E {   36} {w} {w} {8} {0} {} {1.000} {}
@@ -460,7 +460,7 @@ E {   56} {s} {s} {4} {0} {} {1.000} {}
 E {   49} {e} {e} {2} {0} {} {1.000} {}
 E {  568} {climb} {climb} {0} {0} {} {1.000} {}
 
-R {   43} {0} {} {Crafter's Lane (nw,s,e)} { } {A smooth, neatly swept brown brick road leads northwest into a cluster of compact brown and black buildings that seem to swim in a constant symphony of hammering metal.  The road continues south to an intersection with a narrow pebbled country lane and an undulating path of greenish red bricks.   } {Chaos} {} {} {} {1.000} {}
+R {   43} {0} {} {Crafter's Lane (nw,s,e)} { } {A smooth, neatly swept brown brick road leads northwest into a cluster of compact brown and black buildings that seem to swim in a constant symphony of hammering metal.  The road continues south to an intersection with a narrow pebbled country lane and an undulating path of greenish red bricks.   } {Pinnacle} {} {} {} {1.000} {}
 E {   44} {s} {s} {4} {0} {} {1.000} {}
 E {   45} {nw} {nw} {9} {0} {} {1.000} {}
 E {   46} {e} {e} {2} {0} {} {1.000} {}
@@ -503,10 +503,11 @@ R {   53} {0} {} {End of a Path (w,cave)} { } {It appears that the building was 
 E {   37} {w} {w} {8} {0} {} {1.000} {}
 E { 3001} {cave} {cave} {0} {0} {} {1.000} {}
 
-R {   54} {0} {} {Robinwood street (s,w,e)} {?} {Strange greenish red bricks head into a weird and miasmic haze to the west but give way to a gentle, lush green path to the south.  A small and pleasantly melting white building is to the east.  Towering clouds shaped like nothing you have ever seen before rear high into the air to north and south. Massive flashes of black lightning tear through the air. How odd.  There seems to be a manhole here now! } {Pinnacle} {} {} {} {1.000} {}
+R {   54} {0} {} {Robinwood street (s,w,e)} {S} {Strange greenish red bricks head into a weird and miasmic haze to the west but give way to a gentle, lush green path to the south.  A small and pleasantly melting white building is to the east.  Towering clouds shaped like nothing you have ever seen before rear high into the air to north and south. Massive flashes of black lightning tear through the air. How odd.  There seems to be a manhole here now! } {Pinnacle} {} {} {} {1.000} {}
 E {   34} {w} {w} {8} {0} {} {1.000} {}
 E {  284} {s} {s} {4} {0} {} {1.000} {}
 E {  290} {e} {e} {2} {0} {} {1.000} {}
+E { 3683} {enter manhole} {enter manhole} {0} {0} {} {1.000} {}
 
 R {   55} {0} {} {A very small forest (n,s)} { } {This looks like a regular forest, except everything is so large, even the mushrooms are huge in this forest. Too bad you don't recognize any species that are edible. One mushroom in particular stands out amongst the rest. Perhaps a closer look is warranted. } {Smurfland} {} {} {} {1.000} {}
 E {   48} {n} {n} {1} {0} {} {1.000} {}
@@ -614,11 +615,11 @@ E { 1444} {w} {w} {8} {0} {} {1.000} {}
 E {   90} {s} {s} {4} {0} {} {1.000} {}
 E { 1448} {n} {n} {1} {0} {} {1.000} {}
 
-R {   79} {0} {} {Alphabet Room (u,s)} { } {This is a large room with various symbols on all walls, the floor, the ceiling and everywhere else.  Upon closer inspection you notice the symbols are just letters!  All the letters of the alphabet are displayed here. } {Alphabet Land} {} {} {} {1.000} {}
+R {   79} {0} {} {Alphabet Room (u,s)} { } {This is a large room with various symbols on all walls, the floor, the ceiling and everywhere else.  Upon closer inspection you notice the symbols are just letters!  All the letters of the alphabet are displayed here. } {Alphabet Land} {alphabet} {} {} {1.000} {}
 E { 3250} {u} {u} {16} {0} {} {1.000} {}
 E { 3251} {s} {s} {4} {0} {} {1.000} {}
 
-R {   80} {0} {} {A path of yellow dirt (n,s,doorway)} {?} {That highway definitely didn't go anywhere.  As you move north it totally disappears.  No trucks, no asphalt, nothing.  You suddenly find yourself on a road of yellow dirt.  You almost imagine that you can see the outlines of bricks.  This has got to be your imagination. To make matters worse, you think you can see the outline of a doorway set into the path. } {Chaos} {} {} {} {1.000} {}
+R {   80} {0} {} {A path of yellow dirt (n,s,doorway)} {D} {That highway definitely didn't go anywhere.  As you move north it totally disappears.  No trucks, no asphalt, nothing.  You suddenly find yourself on a road of yellow dirt.  You almost imagine that you can see the outlines of bricks.  This has got to be your imagination. To make matters worse, you think you can see the outline of a doorway set into the path. } {Chaos} {} {} {} {1.000} {}
 E {   49} {s} {s} {4} {0} {} {1.000} {}
 E { 2843} {n} {n} {1} {0} {} {1.000} {}
 E { 2844} {doorway} {doorway} {0} {0} {} {1.000} {}
@@ -628,8 +629,9 @@ E {   49} {n} {n} {1} {0} {} {1.000} {}
 E { 3277} {d} {d} {32} {0} {} {1.000} {}
 E {   84} {s} {s} {4} {0} {} {1.000} {}
 E { 1197} {e} {e} {2} {0} {} {1.000} {}
+E { 3749} {trace symbol} {trace symbol} {0} {0} {} {1.000} {}
 
-R {   82} {0} {} {elbow joint (n,s,w,e)} {?} {As you turn the corner, you note that you have entered a steel gray tunnel.  You plink your finger off the rounded wall and realize that you are walking inside a giant junction pipe. } {Chaos} {} {} {} {1.000} {}
+R {   82} {0} {} {elbow joint (n,s,w,e)} {L} {As you turn the corner, you note that you have entered a steel gray tunnel.  You plink your finger off the rounded wall and realize that you are walking inside a giant junction pipe. } {Chaos} {} {} {} {1.000} {}
 E {   49} {w} {w} {8} {0} {} {1.000} {}
 E { 1201} {n} {n} {1} {0} {} {1.000} {}
 E { 2884} {e} {e} {2} {0} {} {1.000} {}
@@ -639,28 +641,35 @@ R {   83} {0} {} {Sewer (u,e)} { } {You stand at the bottom of a cylindrical-sha
 E { 3277} {u} {u} {16} {0} {} {1.000} {}
 E { 3278} {e} {e} {2} {0} {} {1.000} {}
 
-R {   84} {0} {} {A path of yellow dirt (sw,n,s)} { } {The yellow brick road, or so you think it might be, comes to an abrupt ending here.  Further to the south, you think you see the yellow bricks give way to Lego blocks.  That's impossible of course! } {Chaos} {} {} {} {1.000} {}
+R {   84} {0} {} {A path of yellow dirt (sw,n,s)} {L} {The yellow brick road, or so you think it might be, comes to an abrupt ending here.  Further to the south, you think you see the yellow bricks give way to Lego blocks.  That's impossible of course! } {Chaos} {} {} {} {1.000} {}
 E {   81} {n} {n} {1} {0} {} {1.000} {}
 E { 2840} {sw} {sw} {12} {0} {} {1.000} {}
 E { 2842} {s} {s} {4} {0} {} {1.000} {}
+E { 3737} {grab the box} {grab the box} {0} {0} {} {1.000} {}
 
 R {   85} {0} {} {dirt trail (n,w,e)} { } {As you venture off the yellow brick road you find yourself struggling through a thicket of shrubbery that you swear wasn't here before. What is going on here?  Following the end of your nose, the smell of bread wafts from the east, towards what appears to be a small cottage. The cottage seems to get farther away as you approach it. Or are you just walking slower? } {Mouse Trails Cottage} {mouse_trails} {} {} {1.000} {}
 E { 1197} {w} {w} {8} {0} {} {1.000} {}
 E { 1196} {e} {e} {2} {0} {} {1.000} {}
 E { 1226} {n} {n} {1} {0} {} {1.000} {}
 
-R {   86} {0} {} {A Chagall Mosaic (maybe) (n,s,w,e)} { } {The grass gives way to innumerable little bits of glass.  They are arranged in intricate but non-linear rows.  It is night time here but the stars are out and a blazing comet casts sufficient light to see. } {Chaos} {} {} {} {1.000} {}
+R {   86} {0} {} {A Chagall Mosaic (maybe) (n,s,w,e)} {*} {The grass gives way to innumerable little bits of glass.  They are arranged in intricate but non-linear rows.  It is night time here but the stars are out and a blazing comet casts sufficient light to see. } {Chaos} {} {} {} {1.000} {}
 E {   40} {n} {n} {1} {0} {} {1.000} {}
 E { 2992} {s} {s} {4} {0} {} {1.000} {}
 E { 2980} {w} {w} {8} {0} {} {1.000} {}
 E { 2978} {e} {e} {2} {0} {} {1.000} {}
+E { 3717} {ride comet} {ride comet} {0} {0} {} {1.000} {}
+E { 3719} {chapter 1} {open book;read book;read chapter 1} {0} {0} {} {1.000} {}
+E { 3720} {read runes} {read runes} {0} {0} {} {1.000} {}
+E { 3725} {chapter 3} {open book;read book;read chapter 3} {0} {0} {} {1.000} {}
 
-R {   87} {0} {} {South Forest (n,s,w)} { } {Branching off from the main road, you enter a plain forest. The ground beneath you is simply dirt with random tufts of grass shooting up through the ground. There is a marking of some sort etched in the dirt. } {Chaos} {} {} {} {1.000} {}
+R {   87} {0} {} {South Forest (n,s,w)} {S} {Branching off from the main road, you enter a plain forest. The ground beneath you is simply dirt with random tufts of grass shooting up through the ground. There is a marking of some sort etched in the dirt. } {Chaos} {*} {} {} {1.000} {}
 E {   41} {n} {n} {1} {0} {} {1.000} {}
 E { 3176} {w} {w} {8} {0} {} {1.000} {}
 E { 3177} {s} {s} {4} {0} {} {1.000} {}
+E { 3699} {smile} {smile} {0} {0} {} {1.000} {}
+E { 3702} {enter swamp} {enter swamp} {0} {0} {} {1.000} {}
 
-R {   88} {0} {} {At the base of a hill (n,w)} { } {Before you lies a well worn path leading up a gently rolling hill. Drifting in on the gentle summer breeze is the sound of fiddle,  faintly playing some kind of reel or jig.  Overhead starlings  and swallows dart about on the summer breeze.  Everything here is peaceful and quiet, sighing contentedly you feel at one with  nature, heck even the grass seems greener than usual.  } {Leprechaun Village} {} {} {} {1.000} {}
+R {   88} {0} {} {At the base of a hill (n,w)} { } {Before you lies a well worn path leading up a gently rolling hill. Drifting in on the gentle summer breeze is the sound of fiddle,  faintly playing some kind of reel or jig.  Overhead starlings  and swallows dart about on the summer breeze.  Everything here is peaceful and quiet, sighing contentedly you feel at one with  nature, heck even the grass seems greener than usual.  } {Leprechaun Village} {leprechaun} {} {} {1.000} {}
 E {  260} {w} {w} {8} {0} {} {1.000} {}
 E {  261} {n} {n} {1} {0} {} {1.000} {}
 
@@ -2961,8 +2970,12 @@ E {  572} {w} {w} {8} {0} {} {1.000} {}
 E {  573} {e} {e} {2} {0} {} {1.000} {}
 E {   42} {climb} {climb} {0} {0} {} {1.000} {}
 
-R {  569} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+R {  569} {0} {} {A Dark Square (d,n,s,w,e)} { } {An immense battle zone displays a dark scene of destruction and violence. The cold, death filled landscape continues as far as the eye can see. A cold dust-filled wind sends chills of agony, and fear, whipping across this corpse filled battle ground. } {Archon} {archon} {} {} {1.000} {}
 E {  568} {d} {d} {32} {0} {} {1.000} {}
+E { 3724} {n} {n} {1} {0} {} {1.000} {}
+E { 3728} {s} {s} {4} {0} {} {1.000} {}
+E { 3729} {w} {w} {8} {0} {} {1.000} {}
+E { 3730} {e} {e} {2} {0} {} {1.000} {}
 
 R {  570} {0} {} {A Light Square (w,n,s,e)} { } {You are surrounded by burning brush set afire by cannon blasts and burning arrows sent high into the sky by the charioteers. The bright light from the flames highlights the detritus of war scattered by the explosions.  The area is littered with the horrible mangled remains of humans and animals. } {Chess Board} {} {} {} {1.000} {}
 E {  568} {s} {s} {4} {0} {} {1.000} {}
@@ -6067,6 +6080,7 @@ R { 1201} {0} {} {Pipe Outlet (n,s,e)} { } {After crawling through the pipe, you
 E {   82} {s} {s} {4} {0} {} {1.000} {}
 E { 2961} {n} {n} {1} {0} {} {1.000} {}
 E { 3305} {e} {e} {2} {0} {} {1.000} {}
+E { 3746} {enter staircase} {enter staircase} {0} {0} {} {1.000} {}
 
 R { 1202} {0} {} {Desert (s,n,w,e)} { } {Desert You see some footsteps in the sand and you wonder where they lead.  A strong wind blows across the baking desert, whipping sand into the air.  The desert seems the same every way you look. You see an oasis in the distance, however on second inspection it turns out to be just a mirage. } {Fantasy} {} {} {} {1.000} {}
 E { 1200} {n} {n} {1} {0} {} {1.000} {}
@@ -6860,7 +6874,7 @@ R { 1361} {0} {} {Pinnacle branch of the 3KP (d,w)} { } {A room in a quaint old 
 E {  296} {w} {w} {8} {0} {} {1.000} {}
 E { 2997} {d} {d} {32} {0} {} {1.000} {}
 
-R { 1362} {0} {} {Pinnacle Morgue (n)} { } {This is the new and improved Pinnacle Morgue.  The recent renovations have really done wonders for the place.  The walls and floor are both tile with a large drain in the floor.  Probably for cleanup!  In the corner is a cart likely used by the mortician to move the bodies around. There is a sign here if you want more information. } {Pinnacle} {morgue} {} {} {1.000} {}
+R { 1362} {0} {} {Pinnacle Morgue (n)} { } {This is the new and improved Pinnacle Morgue.  The recent renovations have really done wonders for the place.  The walls and floor are both tile with a large drain in the floor.  Probably for cleanup!  In the corner is a cart likely used by the mortician to move the bodies around. There is a sign here if you want more information. } {Pinnacle Morgue} {morgue} {} {} {1.000} {}
 E { 1481} {n} {n} {1} {0} {} {1.000} {}
 
 R { 1363} {0} {} {A weathered path (n,s,library)} { } {A large foreboding gate lies to the north.  As if by magic, it opens up occasionally allowing new denizens of Three Kingdoms access to and from the grand city of Pinnacle.  A worn and well traveled path leads south towards a large majestic looking tower.  From this distance, the large structure looks vacant, but curiosity demands a more thorough investigation of the property.  Perhaps the secrets of the realms lie inside.  You can also return to the Woonsocket library simply by typing the word library. } {Pinnacle} {} {} {} {1.000} {}
@@ -7652,20 +7666,24 @@ R { 1562} {0} {} {Lollipop Lane (n,s)} { } {As you move north the road gives way
 E {   41} {s} {s} {4} {0} {} {1.000} {}
 E { 1581} {n} {n} {1} {0} {} {1.000} {}
 
-R { 1563} {0} {} {Eastwick Road (n,s,w,e)} { } {This is the road of Eastwick.  It leads to you know not where. Follow your feet and see where you go. There is a manhole here in the ground. } {Chaos} {} {} {} {1.000} {}
+R { 1563} {0} {} {Eastwick Road (n,s,w,e)} { } {This is the road of Eastwick.  It leads to you know not where. Follow your feet and see where you go. There is a manhole here in the ground. } {Chaos} {M} {} {} {1.000} {}
 E {   41} {e} {e} {2} {0} {} {1.000} {}
 E { 1565} {s} {s} {4} {0} {} {1.000} {}
 E { 1566} {w} {w} {8} {0} {} {1.000} {}
 E { 1582} {n} {n} {1} {0} {} {1.000} {}
+E { 3496} {open manhole} {open manhole} {0} {0} {} {1.000} {}
+E { 3629} {vortex} {vortex} {0} {0} {} {1.000} {}
 
 R { 1564} {0} {} {Eastwick Road (n,e)} {F} {You are on the Eastwick road.  There is a road to the east and another to the north.  Which way do you go, you do not know. } {Chaos} {} {} {} {1.000} {}
 E { 1579} {e} {e} {2} {0} {} {1.000} {}
 E { 1583} {n} {n} {1} {0} {} {1.000} {}
 E { 1611} {push fence} {push fence} {0} {0} {} {1.000} {}
 
-R { 1565} {0} {} {Wickland Street (n,s)} { } {This appears to be a new side street. The pavement looks fresh and clean. Nary a pothole to be found! Too bad the same can't be said for the ground just beyond the curb on each side of this pleasant little avenue. It seems to be littered with craters. } {Chaos} {} {} {} {1.000} {}
+R { 1565} {0} {} {Wickland Street (n,s)} {S} {This appears to be a new side street. The pavement looks fresh and clean. Nary a pothole to be found! Too bad the same can't be said for the ground just beyond the curb on each side of this pleasant little avenue. It seems to be littered with craters. } {Chaos} {} {} {} {1.000} {}
 E { 1563} {n} {n} {1} {0} {} {1.000} {}
 E { 3173} {s} {s} {4} {0} {} {1.000} {}
+E {   87} {e} {e} {2} {0} {} {1.000} {}
+E { 3708} {count 123} {count 123} {0} {0} {} {1.000} {}
 
 R { 1566} {0} {} {Eastwick (n,s,w,e)} { } {You continue along the road of Eastwick.  Something smells just slightly wrong.  Turning, you notice bubbling tarpits off to the south.  Not at all extreme for chaos... } {Chaos} {} {} {} {1.000} {}
 E { 1563} {e} {e} {2} {0} {} {1.000} {}
@@ -7673,26 +7691,33 @@ E { 1569} {w} {w} {8} {1} {} {1.000} {}
 E { 1567} {n} {n} {1} {0} {} {1.000} {}
 E { 1568} {s} {s} {4} {0} {} {1.000} {}
 
-R { 1567} {0} {} {A road leading north-south (n,s)} { } {You are on a road leading north-south.  You're traveling through some really messed up mountains.  It smells like charred flesh... or maybe it's Snuggle Fabric Softener, it's hard to tell. } {Chaos} {} {} {} {1.000} {}
+R { 1567} {0} {} {A road leading north-south (n,s)} {P} {You are on a road leading north-south.  You're traveling through some really messed up mountains.  It smells like charred flesh... or maybe it's Snuggle Fabric Softener, it's hard to tell. } {Chaos} {P} {} {} {1.000} {}
 E { 1566} {s} {s} {4} {0} {} {1.000} {}
 E { 3149} {n} {n} {1} {0} {} {1.000} {}
+E { 3649} {wrist puck} {wrist puck} {0} {0} {} {1.000} {}
 
-R { 1568} {0} {} {A Cosmic Dishwasher (u,n,s)} { } {You are abruptly doused with hot, soapy water.  Shaking your head you look around and shrink in fear.  You are in a giant dishwasher. A whirling rubber hose nearly takes your head off as you duck behind the silverware.  Some tarpits these turned out to be! } {Chaos} {} {} {} {1.000} {}
+R { 1568} {0} {} {A Cosmic Dishwasher (u,n,s)} {W} {You are abruptly doused with hot, soapy water.  Shaking your head you look around and shrink in fear.  You are in a giant dishwasher. A whirling rubber hose nearly takes your head off as you duck behind the silverware.  Some tarpits these turned out to be! } {Chaos} {} {} {} {1.000} {}
 E { 1566} {n} {n} {1} {0} {} {1.000} {}
 E { 3156} {u} {u} {16} {0} {} {1.000} {}
 E { 3167} {s} {s} {4} {0} {} {1.000} {}
+E { 3671} {dive into bucket} {dive into bucket} {0} {0} {} {1.000} {}
 
-R { 1569} {0} {} {Eastwick (n,s,w,e)} {?} {You continue along the road of Eastwick.  Something smells just slightly wrong.  Turning, you notice bubbling tarpits off to the south.  Not at all extreme for chaos... } {Chaos} {} {} {} {1.000} {}
+R { 1569} {0} {} {Eastwick (n,s,w,e)} {*} {You continue along the road of Eastwick.  Something smells just slightly wrong.  Turning, you notice bubbling tarpits off to the south.  Not at all extreme for chaos... } {Chaos} {} {} {} {1.000} {}
 E { 1566} {w} {w} {8} {0} {} {1.000} {}
 E { 1571} {e} {e} {2} {0} {} {1.000} {}
+E { 3618} {enter void} {enter void} {0} {0} {} {1.000} {}
+E { 3621} {eat mushroom} {eat mushroom} {0} {0} {} {1.000} {}
+E { 3628} {vortex} {vortex} {0} {0} {} {1.000} {}
+E { 3630} {stairs} {stairs} {0} {0} {} {1.000} {}
 
 R { 1570} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 
-R { 1571} {0} {} {Eastwick (n,s,w,e)} {?} {The road splits into four directions from here. You can go to the north and the south or back to the center. Maybe.  You never really can know in chaos.  The future lies to the north.  The past to the south.  Or is it to the east? Well, head on in and find out for yourself. } {Chaos} {} {} {} {1.000} {}
+R { 1571} {0} {} {Eastwick (n,s,w,e)} {T} {The road splits into four directions from here. You can go to the north and the south or back to the center. Maybe.  You never really can know in chaos.  The future lies to the north.  The past to the south.  Or is it to the east? Well, head on in and find out for yourself. } {Chaos} {} {} {} {1.000} {}
 E { 1569} {w} {w} {8} {0} {} {1.000} {}
 E { 1573} {e} {e} {2} {0} {} {1.000} {}
 E { 1579} {n} {n} {1} {0} {} {1.000} {}
 E { 1580} {s} {s} {4} {0} {} {1.000} {}
+E { 3615} {open chest} {open chest} {0} {0} {} {1.000} {}
 
 R { 1572} {0} {} {Entrance to Waldo's (w,e)} { } {You boggle at the weird looking house that stands before you, if you can call it a house.  It seems to be more of a child's play block with little windows here and there.  The side you face has a big 'W' on it, but that fits you guess. } {Waldo's House} {waldo} {} {} {1.000} {}
 E { 1573} {e} {e} {2} {0} {} {1.000} {}
@@ -7715,79 +7740,98 @@ R { 1577} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 
 R { 1578} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 
-R { 1579} {0} {} {Eastwick Road (s,w)} { } {You are on the Eastwick road.  There is a road to the west and another to the south.  Which way do you go, you do not know. } {Chaos} {} {} {} {1.000} {}
+R { 1579} {0} {} {Eastwick Road (s,w)} {Z} {You are on the Eastwick road.  There is a road to the west and another to the south.  Which way do you go, you do not know. } {Chaos} {} {} {} {1.000} {}
 E { 1571} {s} {s} {4} {0} {} {1.000} {}
 E { 1564} {w} {w} {8} {0} {} {1.000} {}
+E { 3647} {pop door} {pop door} {0} {0} {} {1.000} {}
 
-R { 1580} {0} {} {South/North Fork (n,w,e)} {?} {This is a narrow road north of Eastwick.  Or maybe south. It really is hard to say.  You can see a big gray building to the east, or west, or north.  Directions really are pretty meaningless in this part of Chaos. } {Chaos} {} {} {} {1.000} {}
+R { 1580} {0} {} {South/North Fork (n,w,e)} {C} {This is a narrow road north of Eastwick.  Or maybe south. It really is hard to say.  You can see a big gray building to the east, or west, or north.  Directions really are pretty meaningless in this part of Chaos. } {Chaos} {} {} {} {1.000} {}
 E { 1571} {n} {n} {1} {0} {} {1.000} {}
 E { 1589} {e} {e} {2} {0} {} {1.000} {}
 E { 1585} {w} {w} {8} {0} {} {1.000} {}
+E { 3612} {enter store} {enter store} {0} {0} {} {1.000} {}
 
 R { 1581} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 E { 1562} {s} {s} {4} {0} {} {1.000} {}
 
-R { 1582} {0} {} {Wickward Path (n,s)} { } {A brand-spanking new path! How 'bout that? It's made out of some kind of spongy material that adds a bounce to your step. The land around the path is as flat as Leeloo Dallas and looks like it's covered in AstroTurf. } {Chaos} {} {} {} {1.000} {}
-E { 1563} {s} {s} {4} {0} {} {1.000} {}
+R { 1582} {0} {} {Wickward Path (n,s)} {T} {A brand-spanking new path! How 'bout that? It's made out of some kind of spongy material that adds a bounce to your step. The land around the path is as flat as Leeloo Dallas and looks like it's covered in AstroTurf. } {Chaos} {} {} {} {1.000} {}
 E { 3148} {n} {n} {1} {0} {} {1.000} {}
+E { 1563} {s} {s} {4} {0} {} {1.000} {}
+E { 3679} {follow tracks} {follow tracks} {0} {0} {} {1.000} {}
 
-R { 1583} {0} {} {Eastwick (u,n,w,e)} { } {} {Chaos} {} {} {} {1.000} {}
+R { 1583} {0} {} {Eastwick (u,n,w,e)} { } {Your sense of direction suffers a new jolt.  There is a bubbling pool to the west and a road heading south.  The only way you can see around the pool is by jumping it. } {Chaos} {} {} {} {1.000} {}
 E { 1564} {s} {s} {4} {0} {} {1.000} {}
 E { 1586} {n} {n} {1} {0} {} {1.000} {}
 E { 1599} {jump pool} {jump pool} {0} {0} {} {1.000} {}
 
-R { 1584} {0} {} {A Physics Lab (out)} { } {You have entered a large physics laboratory.  The walls are lined with lasers, steel tubes, screws, bolts, stands, and other machine parts.  A small desk sits in one corner with stacks of papers strewn across the surface, and a large particle accelerator sits in the center of the room. The inch-thick layer of dust in the room gives you the feeling that nobody has been in this room for years, or that the scientists working here don't know how to clean. } {Physics Lab} {} {} {} {1.000} {}
+R { 1584} {0} {} {A Physics Lab (out)} { } {You have entered a large physics laboratory.  The walls are lined with lasers, steel tubes, screws, bolts, stands, and other machine parts.  A small desk sits in one corner with stacks of papers strewn across the surface, and a large particle accelerator sits in the center of the room. The inch-thick layer of dust in the room gives you the feeling that nobody has been in this room for years, or that the scientists working here don't know how to clean. } {Physics Lab} {physics_lab} {} {} {1.000} {}
 E { 1580} {out} {out} {0} {0} {} {1.000} {}
 
-R { 1585} {0} {} {Eastwick (s,e)} {?} {This is the Eastwick road.  There is a path running south and another to the east.  There is also a big white portal here. Which way do you go, I do not know! } {Chaos} {} {} {} {1.000} {}
+R { 1585} {0} {} {Eastwick (s,e)} {L} {This is the Eastwick road.  There is a path running south and another to the east.  There is also a big white portal here. Which way do you go, I do not know! } {Chaos} {} {} {} {1.000} {}
 E { 1580} {e} {e} {2} {0} {} {1.000} {}
 E { 1587} {s} {s} {4} {0} {} {1.000} {}
+E { 3609} {enter light} {enter light} {0} {0} {} {1.000} {}
+E { 3610} {enter bliss} {enter bliss} {0} {2} {} {1.000} {}
 
-R { 1586} {0} {} {} {?} {} {} {} {} {} {1.000} {}
+R { 1586} {0} {} {Eastwick Road Food Court (s,taco,mcd)} {*} {The road ends here at a series of entrances to various food emporiums. So, if you're hungry, you've come to the right place! Several of the doors' signs say 'CLOSED' with no indication of what they even are.  A few other doors seem to be wide open, ready for you to wander in and fill your gut. } {Chaos} {} {} {} {1.000} {}
 E { 1583} {s} {s} {4} {0} {} {1.000} {}
+E { 3641} {taco} {taco} {0} {0} {} {1.000} {}
+E { 3642} {mcd} {mcd} {0} {0} {} {1.000} {}
 
-R { 1587} {0} {} {Eastwick Road (n,e)} {?} {The road suddenly leads through the reading room of a small library.  There is a passage north and another to the east. Which way do you go, you do not know. } {Chaos} {} {} {} {1.000} {}
+R { 1587} {0} {} {Eastwick Road (n,e)} {B} {The road suddenly leads through the reading room of a small library.  There is a passage north and another to the east. Which way do you go, you do not know. } {Chaos} {} {} {} {1.000} {}
 E { 1585} {n} {n} {1} {0} {} {1.000} {}
 E { 1588} {e} {e} {2} {0} {} {1.000} {}
+E { 3604} {read book} {read book} {0} {0} {} {1.000} {}
 
-R { 1588} {0} {} {Eastwick (w,e)} {?} {You are back on the Eastwick road.  There is a road to the east and another to the west.  Which way do you go, you do not know. } {Chaos} {} {} {} {1.000} {}
+R { 1588} {0} {} {Eastwick (w,e)} {O} {You are back on the Eastwick road.  There is a road to the east and another to the west.  Which way do you go, you do not know. } {Chaos} {} {} {} {1.000} {}
 E { 1587} {w} {w} {8} {0} {} {1.000} {}
 E { 1590} {e} {e} {2} {0} {} {1.000} {}
+E { 3601} {enter outhouse} {enter outhouse} {0} {2} {} {1.000} {}
 
 R { 1589} {5130} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 E { 1584} {e} {e} {2} {0} {} {1.000} {}
 E { 1580} {w} {w} {8} {0} {} {1.000} {}
 
-R { 1590} {0} {} {Eastwick (u,n,w,e)} {?} {This is the Eastwick road.  There is a road to the north and one to the west.  Which way do you go, you do not know.  There is a deep dark hole here.  Oddly enough, it goes up, not down. } {Chaos} {} {} {} {1.000} {}
+R { 1590} {0} {} {Eastwick (u,n,w,e)} {G} {This is the Eastwick road.  There is a road to the north and one to the west.  Which way do you go, you do not know.  There is a deep dark hole here.  Oddly enough, it goes up, not down. } {Chaos} {} {} {} {1.000} {}
 E { 1588} {w} {w} {8} {0} {} {1.000} {}
 E { 1594} {e} {e} {2} {0} {} {1.000} {}
-E { 1593} {u} {u} {16} {0} {} {1.000} {}
 E { 1595} {n} {n} {1} {0} {} {1.000} {}
+E { 3597} {grab joystick} {grab joystick} {0} {0} {} {1.000} {}
+E { 1593} {u} {u} {16} {0} {} {1.000} {}
 
-R { 1591} {0} {} {A quiet road (w,enter)} { } {The road dumps you in front of a store.  You can't imagine why anyone would put a store here, but it's definitely a store.  The plate glass windows are filled with displays of books and CDs and even a few ancient tapes.  The road runs back to the west, you think. } {The Book Nook} {} {} {} {1.000} {}
+R { 1591} {0} {} {A quiet road (w,enter)} { } {The road dumps you in front of a store.  You can't imagine why anyone would put a store here, but it's definitely a store.  The plate glass windows are filled with displays of books and CDs and even a few ancient tapes.  The road runs back to the west, you think. } {The Book Nook} {book_nook} {} {} {1.000} {}
 E { 1594} {w} {w} {8} {0} {} {1.000} {}
 E { 1592} {enter} {enter} {0} {0} {} {1.000} {}
 
-R { 1592} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+R { 1592} {0} {} {The Booknook service counter (ne,nw,w,e)} { } {Before you is the check-out counter of the store.  The counter backs  up against one of the display windows, letting the clerk keep an eye  on the door while working.  Across from the door is a wall dividing the store in half.  A sign hangs on the wall. } {The Book Nook} {} {} {} {1.000} {}
+E { 3544} {ne} {ne} {3} {0} {} {1.000} {}
+E { 3545} {nw} {nw} {9} {0} {} {1.000} {}
+E { 3547} {e} {e} {2} {0} {} {1.000} {}
+E { 1591} {w} {w} {8} {0} {} {1.000} {}
+E { 3554} {climb staircase} {climb staircase} {0} {0} {} {1.000} {}
 
-R { 1593} {0} {} {Eastwick (u,n,w,e)} { } {} {Crydee} {} {} {} {1.000} {}
-E { 1590} {d} {d} {32} {0} {} {1.000} {}
+R { 1593} {0} {} {A Cave leading down (u,n)} { } {A very small cave with strange writing on the walls. There is just enough room for a large man to walk upright, and for one to walk abreast. There are strange sounds coming from further north. } {Crydee} {crydee} {} {} {1.000} {}
+E { 3632} {n} {n} {1} {0} {} {1.000} {}
+E { 1590} {u} {u} {16} {0} {} {1.000} {}
 
-R { 1594} {5130} {} {} { } {} {} {} {} {} {1.000} {}
+R { 1594} {5130} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 E { 1591} {e} {e} {2} {0} {} {1.000} {}
 E { 1590} {w} {w} {8} {0} {} {1.000} {}
 
-R { 1595} {0} {} {Eastwick Road (n,s)} { } {This is the Eastwick road.  The lurching, sidewinding street leads straight as an arrow north and south, or rather south and north, or perhaps both at the same time.  The mottled sky is dark and shadowy, caused both by the existence and non- existence of a fixed source of light, and the giant warehouse that floats happily over your halo.  Which way to head?  Which way to feet?  Which way to the nearest nail factory?  Questions, questions. } {Chaos} {} {} {} {1.000} {}
+R { 1595} {0} {} {Eastwick Road (n,s)} {W} {This is the Eastwick road.  The lurching, sidewinding street leads straight as an arrow north and south, or rather south and north, or perhaps both at the same time.  The mottled sky is dark and shadowy, caused both by the existence and non- existence of a fixed source of light, and the giant warehouse that floats happily over your halo.  Which way to head?  Which way to feet?  Which way to the nearest nail factory?  Questions, questions. } {Chaos} {} {} {} {1.000} {}
 E { 1590} {s} {s} {4} {0} {} {1.000} {}
 E { 1596} {n} {n} {1} {0} {} {1.000} {}
+E { 3633} {enter hole} {enter hole} {0} {0} {} {1.000} {}
 
-R { 1596} {0} {} {Eastwick Road (w,e)} {?} {This is the Eastwick road.  Somehow it suddenly veered in direction. There is a road to the west and another to the east.  Which way do you go, you do not know. } {Chaos} {} {} {} {1.000} {}
+R { 1596} {0} {} {Eastwick Road (w,e)} {W} {This is the Eastwick road.  Somehow it suddenly veered in direction. There is a road to the west and another to the east.  Which way do you go, you do not know. } {Chaos} {} {} {} {1.000} {}
 E { 1595} {w} {w} {8} {0} {} {1.000} {}
 E { 1597} {e} {e} {2} {0} {} {1.000} {}
+E { 3637} {enter whirlpool} {enter whirlpool} {0} {0} {} {1.000} {}
 
-R { 1597} {0} {} {Eastwick Road (n,s)} {?} {As you travel west you start to realize... You are going south. The world in eastwick is chaotic and turned around.  To the south is a barren wasteland.  It looks as though it has been hit by an atomic weapon.  The gooey tar-like substance was once an asphalt road.  You can almost feel the radiation pouring through your shoes. The road to the north leads into eastwick.  The road south trails off into a steamy, twisted world. } {Chaos} {} {} {} {1.000} {}
+R { 1597} {0} {} {Eastwick Road (n,s)} {} {As you travel west you start to realize... You are going south. The world in eastwick is chaotic and turned around.  To the south is a barren wasteland.  It looks as though it has been hit by an atomic weapon.  The gooey tar-like substance was once an asphalt road.  You can almost feel the radiation pouring through your shoes. The road to the north leads into eastwick.  The road south trails off into a steamy, twisted world. } {Chaos} {} {} {} {1.000} {}
 E { 1596} {n} {n} {1} {0} {} {1.000} {}
 E { 1598} {s} {s} {4} {0} {} {1.000} {}
+E { 3640} {grasp tendril} {grasp tendril} {0} {0} {} {1.000} {}
 
 R { 1598} {0} {} {Nuclear Wasteland (n,e)} {T} {You meander through a glowing rockpile glancing nervously over you shoulder as you hear slight rustlings on all sides. } {Chaos} {} {} {} {1.000} {}
 E { 1597} {n} {n} {1} {0} {} {1.000} {}
@@ -13028,8 +13072,10 @@ R { 2808} {0} {} {a dark underground passage (w,e)} { } {This passageway was dug
 E { 2807} {w} {w} {8} {0} {} {1.000} {}
 E { 2801} {e} {e} {2} {0} {} {1.000} {}
 
-R { 2809} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+R { 2809} {0} {} {a dark underground passage (w,n,e)} { } {This passageway was dug straight out of the earth, and smells of rich soil and blood.  Menacing sounds echo through the tunnel from indiscernible directions, and shadows appear to dart around the edges of your vision. } {Zelligar's Castle} {} {} {} {1.000} {}
 E { 2806} {w} {w} {8} {0} {} {1.000} {}
+E { 3509} {n} {n} {1} {0} {} {1.000} {}
+E { 3510} {e} {e} {2} {0} {} {1.000} {}
 
 R { 2810} {0} {} {Desert (n,s,w,e)} { } {Desert The desert stretches out to the horizon. Your feet sink into the sand beneath you and every step you take drains your mind and body.  The midday sun is high in a cloudless sky, baking the desert sands.  You look back the way you came and see your footsteps in the sand.   } {Fantasy} {} {} {} {1.000} {}
 E {  538} {n} {n} {1} {0} {} {1.000} {}
@@ -13113,10 +13159,11 @@ E { 1256} {e} {e} {2} {0} {} {1.000} {}
 
 R { 2832} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 
-R { 2833} {0} {} {Slide Street (n,s,w)} { } {Whoa!  You nearly fall on your butt as you scramble around trying to keep your balance.  The floor here is a slippery, wet, yellow plastic sheet.  It looks kinda like one of those Wet Run things that you hook up to your sprinkler in the summertime.  A multicolored rainbow extends up majestically into the sky. } {Chaos} {} {} {} {1.000} {}
+R { 2833} {0} {} {Slide Street (n,s,w)} {R} {Whoa!  You nearly fall on your butt as you scramble around trying to keep your balance.  The floor here is a slippery, wet, yellow plastic sheet.  It looks kinda like one of those Wet Run things that you hook up to your sprinkler in the summertime.  A multicolored rainbow extends up majestically into the sky. } {Chaos} {} {} {} {1.000} {}
 E {   82} {n} {n} {1} {0} {} {1.000} {}
 E { 2895} {w} {w} {8} {0} {} {1.000} {}
 E { 2896} {s} {s} {4} {0} {} {1.000} {}
+E { 3744} {climb rainbow} {climb rainbow} {0} {0} {} {1.000} {}
 
 R { 2834} {5130} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 E { 1256} {s} {s} {4} {0} {} {1.000} {}
@@ -13157,7 +13204,8 @@ E {   80} {s} {s} {4} {0} {} {1.000} {}
 E { 3106} {n} {n} {1} {0} {} {1.000} {}
 E { 2846} {w} {w} {8} {0} {} {1.000} {}
 
-R { 2844} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+R { 2844} {0} {} {-=( A messy bedroom )=- (doorway)} { } {You have stumbled into a dimly lit room.  The pale red blinds are parted slightly, allowing a small stream of rather weak light to filter into the room.  A weak light bulb casts some additional light, but it fails to fully illuminate the room.  The light plays slowly over a scene of total chaos.  The floor is covered by a thin brown colored carpet.  A rather dirty bed is pushed tightly against one corner of the room.  A set of dirty, crumpled sheets lie over the bed.  The corner of a magazine can be seen sticking out from under the crumpled corner of the bed.  There is a large poster from Angra's "Holy Land" album fixed to one wall.  Underneath the poster is a large, rather cluttered wooden desk  with a single drawer built into it.  A large, black stereo system and  two black speakers take up the corner of the desk.  Three large shelves have been fixed to the wall above the bed.  There is a large doorway leading out of the room, and another leading into a hallway on the opposite side of the room. } {Lostar's Bedroom} {lostars_bedroom} {} {} {1.000} {}
+E {   80} {doorway} {doorway} {0} {0} {} {1.000} {}
 
 R { 2845} {0} {} {Entrance to the World of Games (n,s)} { } {This is a sort of darkened alley.  Toward the end, you see a bright light.  You feel yourself being drawn to it and a big cheesy grin coming over your face. } {Game Show} {} {} {} {1.000} {}
 E { 3106} {s} {s} {4} {0} {} {1.000} {}
@@ -13166,18 +13214,21 @@ E { 3107} {n} {n} {1} {0} {} {1.000} {}
 R { 2846} {0} {} {A bridge (w,e)} {?} {You are crossing a bridge of mist.  In places, the mist gives way to hideous shapes made out of gold.  Which, you suddenly realize is absolutely impossible.  The more you look at them the more you start to look like them.  And anyone with an ounce of sense wouldn't like that!  Of course, they wouldn't be here either but you ignore that thought. } {Chaos} {} {} {} {1.000} {}
 E { 2843} {e} {e} {2} {0} {} {1.000} {}
 E { 2847} {w} {w} {8} {0} {} {1.000} {}
+E { 3506} {enter mist} {enter mist} {0} {0} {} {1.000} {}
+E { 3507} {enter frame} {enter frame} {0} {0} {} {1.000} {}
 
-R { 2847} {0} {} {Crazy Road (u,n,s,e)} {?} {Your brain is under a serious assault now.  Images of horror and mayhem surround you. Maybe those stores to the north will be a refuge of sanity. Or otherwise that weird stairway over there might lead up to something better? Probably not though. } {Chaos} {} {} {} {1.000} {}
+R { 2847} {0} {} {Crazy Road (u,n,s,e)} {L} {Your brain is under a serious assault now.  Images of horror and mayhem surround you. Maybe those stores to the north will be a refuge of sanity. Or otherwise that weird stairway over there might lead up to something better? Probably not though. } {Chaos} {} {} {} {1.000} {}
 E { 2846} {e} {e} {2} {0} {} {1.000} {}
 E { 3248} {u} {u} {16} {0} {} {1.000} {}
 E { 2853} {n} {n} {1} {0} {} {1.000} {}
 E {   39} {s} {s} {4} {0} {} {1.000} {}
+E { 3505} {pull leash} {pull leash} {0} {0} {} {1.000} {}
 
-R { 2848} {0} {} {chaos_mall} { } {This is the entrance to the parking garage which is used by the numerous shoppers at the 3k Mall. A guard station stands here, with a sign posted on it, stating the parking rates. Chances are that if the guard is on duty, you're gonna hafta pay this in advance. To the west you can see a bunch of cars parked in small slots, and past them, a set of metal doors, presumably leading into the mall. } {Chaos Mall} {} {} {} {1.000} {}
+R { 2848} {0} {} {chaos_mall} { } {This is the entrance to the parking garage which is used by the numerous shoppers at the 3k Mall. A guard station stands here, with a sign posted on it, stating the parking rates. Chances are that if the guard is on duty, you're gonna hafta pay this in advance. To the west you can see a bunch of cars parked in small slots, and past them, a set of metal doors, presumably leading into the mall. } {Chaos Mall} {chaos_mall} {} {} {1.000} {}
 E { 3248} {d} {d} {32} {0} {} {1.000} {}
 E { 3249} {w} {w} {8} {0} {} {1.000} {}
 
-R { 2849} {0} {} {Store Entrance (s,w)} { } {You have just walked through a set of sliding doors and entered a new store called 'Groceries are Life'.  You have the feeling that this may be a health food store, but you couldn't be more wrong.  Have a look around, and remember if you break it, you bought it! } {Grocery Store} {} {} {} {1.000} {}
+R { 2849} {0} {} {Store Entrance (s,w)} { } {You have just walked through a set of sliding doors and entered a new store called 'Groceries are Life'.  You have the feeling that this may be a health food store, but you couldn't be more wrong.  Have a look around, and remember if you break it, you bought it! } {Grocery Store} {grocery_store} {} {} {1.000} {}
 E { 2853} {s} {s} {4} {0} {} {1.000} {}
 E { 2854} {w} {w} {8} {0} {} {1.000} {}
 E { 2855} {u} {u} {16} {0} {} {1.000} {}
@@ -13348,13 +13399,15 @@ R { 2888} {0} {} {A small clearing (porch,n)} { } {You are standing in a small c
 E { 2886} {n} {n} {1} {0} {} {1.000} {}
 E { 3200} {porch} {porch} {0} {0} {} {1.000} {}
 
-R { 2889} {0} {} {Lollipop Lane (n,s)} { } {As you move north the road gives way to a cutesy little street lined by tall lollipop trees.  The smell of sugar is so intense here that you can almost hear the zits rising on your face and back.  I'd move on fast if I were you! } {Chaos} {} {} {} {1.000} {}
+R { 2889} {0} {} {Lollipop Lane (n,s)} {K} {As you move north the road gives way to a cutesy little street lined by tall lollipop trees.  The smell of sugar is so intense here that you can almost hear the zits rising on your face and back.  I'd move on fast if I were you! } {Chaos} {} {} {} {1.000} {}
 E {   41} {s} {s} {4} {0} {} {1.000} {}
 E { 2890} {n} {n} {1} {0} {} {1.000} {}
+E { 3692} {twist knob} {twist knob} {0} {0} {} {1.000} {}
 
-R { 2890} {0} {} {Small side road (n,s)} {?} {The lollipop trees give way abruptly to a narrow concrete road. To the north you can see a massive gray edifice.  Maybe the lollipops were former dwellers of that structure.  But if they were, you probably wouldn't want to chance going that way.  But if you were smart, you wouldn't be in Chaos anyway. } {Chaos} {} {} {} {1.000} {}
+R { 2890} {0} {} {Small side road (n,s)} {C} {The lollipop trees give way abruptly to a narrow concrete road. To the north you can see a massive gray edifice.  Maybe the lollipops were former dwellers of that structure.  But if they were, you probably wouldn't want to chance going that way.  But if you were smart, you wouldn't be in Chaos anyway. } {Chaos} {} {} {} {1.000} {}
 E { 2889} {s} {s} {4} {0} {} {1.000} {}
 E { 2893} {n} {n} {1} {0} {} {1.000} {}
+E { 3687} {sip cup} {sip cup} {0} {0} {} {1.000} {}
 
 R { 2891} {0} {} {Shady lane (n,s)} { } {This is a shady lane that leads to a large institution sitting on a hill to the north.  You notice all around you things seem pleasant and very quiet. } {Shady Oaks Asylum} {shady_oaks} {} {} {1.000} {}
 E { 2893} {s} {s} {4} {0} {} {1.000} {}
@@ -13381,6 +13434,7 @@ E { 2833} {n} {n} {1} {0} {} {1.000} {}
 E { 2899} {w} {w} {8} {0} {} {1.000} {}
 E { 2900} {s} {s} {4} {0} {} {1.000} {}
 E { 2901} {e} {e} {2} {0} {} {1.000} {}
+E { 3750} {ride cow} {ride cow} {0} {0} {} {1.000} {}
 
 R { 2897} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 E { 2894} {sw} {sw} {12} {0} {} {1.000} {}
@@ -13393,10 +13447,11 @@ R { 2899} {5130} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 E { 2898} {w} {w} {8} {0} {} {1.000} {}
 E { 2896} {e} {e} {2} {0} {} {1.000} {}
 
-R { 2900} {0} {} {Country Road (n,s,w)} {?} {You're on a small country road.  All you can see around you are fields of corn. It appears that the WPA has reached this sleepy countryside.  Workers are encamped along the road, manning a stand selling Mentos.  } {Chaos} {} {} {} {1.000} {}
+R { 2900} {0} {} {Country Road (n,s,w)} {M} {You're on a small country road.  All you can see around you are fields of corn. It appears that the WPA has reached this sleepy countryside.  Workers are encamped along the road, manning a stand selling Mentos.  } {Chaos} {} {} {} {1.000} {}
 E { 2896} {n} {n} {1} {0} {} {1.000} {}
 E { 2903} {s} {s} {4} {0} {} {1.000} {}
 E { 2905} {w} {w} {8} {0} {} {1.000} {}
+E { 3754} {buy mentos} {buy mentos} {0} {0} {} {1.000} {}
 
 R { 2901} {0} {} {Voodoo Grove (n,s,w,e)} { } {Surrounding you are large, closely grown palm trees.  Thick, green vines hang from intertwined leaves and branches making the clearing in which you stand fairly isolated.  The vines sway gently as a breeze from the south blows through.  Storm clouds are gathering to the south and the faint smell of ozone tickles your nose.  Standing at the northern end of the dirt circle is a wooden totem pole with three large heads. The bottom-most head is a carving of an owl, and the middle head is a carving of a dragon.  The top head is eerily different from the rest in the sense that you can't quite determine what is being represented. There seems to be an opening in the totem pole to the north. } {Chaos} {} {} {} {1.000} {}
 E { 2896} {w} {w} {8} {0} {} {1.000} {}
@@ -13407,10 +13462,12 @@ E { 2913} {e} {e} {2} {0} {} {1.000} {}
 R { 2902} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 E { 2898} {s} {s} {4} {0} {} {1.000} {}
 
-R { 2903} {0} {} {Forest path (n,s,w)} {?} {You're on a tiny deer trail, deep in the middle of a forest.  Only a little sunlight filters through the branches above you, but you can see enough to avoid the trees in your path.   Small animals scurry away at your approach. } {Chaos} {} {} {} {1.000} {}
+R { 2903} {0} {} {Forest path (n,s,w)} {C} {You're on a tiny deer trail, deep in the middle of a forest.  Only a little sunlight filters through the branches above you, but you can see enough to avoid the trees in your path.   Small animals scurry away at your approach. } {Chaos} {} {} {} {1.000} {}
 E { 2900} {n} {n} {1} {0} {} {1.000} {}
 E { 2906} {s} {s} {4} {0} {} {1.000} {}
 E { 2907} {w} {w} {8} {0} {} {1.000} {}
+E { 3762} {tear card} {tear card} {0} {0} {} {1.000} {}
+E { 3762} {touch card} {touch card} {0} {0} {} {1.000} {}
 
 R { 2904} {0} {} {FuNkYtOwN (n,e)} { } {This is one funky town!  You stand in the middle of the main street surrounded by some of the weirdest things you've ever come across.  To the north is a large building which music emanates from.  Farther ahead in the distance you notice a large track of some sort.  All of the buildings that surround you are painted in some of the ugliest colors you have ever seen. } {Funkytown} {funkytown} {} {} {1.000} {}
 E { 2905} {e} {e} {2} {0} {} {1.000} {}
@@ -13423,15 +13480,24 @@ R { 2906} {0} {} {Swirling mist (out1,sideways,out2)} { } {You suddenly find you
 E { 2909} {sideways} {sideways} {0} {0} {} {1.000} {}
 E { 2910} {out2} {out2} {0} {0} {} {1.000} {}
 E { 2903} {out1} {out1} {0} {0} {} {1.000} {}
+E { 3765} {press play} {press play} {0} {0} {} {1.000} {}
 
-R { 2907} {0} {} {Field of Daisies (e)} {?} {Blinding sunlight shines down on this lovely field of white and yellow daisies.  The flowers are everywhere, literally thousands of them. Buzzing about this fragrant patch of land are more dragonflies than you can count.  Watch out or they might fly right into you! } {Chaos} {} {} {} {1.000} {}
+R { 2907} {0} {} {Field of Daisies (e)} {U} {Blinding sunlight shines down on this lovely field of white and yellow daisies.  The flowers are everywhere, literally thousands of them. Buzzing about this fragrant patch of land are more dragonflies than you can count.  Watch out or they might fly right into you! } {Chaos} {} {} {} {1.000} {}
 E { 2903} {e} {e} {2} {0} {} {1.000} {}
+E { 3759} {catch disc} {catch disc} {0} {0} {} {1.000} {}
 
 R { 2908} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 
-R { 2909} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+R { 2909} {0} {} {On a ramp (d,u)} { } {You are standing on a ramp that rises from the swirling anger of Chaos toward a platform of some sort.  You might be mistaken, but it looks like the kind of platform used for elevated trains. } {Disney World} {disneyworld} {} {} {1.000} {}
+E { 3773} {u} {u} {16} {0} {} {1.000} {}
+E { 2906} {d} {d} {32} {0} {} {1.000} {}
 
-R { 2910} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+R { 2910} {0} {<g09>} {Hedge maze (n,s,w,e)} {HM} {You're at an intersection in what appears to be a hedge maze.  Which way will you go? } {Chaos} {} {} {} {1.000} {}
+E { 3778} {s} {s} {4} {0} {} {1.000} {}
+E { 2906} {n} {n} {1} {0} {} {1.000} {}
+E { 3774} {admire ring} {admire ring} {0} {0} {} {1.000} {}
+E { 3775} {e} {e} {2} {0} {} {1.000} {}
+E { 3776} {w} {w} {8} {0} {} {1.000} {}
 
 R { 2911} {0} {} {The Tropical Tavern (s)} { } {You've found your way to what seems to be the tavern of Kayos - you think.  The place is an extravagantly decorated room.  Beautiful  tropical flowers grace every table while lush, brilliant green vines hang from the ceiling and walls, thriving ever so majestically.  Behind the actual bar itself is a slab of stone with drinks and prices:       Intox:                   Detox:    Bark Brew     75 coins         Glass of Water      80 coins    Root Rot     240 coins         Fertilizer         160 coins    Insecticide  300 coins  } {Chaos} {} {} {} {1.000} {}
 E { 2901} {s} {s} {4} {0} {} {1.000} {}
@@ -13524,7 +13590,7 @@ E { 2933} {n} {n} {1} {0} {} {1.000} {}
 E { 2942} {s} {s} {4} {0} {} {1.000} {}
 E { 2935} {w} {w} {8} {0} {} {1.000} {}
 
-R { 2932} {0} {} {ROTC facility (n,out)} { } {You have just entered the local Reserve Officer Training Corps facility.  A large desk sits here with papers arranged neatly.  The lights overhead give off a bright white light and everything shines as if it has just been cleaned.  The floor is carpeted and your feet sink in comfortably. } {ROTC} {} {} {} {1.000} {}
+R { 2932} {0} {} {ROTC facility (n,out)} { } {You have just entered the local Reserve Officer Training Corps facility.  A large desk sits here with papers arranged neatly.  The lights overhead give off a bright white light and everything shines as if it has just been cleaned.  The floor is carpeted and your feet sink in comfortably. } {ROTC} {rotc} {} {} {1.000} {}
 E { 2933} {out} {out} {0} {0} {} {1.000} {}
 E { 2933} {s} {s} {4} {0} {} {1.000} {}
 E { 2972} {n} {n} {1} {0} {} {1.000} {}
@@ -13630,6 +13696,7 @@ R { 2955} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 
 R { 2956} {0} {} {Chaos Shop (e)} {?} {This, quite possibly, could be the main shop of the Chaos Realm. The annoyingly loud car salesman standing in the center of this black cement lot is a dead giveaway.  Type 'list' to see the fine wares being sold in this shop. } {Chaos} {} {} {} {1.000} {}
 E { 2954} {e} {e} {2} {0} {} {1.000} {}
+E { 3731} {jump curb} {jump curb} {0} {0} {} {1.000} {}
 
 R { 2957} {5130} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 E { 2915} {s} {s} {4} {0} {} {1.000} {}
@@ -13724,8 +13791,9 @@ R { 2980} {5130} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 E { 2976} {w} {w} {8} {0} {} {1.000} {}
 E {   86} {e} {e} {2} {0} {} {1.000} {}
 
-R { 2981} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+R { 2981} {0} {} {<-> Mountain plateau <-> (e,enter)} { } {Trudging up along the path, you reach a snow-capped plateau.  In front of you is a large white observatory with a line of people waiting to enter.  You hear them discussing things about stars, comets and other heavenly bodies.  Since you have traveled all this way, you might as well follow their lead and do a little star gazing inside.. } {Carina's Observatory} {} {} {} {1.000} {}
 E { 2976} {e} {e} {2} {0} {} {1.000} {}
+E { 3526} {enter} {enter} {0} {0} {} {1.000} {}
 
 R { 2982} {0} {} {Entry Tunnel (w)} { } {You are in a tunnel.  Bare rock walls surround you on three sides, and it's not even particularly interesting rock.  To your west, the tunnel appears to widen out into some sort of cave.  The only light is coming from the west, along with some rather happy-sounding singing. } {Fraggle Rock} {fraggle_rock} {} {} {1.000} {}
 E { 2983} {w} {w} {8} {0} {} {1.000} {}
@@ -14413,13 +14481,15 @@ E { 3138} {n} {n} {1} {0} {} {1.000} {}
 R { 3147} {0} {} {Principal's office (w)} { } {This is a place you'd rather forget, the principal's office. There is a big desk here and a bunch of useless papers. On the desk you see pictures of the principal's family, but looking closer you see that the pictures came with the frames. } {Alfonzo's Nightmare} {} {} {} {1.000} {}
 E { 3139} {w} {w} {8} {0} {} {1.000} {}
 
-R { 3148} {0} {} {Wickward Path (s)} {?} {This portion of the path is as bouncy as a trampoline. It's all you can do to avoid doing a backflip! The surrounding AstroTurf is now bright red and decorated with shiny white polka-dots. What looks like a giant glazed donut hovers overhead, occasionally dripping sugary sweetness upon the ground. } {Chaos} {} {} {} {1.000} {}
+R { 3148} {0} {} {Wickward Path (s)} {C} {This portion of the path is as bouncy as a trampoline. It's all you can do to avoid doing a backflip! The surrounding AstroTurf is now bright red and decorated with shiny white polka-dots. What looks like a giant glazed donut hovers overhead, occasionally dripping sugary sweetness upon the ground. } {Chaos} {} {} {} {1.000} {}
 E { 1582} {s} {s} {4} {0} {} {1.000} {}
+E { 3682} {break cookie} {break cookie} {0} {0} {} {1.000} {}
 
-R { 3149} {0} {} {A road leading north-south (se,n,s)} { } {All around you fiery geysers explode from the land, showering you in harmless ashes.  Though, you can imagine it wouldn't be quite so harmless if you were standing on top of one of them when it decided to erupt.  You'd best watch where you step.  A small path branches off here, and in defiance of common sense, someone has set up a notice board here as well. } {Chaos} {} {} {} {1.000} {}
+R { 3149} {0} {} {A road leading north-south (se,n,s)} {*} {All around you fiery geysers explode from the land, showering you in harmless ashes.  Though, you can imagine it wouldn't be quite so harmless if you were standing on top of one of them when it decided to erupt.  You'd best watch where you step.  A small path branches off here, and in defiance of common sense, someone has set up a notice board here as well. } {Chaos} {} {} {} {1.000} {}
 E { 1567} {s} {s} {4} {0} {} {1.000} {}
 E { 3155} {n} {n} {1} {0} {} {1.000} {}
 E { 3152} {se} {se} {6} {0} {} {1.000} {}
+E { 3658} {visit flat} {visit flat} {0} {0} {} {1.000} {}
 
 R { 3150} {0} {} {An electron (d)} { } {Energy seems to vibrate through the area, and gives you a tingle of uncertainty.  Random flashes light up your surroundings, giving you a slight start each time.  The air crackles around you here, and charged dust makes your hair stand on end. } {Electric Cave} {electric_cave} {} {} {1.000} {}
 E { 3155} {s} {s} {4} {0} {} {1.000} {}
@@ -14448,6 +14518,7 @@ E { 3149} {s} {s} {4} {0} {} {1.000} {}
 
 R { 3156} {0} {} {The Upper Rack (d)} { } {You're now standing in the middle of the upper rack of a giant dishwasher.  Plastic compartments line the rack from one end to to the other.  Soapy water splashes up and over you every few seconds, leaving you smelling a little better, but it sure does sting the eyes! } {Chaos} {} {} {} {1.000} {}
 E { 1568} {d} {d} {32} {0} {} {1.000} {}
+E { 3661} {slide spoon} {slide spoon} {0} {0} {} {1.000} {}
 
 R { 3157} {0} {} {An electron (nw,n)} { } {A blinding glow prevents you from seeing anything.  There is constant  motion around you.  A slight hum penetrates your soul and shakes it.  SNAP!  A bolt of electricity snaps by your ear and charges the room. } {Electric Cave} {} {} {} {1.000} {}
 E { 3154} {n} {n} {1} {0} {} {1.000} {}
@@ -14474,33 +14545,35 @@ R { 3165} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 
 R { 3166} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 
-R { 3167} {0} {} {A road leading north (n,s)} { } {Suds are popping out of the dishwasher to the north.  That must be how you ended up in this neck of the woods in the first place. While you aren't sure you want to go through that again, the current sparse rocky landscape doesn't look all that promising either.  All these rocks seem out of place, given that there aren't any mountains or rivers anywhere nearby.  Go figure. } {Chaos} {} {} {} {1.000} {}
+R { 3167} {0} {} {A road leading north (n,s)} {C} {Suds are popping out of the dishwasher to the north.  That must be how you ended up in this neck of the woods in the first place. While you aren't sure you want to go through that again, the current sparse rocky landscape doesn't look all that promising either.  All these rocks seem out of place, given that there aren't any mountains or rivers anywhere nearby.  Go figure. } {Chaos} {} {} {} {1.000} {}
 E { 1568} {n} {n} {1} {0} {} {1.000} {}
 E { 3170} {s} {s} {4} {0} {} {1.000} {}
+E { 3676} {listen cd} {listen cd} {0} {0} {} {1.000} {}
 
 R { 3168} {0} {} {Sandy Plains (se,w,e,ne)} { } {Fine-grained sand blows in tiny swirls all about. This place is empty, desolate, and devoid of all life. To the east, a large cloud of sand grows and ebbs, sometimes casting its dark shadow over you. } {Burdog Gorge} {} {} {} {1.000} {}
-E { 3170} {n} {n} {1} {0} {} {1.000} {}
-E { 3169} {se} {se} {6} {0} {} {1.000} {}
-E { 3171} {e} {e} {2} {0} {} {1.000} {}
-E { 3172} {ne} {ne} {3} {0} {} {1.000} {}
 E { 3167} {w} {w} {8} {0} {} {1.000} {}
 
-R { 3169} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
-E { 3168} {nw} {nw} {9} {0} {} {1.000} {}
+R { 3169} {0} {<g09>} {Sandy Plains (se,ne,w,e)} { } {Fine-grained sand blows in tiny swirls all about. This place is empty, desolate, and devoid of all life. To the east, a large cloud of sand grows and ebbs, sometimes casting its dark shadow over you. } {Burdog Gorge} {burdog} {} {} {1.000} {}
+E { 3171} {w} {w} {8} {0} {} {1.000} {}
+E { 3172} {se} {se} {6} {0} {} {1.000} {}
+E { 3674} {ne} {ne} {3} {0} {} {1.000} {}
+E { 3675} {e} {e} {2} {0} {} {1.000} {}
 
-R { 3170} {5130} {} {} { } {} {} {} {} {} {1.000} {}
-E { 3168} {s} {s} {4} {0} {} {1.000} {}
+R { 3170} {5130} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3169} {s} {s} {4} {0} {} {1.000} {}
 E { 3167} {n} {n} {1} {0} {} {1.000} {}
 
-R { 3171} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
-E { 3168} {w} {w} {8} {0} {} {1.000} {}
+R { 3171} {5130} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3167} {w} {w} {8} {0} {} {1.000} {}
+E { 3169} {e} {e} {2} {0} {} {1.000} {}
 
 R { 3172} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
-E { 3168} {sw} {sw} {12} {0} {} {1.000} {}
+E { 3169} {nw} {nw} {9} {0} {} {1.000} {}
 
-R { 3173} {0} {} {Wickland Street (n,s)} { } {Wickland Street continues merrily along, now winding through what appears to be a bamboo forest. A thick one at that! The trees of the forest are so thick on each side of the street that they almost run right up against the curbs. } {Chaos} {} {} {} {1.000} {}
+R { 3173} {0} {} {Wickland Street (n,s)} {M} {Wickland Street continues merrily along, now winding through what appears to be a bamboo forest. A thick one at that! The trees of the forest are so thick on each side of the street that they almost run right up against the curbs. } {Chaos} {} {} {} {1.000} {}
 E { 1565} {n} {n} {1} {0} {} {1.000} {}
 E { 3174} {s} {s} {4} {0} {} {1.000} {}
+E { 3711} {draw tile} {draw tile} {0} {0} {} {1.000} {}
 
 R { 3174} {0} {} {Wickwood Forest (n)} { } {The ground underfoot is hard-packed dirt and a multitude of strange trees surrounds you. You recognize a few varieties such as bamboo and palm, but what are these others? Some of the wood is bright red, others are purple, and some of these 'trees' actually appear to be giant Q-tips! } {Chaos} {} {} {} {1.000} {}
 E { 3173} {n} {n} {1} {0} {} {1.000} {}
@@ -14513,9 +14586,10 @@ R { 3176} {5130} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 E { 3175} {w} {w} {8} {0} {} {1.000} {}
 E {   87} {e} {e} {2} {0} {} {1.000} {}
 
-R { 3177} {0} {} {South Forest (n,s)} { } {The non-forest continues south.  But now the `ground' is beginning to take on a purplish tint which seems to be coming from that obloid to the south. There is a dense patch of purple mist in this area through which you can dimly see huge shapes moving. } {Chaos} {} {} {} {1.000} {}
+R { 3177} {0} {} {South Forest (n,s)} {P} {The non-forest continues south.  But now the `ground' is beginning to take on a purplish tint which seems to be coming from that obloid to the south. There is a dense patch of purple mist in this area through which you can dimly see huge shapes moving. } {Chaos} {} {} {} {1.000} {}
 E {   87} {n} {n} {1} {0} {} {1.000} {}
 E { 3180} {s} {s} {4} {0} {} {1.000} {}
+E { 3705} {enter playhouse} {enter playhouse} {0} {0} {} {1.000} {}
 
 R { 3178} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 E { 3175} {s} {s} {4} {0} {} {1.000} {}
@@ -16010,3 +16084,1016 @@ E { 3495} {trace footprints} {trace footprints} {0} {0} {} {1.000} {}
 R { 3494} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 
 R { 3495} {0} {} {Strange Room} { } {You find yourself in a strange room, the walls are covered with strange zig-zag lined wallpaper, and there's a hole in the floor.  There are no windows and no doors, except for that one huge vault on one wall. } {Waldo's House} {} {} {} {1.000} {}
+
+R { 3496} {0} {} {A room at the bottom of a sewer (n,w,u,e)} { } {The bottom of the sewer seems to be some sort of communications raceway.  There are bundles of wires running all over the place down here. } {BBN Planet} {bbn_planet} {} {} {1.000} {}
+E { 3497} {n} {n} {1} {0} {} {1.000} {}
+E { 3498} {w} {w} {8} {0} {} {1.000} {}
+E { 3500} {e} {e} {2} {0} {} {1.000} {}
+E { 1563} {u} {u} {16} {0} {} {1.000} {}
+
+R { 3497} {0} {} {A dismal white and grey corridor (s,w,e)} { } {The bleak grey partitions match the dull white wall perfectly. The only thing more obnoxious would be the headache you're getting from the throb of the fluorescent lighting. } {BBN Planet} {} {} {} {1.000} {}
+E { 3496} {s} {s} {4} {0} {} {1.000} {}
+E { 3501} {w} {w} {8} {0} {} {1.000} {}
+E { 3502} {e} {e} {2} {0} {} {1.000} {}
+E { 3503} {search stain} {search stain} {0} {0} {} {1.000} {}
+
+R { 3498} {0} {} {A damp sewer (e)} { } {This space seems to be a shrine to wiring.  Every bundle has been meticulously wire tied, and strung out of the way. You've never seen such a nice, clean wiring job before. Of course, having seen the rest of the people here, there must be something wrong with it. } {BBN Planet} {} {} {} {1.000} {}
+E { 3496} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3499} {0} {} {Eastwick Road (n,s,w,e)} { } {This is the road of Eastwick.  It leads to you know not where. Follow your feet and see where you go. There is a manhole here in the ground. } {BBN Planet} {} {} {} {1.000} {}
+E { 3496} {d} {d} {32} {0} {} {1.000} {}
+
+R { 3500} {0} {} {A cramped wiring closet (w)} { } {You're surrounded by servers, switches, relays and hubs. The blinking lights are especially obnoxious under the fluorescent lighting.  There's a wall of transceivers that seem to be flashing madly.  Good thing that red lights aren't usually bad, eh? } {BBN Planet} {} {} {} {1.000} {}
+E { 3496} {w} {w} {8} {0} {} {1.000} {}
+
+R { 3501} {0} {} {A cramped wiring closet (e)} { } {The wiring closet is in total disarray.  Wires are running every which way, with no signs of organization.  Sloppy cabling is highly evident, as you see cables under tension, and a few taking some severe curves. } {BBN Planet} {} {} {} {1.000} {}
+E { 3497} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3502} {0} {} {A cramped wiring closet (w)} { } {There's a giant connector here.  It's some of the scariest cabling you've ever seen.  You'd have much more confidence in this company if the connection wasn't attached with duct tape. } {BBN Planet} {} {} {} {1.000} {}
+E { 3497} {w} {w} {8} {0} {} {1.000} {}
+
+R { 3503} {0} {} {A cramped wiring closet (s)} { } {You've found the true connections behind BBN.  From here, all of the connections from smaller ISPs come into the main servers.  There are a rather large collection of patch cables laying around, for some strange reason. } {BBN Planet} {} {} {} {1.000} {}
+E { 3497} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3504} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3503} {n} {n} {1} {0} {} {1.000} {}
+
+R { 3505} {0} {} {Dog Pound Office (exit,s)} { } {You've entered the Chaos Dog Pound. This is where all the local strays end up once the dog catcher tracks them down. He seems to be out at the moment, but you see his desk against the wall and an empty coat rack in one corner of the office. The hallway towards the pound's cages lies to the south. } {Dog Pound} {dogpound} {} {} {1.000} {}
+E { 2847} {exit} {exit} {0} {0} {} {1.000} {}
+E { 3780} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3506} {0} {<g09>} {} { } {} {} {unknown} {} {} {1.000} {}
+E { 2846} {retreat} {retreat} {0} {0} {} {1.000} {}
+
+R { 3507} {0} {} {JJJ Enterprises (leave)} { } {You are at the headquarters of JJJ Enterprises, which consists of a single office with just enough space for two office chairs and a large oak desk.  The air smells of cigar smoke and french fries.  An open doorway provides an exit into swirling mists. } {JJJ Enterprises} {jjj_enterprises} {} {} {1.000} {}
+E { 2846} {leave} {leave} {0} {0} {} {1.000} {}
+
+R { 3508} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3509} {0} {} {a dark underground passage (s,e)} { } {This passageway was dug straight out of the earth, and smells of rich soil and blood.  Menacing sounds echo through the tunnel from indiscernible directions, and shadows appear to dart around the edges of your vision. } {Zelligar's Castle} {} {} {} {1.000} {}
+E { 2809} {s} {s} {4} {0} {} {1.000} {}
+E { 3516} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3510} {0} {} {a dark underground passage (e,w)} { } {This passageway was dug straight out of the earth, and smells of rich soil and blood.  Menacing sounds echo through the tunnel from indiscernible directions, and shadows appear to dart around the edges of your vision. } {Zelligar's Castle} {} {} {} {1.000} {}
+E { 2809} {w} {w} {8} {0} {} {1.000} {}
+E { 3511} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3511} {0} {} {a dark underground passage (e,w)} { } {This passageway was dug straight out of the earth, and smells of rich soil and blood.  Menacing sounds echo through the tunnel from indiscernible directions, and shadows appear to dart around the edges of your vision. } {Zelligar's Castle} {} {} {} {1.000} {}
+E { 3510} {w} {w} {8} {0} {} {1.000} {}
+E { 3512} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3512} {0} {} {a dark underground passage (n,w)} { } {This passageway was dug straight out of the earth, and smells of rich soil and blood.  Menacing sounds echo through the tunnel from indiscernible directions, and shadows appear to dart around the edges of your vision. } {Zelligar's Castle} {} {} {} {1.000} {}
+E { 3511} {w} {w} {8} {0} {} {1.000} {}
+E { 3513} {n} {n} {1} {0} {} {1.000} {}
+
+R { 3513} {0} {} {a dark underground passage (ne,s,nw)} { } {This passageway was dug straight out of the earth, and smells of rich soil and blood.  Menacing sounds echo through the tunnel from indiscernible directions, and shadows appear to dart around the edges of your vision. } {Zelligar's Castle} {} {} {} {1.000} {}
+E { 3512} {s} {s} {4} {0} {} {1.000} {}
+E { 3514} {ne} {ne} {3} {0} {} {1.000} {}
+E { 3515} {nw} {nw} {9} {0} {} {1.000} {}
+
+R { 3514} {0} {} {a dark underground passage (sw,e)} { } {This passageway was dug straight out of the earth, and smells of rich soil and blood.  Menacing sounds echo through the tunnel from indiscernible directions, and shadows appear to dart around the edges of your vision. } {Zelligar's Castle} {} {} {} {1.000} {}
+E { 3513} {sw} {sw} {12} {0} {} {1.000} {}
+E { 3522} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3515} {0} {} {a dark underground passage (nw,se)} { } {This passageway was dug straight out of the earth, and smells of rich soil and blood.  Menacing sounds echo through the tunnel from indiscernible directions, and shadows appear to dart around the edges of your vision. } {Zelligar's Castle} {} {} {} {1.000} {}
+E { 3513} {se} {se} {6} {0} {} {1.000} {}
+E { 3520} {nw} {nw} {9} {0} {} {1.000} {}
+
+R { 3516} {0} {} {a dark underground passage (w,e)} { } {This passageway was dug straight out of the earth, and smells of rich soil and blood.  Menacing sounds echo through the tunnel from indiscernible directions, and shadows appear to dart around the edges of your vision. } {Zelligar's Castle} {} {} {} {1.000} {}
+E { 3509} {w} {w} {8} {0} {} {1.000} {}
+E { 3517} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3517} {0} {} {a dark underground passage (w,nw)} { } {This passageway was dug straight out of the earth, and smells of rich soil and blood.  Menacing sounds echo through the tunnel from indiscernible directions, and shadows appear to dart around the edges of your vision. } {Zelligar's Castle} {} {} {} {1.000} {}
+E { 3516} {w} {w} {8} {0} {} {1.000} {}
+E { 3518} {nw} {nw} {9} {0} {} {1.000} {}
+
+R { 3518} {0} {} {a dark underground passage (se,w)} { } {This passageway was dug straight out of the earth, and smells of rich soil and blood.  Menacing sounds echo through the tunnel from indiscernible directions, and shadows appear to dart around the edges of your vision. } {Zelligar's Castle} {} {} {} {1.000} {}
+E { 3517} {se} {se} {6} {0} {} {1.000} {}
+E { 3519} {w} {w} {8} {0} {} {1.000} {}
+
+R { 3519} {0} {} {a dark underground passage (e,ne)} { } {This passageway was dug straight out of the earth, and smells of rich soil and blood.  Menacing sounds echo through the tunnel from indiscernible directions, and shadows appear to dart around the edges of your vision. } {Zelligar's Castle} {} {} {} {1.000} {}
+E { 3518} {e} {e} {2} {0} {} {1.000} {}
+E { 3520} {ne} {ne} {3} {0} {} {1.000} {}
+
+R { 3520} {0} {} {a dark underground passage (w,sw,se)} { } {This passageway was dug straight out of the earth, and smells of rich soil and blood.  Menacing sounds echo through the tunnel from indiscernible directions, and shadows appear to dart around the edges of your vision. } {Zelligar's Castle} {} {} {} {1.000} {}
+E { 3519} {sw} {sw} {12} {0} {} {1.000} {}
+E { 3521} {w} {w} {8} {0} {} {1.000} {}
+E { 3515} {se} {se} {6} {0} {} {1.000} {}
+
+R { 3521} {0} {} {a dark underground passage (e)} { } {This passageway was dug straight out of the earth, and smells of rich soil and blood.  Menacing sounds echo through the tunnel from indiscernible directions, and shadows appear to dart around the edges of your vision. } {Zelligar's Castle} {} {} {} {1.000} {}
+E { 3520} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3522} {0} {} {a dark underground passage (e,w)} { } {This passageway was dug straight out of the earth, and smells of rich soil and blood.  Menacing sounds echo through the tunnel from indiscernible directions, and shadows appear to dart around the edges of your vision. } {Zelligar's Castle} {} {} {} {1.000} {}
+E { 3514} {w} {w} {8} {0} {} {1.000} {}
+E { 3523} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3523} {0} {} {Zelligar's Castle (w,e)} { } {This seems to be one of the only places in the castle that is well kept.  You stand in a small study, perhaps where Zelligar does most of his reading and research.  There is a small wooden desk in the corner with several books on it, and the south and north walls both have large book shelves.  There is a soft satin chair in the southeast corner of the room with a small light beside it. } {Zelligar's Castle} {} {} {} {1.000} {}
+E { 3522} {w} {w} {8} {0} {} {1.000} {}
+E { 3524} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3524} {0} {} {Zelligar's Castle (w,n)} { } {This is a small hallway that connects Zelligar's study and his bedroom.  To the north you can see perhaps the most luxurious room in the castle.  Back to the west is Zelligar's study. } {Zelligar's Castle} {} {} {} {1.000} {}
+E { 3523} {w} {w} {8} {0} {} {1.000} {}
+E { 3525} {n} {n} {1} {0} {} {1.000} {}
+
+R { 3525} {0} {} {Zelligar's Castle (s)} { } {This is the master bedroom of the Castle.  The room is quite large and extravagant, with an elevated semi-circle at the back of the room on which the king-sized bed rests.  Long purple drapes cover the two large windows on the sides of the room.  There is a small dresser on the wall with a full length mirror beside it.  There are a few books that look as if they have been discarded, tossed in disgust to the side of the room. } {Zelligar's Castle} {} {} {} {1.000} {}
+E { 3524} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3526} {0} {} {<-> Observatory entrance <-> (n,leave)} { } {The size of the observatory takes your breath away.  The ceiling to this enormous complex is nearly one hundred feet above your head, with a large opening in the center.  You notice quite a few people wandering about flashing their cameras and hollering at their siblings.  This must be one of the largest tourist attractions around. } {Carina's Observatory} {} {} {} {1.000} {}
+E { 3527} {n} {n} {1} {0} {} {1.000} {}
+E { 2981} {leave} {leave} {0} {0} {} {1.000} {}
+
+R { 3527} {0} {} {<-> Observatory lobby <-> (n,s,w,e)} { } {Working your way further into the observatory you have wandered into the main lobby.  A few desks clutter the center of the room, and many people rush by you busy in their endeavors.  As you glance down to make sure you are not stepping on anyone's shoes, the tiles on the floor grab your attention. } {Carina's Observatory} {} {} {} {1.000} {}
+E { 3526} {s} {s} {4} {0} {} {1.000} {}
+E { 3529} {n} {n} {1} {0} {} {1.000} {}
+E { 3530} {w} {w} {8} {0} {} {1.000} {}
+E { 3531} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3528} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3529} {0} {} {<-> Uranus Exhibit <-> (n,s,w,e)} { } {The seventh planet from the sun is displayed here in a rather large glass case.  The planet turns and rotates and you notice that the rotation is unlike any of the other planets.  It turns in an extremely tilted fashion with its sixteen satellites that turn around it.  The greenish display is the largest of all the others that you have passed by.  Truly an impressive sight to behold. } {Carina's Observatory} {} {} {} {1.000} {}
+E { 3527} {s} {s} {4} {0} {} {1.000} {}
+E { 3532} {e} {e} {2} {0} {} {1.000} {}
+E { 3534} {n} {n} {1} {0} {} {1.000} {}
+E { 3540} {w} {w} {8} {0} {} {1.000} {}
+
+R { 3530} {0} {} {<-> Mars exhibit <-> (n,e)} { } {You walk further along the lobby and see a large exhibit in front of you. A large circular ball representing the planet Mars, floats gently in the air and a few smaller ones rotate around it.  The large glass case that encloses the model, reflects out red laser beams that you assume is the security system of the Observatory.  There is nothing worse than when a tourist makes off with an entire solar system. } {Carina's Observatory} {} {} {} {1.000} {}
+E { 3527} {e} {e} {2} {0} {} {1.000} {}
+E { 3540} {n} {n} {1} {0} {} {1.000} {}
+
+R { 3531} {0} {} {<-> Observatory lobby <-> (n,w)} { } {A large bay window on the southern wall catches your attention as you enter the room.  Off to a corner in the room, you notice a few of the Observatory technicians and workers talking amongst themselves, but loud enough for you to hear portions of the conversation.  It might be wise to listen to them more closely.  Try not to make yourself too noticeable however, because they might not be happy when they find out you are listening. } {Carina's Observatory} {} {} {} {1.000} {}
+E { 3527} {w} {w} {8} {0} {} {1.000} {}
+E { 3532} {n} {n} {1} {0} {} {1.000} {}
+
+R { 3532} {0} {} {<-> Venus Exhibit <-> (n,s,w)} { } {A medium-size planet display stands before you.  Looking inside you see a brown and orange tint colored planet floating within.  The planet Venus is often referred to as 'Earth's sister planet' because of its very similar nature.  Among all of the planets in the known solar system, Venus is the closest planet to view from the telescope and brightest in the night sky. } {Carina's Observatory} {} {} {} {1.000} {}
+E { 3531} {s} {s} {4} {0} {} {1.000} {}
+E { 3533} {n} {n} {1} {0} {} {1.000} {}
+E { 3529} {w} {w} {8} {0} {} {1.000} {}
+
+R { 3533} {0} {} {<-> Jupiter Exhibit <-> (s,w,e)} { } {The largest planet known in the nine planet solar system lies before you in the glass casing surrounding the display.  Its known diameter is roughly eleven diameters bigger than the size of Earth.  Off to the east, the stairwell that has circled the ceiling connects with the floor of the Observatory lobby. } {Carina's Observatory} {} {} {} {1.000} {}
+E { 3532} {s} {s} {4} {0} {} {1.000} {}
+E { 3534} {w} {w} {8} {0} {} {1.000} {}
+E { 3535} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3534} {0} {} {<-> The Telescopic Pad <-> (n,s,w,e)} { } {The ceiling high overhead is obstructed by the long telescopic lens of the great Observatory telescope before you.  You have heard rumors that this once used to be able to transport you to the stars above, but of course that is all rumor, and the Observatory has changed. This is the pillar piece of equipment when one wants to gaze into the sky and the stars above.  Perhaps you should give it a go. } {Carina's Observatory} {} {} {} {1.000} {}
+E { 3533} {e} {e} {2} {0} {} {1.000} {}
+E { 3537} {n} {n} {1} {0} {} {1.000} {}
+E { 3529} {s} {s} {4} {0} {} {1.000} {}
+E { 3538} {w} {w} {8} {0} {} {1.000} {}
+
+R { 3535} {0} {} {<-> Observatory Stairwell <-> (w,stairs)} {?} {Walking into a small quartered-off section in the Observatory, you notice the stairwell that leads up and around the ceiling above.  As to where it leads is anyone's guess.  You should probably stay clear in case anyone wanders in and catches you going up.  The sounds of the tourists erupt from the west.  It looks as if yet another one of them had set off an alarm. } {Carina's Observatory} {} {} {} {1.000} {}
+E { 3533} {w} {w} {8} {0} {} {1.000} {}
+E { 3536} {stairs} {stairs} {0} {0} {} {1.000} {}
+
+R { 3536} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3537} {0} {} {<-> Souvenir Stand <-> (s,w)} { } {A small souvenir stand along the corner of the wall grabs your attention as you enter this section of the Observatory.  A whole line of products line the small shelves behind the stand.  A small sign tacked up on a solar poster lists the current items for sale.  You might as well take a look and get a little remembrance of your trip here. } {Carina's Observatory} {} {} {} {1.000} {}
+E { 3534} {s} {s} {4} {0} {} {1.000} {}
+E { 3539} {w} {w} {8} {0} {} {1.000} {}
+
+R { 3538} {0} {} {<-> Neptune Exhibit <-> (n,s,e)} { } {The moons of Neptune act differently in this display than the others you have see thus far.  The moon rotation is opposite the natural rotation of the planet on its axis.  The planet is surrounded by four dark rings that can barely be seen.  You wonder what it would be like to dwell upon this eighth planet from the sun. } {Carina's Observatory} {} {} {} {1.000} {}
+E { 3534} {e} {e} {2} {0} {} {1.000} {}
+E { 3539} {n} {n} {1} {0} {} {1.000} {}
+E { 3540} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3539} {0} {} {<-> Saturn Exhibit <-> (s,e)} { } {The rings of Saturn are the most known of any of the other planets in the solar system, and depicting them perfectly is the static display appropriately named.  The hustle of traffic is lessened on this part of the lobby, yet still busy with activity.  The white walls glisten under the lights of the domed ceiling above. } {Carina's Observatory} {} {} {} {1.000} {}
+E { 3537} {e} {e} {2} {0} {} {1.000} {}
+E { 3538} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3540} {0} {} {<-> Pluto Exhibit <-> (n,s,w,e)} { } {Examining the glass case, you see a small replica of the planet Pluto and its moons rotating around.  You can only assume that the models are magnetically charged, which allows them to move around silently.  Small flashes of red light emitting from the case catch your attention.  The Observatory security system must be armed. } {Carina's Observatory} {} {} {} {1.000} {}
+E { 3538} {n} {n} {1} {0} {} {1.000} {}
+E { 3530} {s} {s} {4} {0} {} {1.000} {}
+E { 3541} {w} {w} {8} {0} {} {1.000} {}
+E { 3529} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3541} {0} {} {<-> Observatory lobby <-> (n,e)} { } {The whole observatory is flowing with tourists, and you feel a small sense of relief having found a small section where they have not yet infected.  A small cubicle lies to the north with a sliding glass door enclosing it from the lobby.  The office room does not seem to have a ceiling but it really does not need one.  You could easily peek through the glass if you felt a little curious. } {Carina's Observatory} {} {} {} {1.000} {}
+E { 3540} {e} {e} {2} {0} {} {1.000} {}
+E { 3542} {n} {n} {1} {0} {} {1.000} {}
+
+R { 3542} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3541} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3543} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3544} {0} {} {A room full of CDs (sw,n)} {P} {This half of the store is floor to ceiling compact discs.  Shelves and display racks line the walls and form a center divider down the room, creating two aisles.  Every so often along the aisle you notice a listening station where you can preview selected CDs before you buy them.  Looks like this room was made for browsing, so take a look around. } {The Book Nook} {} {} {} {1.000} {}
+E { 1592} {sw} {sw} {12} {0} {} {1.000} {}
+E { 3552} {n} {n} {1} {0} {} {1.000} {}
+E { 3587} {press play} {press play} {0} {0} {} {1.000} {}
+
+R { 3545} {0} {} {A room full of books (se,n)} {*} {Books surround you, covering the walls nearly to the ceiling. There are even a few free standing shelves about the room, usually strategically placed to add privacy to the small reading tables which are scattered about the room. A red overstuffed chair sits at the end of one of the shelves. } {The Book Nook} {*} {} {} {1.000} {}
+E { 1592} {se} {se} {6} {0} {} {1.000} {}
+E { 3548} {n} {n} {1} {0} {} {1.000} {}
+E { 3556} {sit} {sit} {0} {0} {} {1.000} {}
+E { 3559} {recline} {recline} {0} {0} {} {1.000} {}
+E { 3562} {read tale} {read tale} {0} {0} {} {1.000} {}
+
+R { 3546} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 1592} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3547} {0} {} {A small hobby shop (w,e)} { } {A small hobby shop which connects to the BookNook.  Models,  paints, landscaping stuff for little trains, baseball cards, board  games, everything you can think of to waste time is here.  And  that's why you're here right?  The shop seems to be divided up by  the gaming tables.  The aisles of merchandise winding about them in  the cramped space. } {The Book Nook} {} {} {} {1.000} {}
+E { 1592} {w} {w} {8} {0} {} {1.000} {}
+E { 3553} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3548} {0} {} {A room full of books (n,s)} {*} {You stand at the end of a long room full of books.  The walls are covered with shelves reaching nearly to the ceiling, all covered with books.  There are even a few free standing shelves about the room, usually strategically placed to add privacy to the small reading tables which are scattered about the room. } {The Book Nook} {} {} {} {1.000} {}
+E { 3545} {s} {s} {4} {0} {} {1.000} {}
+E { 3549} {n} {n} {1} {0} {} {1.000} {}
+E { 3565} {wear ring} {wear ring} {0} {0} {} {1.000} {}
+E { 3567} {read book} {read book} {0} {0} {} {1.000} {}
+
+R { 3549} {0} {} {A room full of books (ne,s)} {*} {Books surround you, covering the walls nearly to the ceiling.  There are even a few free standing shelves about the room, usually  strategically placed to add privacy to the small reading tables which are scattered about the room. } {The Book Nook} {} {} {} {1.000} {}
+E { 3548} {s} {s} {4} {0} {} {1.000} {}
+E { 3550} {ne} {ne} {3} {0} {} {1.000} {}
+E { 3570} {sit} {sit} {0} {0} {} {1.000} {}
+E { 3573} {read comics} {read comics} {0} {0} {} {1.000} {}
+
+R { 3550} {0} {} {The BookNook ordering desk (sw,se)} { } {The two side rooms come together here at the ordering desk for  the store.  No one seems to be here right now, but they've left a  few sheets of paper and a cork board to tack them on with your  orders. } {The Book Nook} {} {} {} {1.000} {}
+E { 3549} {sw} {sw} {12} {0} {} {1.000} {}
+E { 3551} {se} {se} {6} {0} {} {1.000} {}
+
+R { 3551} {0} {} {A room full of CDs (s,nw)} { } {This half of the store is floor to ceiling compact discs.  Shelves and display racks line the walls and form a center divider down the room, creating two aisles.  Every so often along the aisle you notice a listening station where you can preview selected CDs before you buy them.  Looks like this room was made for browsing, so take a look around. } {The Book Nook} {} {} {} {1.000} {}
+E { 3550} {nw} {nw} {9} {0} {} {1.000} {}
+E { 3552} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3552} {0} {} {A room full of CDs (s,n)} {P} {This half of the store is floor to ceiling compact discs.  Shelves and display racks line the walls and form a center divider down the room, creating two aisles.  Every so often along the aisle you notice a listening station where you can preview selected CDs before you buy them.  Looks like this room was made for browsing, so take a look around. } {The Book Nook} {} {} {} {1.000} {}
+E { 3551} {n} {n} {1} {0} {} {1.000} {}
+E { 3544} {s} {s} {4} {0} {} {1.000} {}
+E { 3575} {press play} {press play} {0} {0} {} {1.000} {}
+
+R { 3553} {0} {} {The Magic tables (w)} {M} {Now this is where you wanted to be.  You can almost feel the  cardboard crack calling you.  These tables in the back of the store  are for the Magic junkies.  They're usually waiting about for a  game or two.  You just need to find one and take your chances with  your deck.  Heck, if you start losing, you can just stand up and leave. } {The Book Nook} {} {} {} {1.000} {}
+E { 3547} {w} {w} {8} {0} {} {1.000} {}
+E { 3591} {sit} {sit} {0} {0} {} {1.000} {}
+
+R { 3554} {0} {} {The Booknook Attic (d)} { } {Wooden floorboards stretch out around you until they reach the cream-colored walls that rise toward the attic's vaulted ceiling.  Bookshelves line the walls, crammed with volumes of literature of every sort.  Low slung chairs are spaced around the room for readers or listeners to sit and relax as they lose themselves in a good story. A large rocking chair sits in the middle of the room and in that chair sits a smiling old man. } {The Princess Bride} {princess_bride} {} {} {1.000} {}
+E { 1592} {d} {d} {32} {0} {} {1.000} {}
+
+R { 3555} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3554} {u} {u} {16} {0} {} {1.000} {}
+
+R { 3556} {0} {} {Lost in a book.} { } {You sit down at the table and pick up a DragonLance novel and begin to read. } {Inn of the last Home} {inn_of_the_last_home} {} {} {1.000} {}
+E { 3558} {ascend} {ascend} {0} {0} {} {1.000} {}
+E { 3545} {leave} {leave} {0} {0} {} {1.000} {}
+
+R { 3557} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3558} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3559} {0} {} {Lost in a book.} { } {You begin to read about the King and his Twelve Daughters, who escape their locked bedroom each night to go dancing. } {Twelve Princesses} {twelve_pricesses} {} {} {1.000} {}
+E { 3561} {road} {road} {0} {0} {} {1.000} {}
+E { 3545} {leave} {leave} {0} {0} {} {1.000} {}
+
+R { 3560} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3561} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3562} {0} {} {The Enchanged Kingdom (s,leave)} { } {After many long travels you arrive at the border of the Enchanged Kingdom... There's not much to see from here.  A beautiful, verdant, and very lush forest grows behind a small house and on both sides of this path.  The forest appears too thick to pass through. The house to the south, on the other hand, stands wide open with doors agape.  Despite the open welcoming doors something -- perhaps the shadow covering the face of the building -- gives the impression of something amiss. } {The Enchanged Kingdom} {enchanged_kingdom} {} {} {1.000} {}
+E { 3563} {s} {s} {4} {0} {} {1.000} {}
+E { 3545} {leave} {leave} {0} {0} {} {1.000} {}
+
+R { 3563} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3562} {n} {n} {1} {0} {} {1.000} {}
+
+R { 3564} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3565} {0} {} {Path to Solace (sw)} { } {You are walking on a long path leading downwards to a lovely valley. The mountainside below forms a bowl cradled between the mountains. Vallenwood trees fill the valley and blaze in the season colors. Behind the valley you can see distant and high peaks. A big lake in the middle of the valley catches your eyes, its waters blue and inviting. Columns of smoke can be seen around the treetops and the aroma of home fires tingles your nose. } {The Book Nook} {solace} {} {} {1.000} {}
+E { 3566} {sw} {sw} {12} {0} {} {1.000} {}
+E { 3548} {ride dragon} {ride dragon} {0} {0} {} {1.000} {}
+
+R { 3566} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3565} {ne} {ne} {3} {0} {} {1.000} {}
+
+R { 3567} {0} {} {Tao Te Cheng (return,continue)} { } {                                       One                           The way that can be spoken of                             Is not the constant way\;                            The name that can be named                             Is not the constant name.                The nameless was the beginning of heaven and earth\;                 The named was the mother of the myriad creatures.       Hence always rid yourself of desires in order to observe its secrets\;         But always allow yourself to have desires in order to observe its                                  manifestations.                              These two are the same                     But diverge in name as they issue forth.                     Being the same they are called mysteries,                              Mystery upon mystery -                       The gateway of the manifold secrets. } {Tao Te Cheng} {tao} {} {} {1.000} {}
+E { 3569} {continue} {continue} {0} {0} {} {1.000} {}
+E { 3548} {return} {return} {0} {0} {} {1.000} {}
+
+R { 3568} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3569} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3570} {0} {} {Sitting before a table} { } {You've settled into a comfortable chair before a copy of The  Phantom of the Opera.  I guess it's time to start reading. } {Phantom of the Opera} {phantom} {} {} {1.000} {}
+E { 3572} {n} {n} {1} {0} {} {1.000} {}
+E { 3549} {out} {out} {0} {0} {} {1.000} {}
+
+R { 3571} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3572} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3570} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3573} {0} {} {A Snowy Street (e)} { } {Chilly gusts of wind sweep across the snow-covered yards along this suburban street. The road is clear of snow and ice, but is peppered with cinders and salt. Tall brown skeletons of trees jut out of the snow and stand starkly against the gray sky. } {Calvin and Hobbes} {calvin} {} {} {1.000} {}
+E { 3574} {e} {e} {2} {0} {} {1.000} {}
+E { 3549} {read newspaper} {read newspaper} {0} {0} {} {1.000} {}
+
+R { 3574} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3573} {w} {w} {8} {0} {} {1.000} {}
+
+R { 3575} {0} {} {A hill side (ne,e)} { } {You watch the train turn the bend out of sight, wondering again  how long a lead you have before the wandering 'Eyes' spot you.  The rolling hills are covered in tall grass, but even so you know the way to your uncle's farm. } {Red Barchetta} {red_barchetta} {} {} {1.000} {}
+E { 3576} {ne} {ne} {3} {0} {} {1.000} {}
+E { 3577} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3576} {0} {} {A hill side (sw,ne,s,e)} { } {You stand atop a small hill amonst the tall grass.  You can just  make out the railway tracks in the west.  Just as you thought you  had made it free and clear to your uncle's farm, you seem to have  run into the border patrol. } {Red Barchetta} {} {} {} {1.000} {}
+E { 3575} {sw} {sw} {12} {0} {} {1.000} {}
+E { 3577} {s} {s} {4} {0} {} {1.000} {}
+E { 3579} {ne} {ne} {3} {0} {} {1.000} {}
+E { 3578} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3577} {0} {} {A hill side (ne,n,w)} { } {From the top of this hill you can see the railway running away to  the northwest, as well as glimpse your uncle's farm to the  northeast.  You can hear the sounds of a border corps patrol  approaching on their normal route, perhaps you'd better get moving  on? } {Red Barchetta} {} {} {} {1.000} {}
+E { 3575} {w} {w} {8} {0} {} {1.000} {}
+E { 3578} {ne} {ne} {3} {0} {} {1.000} {}
+E { 3576} {n} {n} {1} {0} {} {1.000} {}
+
+R { 3578} {0} {} {A small hill (w,n,sw)} { } {The hills about you block your view of the railway to the west. The grass swaying lightly in the breeze.  To the northeast you can see  the buildings of your uncle's farm. } {Red Barchetta} {} {} {} {1.000} {}
+E { 3577} {sw} {sw} {12} {0} {} {1.000} {}
+E { 3576} {w} {w} {8} {0} {} {1.000} {}
+E { 3579} {n} {n} {1} {0} {} {1.000} {}
+
+R { 3579} {0} {} {An uncultivated field (s,sw,ne)} { } {The hills block your view of the railway where you came from to  the west, but create a cozy feeling here around the farm.  A large  barn stands to the northeast, and in the distance, beyond it, you  can see a small house. } {Red Barchetta} {} {} {} {1.000} {}
+E { 3576} {sw} {sw} {12} {0} {} {1.000} {}
+E { 3578} {s} {s} {4} {0} {} {1.000} {}
+E { 3580} {ne} {ne} {3} {0} {} {1.000} {}
+
+R { 3580} {0} {} {A large barn (sw,e)} { } {You stand inside a large barn.  The north wall is a series of open  horse stalls, now cleaned out and empty.  The opposite wall is  covered with tools, both farming and others.  A pile of debris lies  in the southeast corner of the barn.  The doors at either end of  the barn are open, letting in sunlight to illuminate the barn. } {Red Barchetta} {} {} {} {1.000} {}
+E { 3579} {sw} {sw} {12} {0} {} {1.000} {}
+E { 3581} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3581} {0} {} {A dusty driveway (n,w,e)} { } {The bright overhead sun has baked the dirt of the driveway,  leaving it hard and cracked.  The wind picks up the dust off the drive and whips it into your eyes, making it hard to see.  The road to the farm leads off to the north, the barn lies just west of you, and the front porch of the farmhouse beckons you to the east. } {Red Barchetta} {} {} {} {1.000} {}
+E { 3580} {w} {w} {8} {0} {} {1.000} {}
+E { 3582} {n} {n} {1} {0} {} {1.000} {}
+E { 3583} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3582} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3581} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3583} {0} {} {The front porch (e,w)} { } {You step onto the front porch out of the sun.  The shade is cooler  than the direct sun, but not much.  There is a small bench to rest  on, and a screen door leads into the house. } {Red Barchetta} {} {} {} {1.000} {}
+E { 3581} {w} {w} {8} {0} {} {1.000} {}
+E { 3584} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3584} {0} {} {By the fireside (w)} { } {You've entered the living room of your uncle's house.  The fire  crackles gently in the fireplace, not so much for heat, but  atmosphere.  Two comfortable looking chairs sit on either side of a  small table.  Your uncle smiles up at you from one of them. } {Red Barchetta} {} {} {} {1.000} {}
+E { 3583} {w} {w} {8} {0} {} {1.000} {}
+E { 3585} {n} {n} {1} {0} {} {1.000} {}
+E { 3586} {s} {s} {4} {0} {} {1.000} {}
+E { 3552} {sit} {sit} {0} {0} {} {1.000} {}
+
+R { 3585} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3584} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3586} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3584} {n} {n} {1} {0} {} {1.000} {}
+
+R { 3587} {0} {} {Drifting in the music} { } {You can feel the powerful thrum of the techno beat pulsing  through you as the Mortal Kombat theme song kicks into gear,  pounding out synthesized rhythms. } {Mortal Kombat} {mortal_kombat} {} {} {1.000} {}
+E { 3588} {n} {n} {1} {0} {} {1.000} {}
+E { 3589} {w} {w} {8} {0} {} {1.000} {}
+E { 3590} {e} {e} {2} {0} {} {1.000} {}
+E { 3544} {enter mist} {enter mist} {0} {0} {} {1.000} {}
+
+R { 3588} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3587} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3589} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3587} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3590} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3587} {w} {w} {8} {0} {} {1.000} {}
+
+R { 3591} {0} {} {The Arena (nw,sw,n,se,ne)} { } {You find yourself standing in the center of a gigantic arena.  The  hard packed sand beneath your feet is stained dark in places with  blood.  Five giant stone arches break the thousands of seats about  the arena.  The galleries are now empty in the twilight, but  perhaps in the morning they'll fill with spectators for some  grisly spectacle.  Somewhere in the back of your mind you remember  that it's only a game though...and you can just stand up and walk away. } {Magic The Gathering} {mtg} {} {} {1.000} {}
+E { 3592} {nw} {nw} {9} {0} {} {1.000} {}
+E { 3593} {sw} {sw} {12} {0} {} {1.000} {}
+E { 3594} {n} {n} {1} {0} {} {1.000} {}
+E { 3595} {se} {se} {6} {0} {} {1.000} {}
+E { 3596} {ne} {ne} {3} {0} {} {1.000} {}
+E { 3553} {stand} {stand} {0} {0} {} {1.000} {}
+
+R { 3592} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3591} {se} {se} {6} {0} {} {1.000} {}
+
+R { 3593} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3591} {ne} {ne} {3} {0} {} {1.000} {}
+
+R { 3594} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3591} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3595} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3591} {nw} {nw} {9} {0} {} {1.000} {}
+
+R { 3596} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3591} {sw} {sw} {12} {0} {} {1.000} {}
+
+R { 3597} {0} {} {Entrance to an apartment (s,w,out)} { } {A white marble floor covers the entrance of the apartment. It gives way to a gray carpet after about three feet. White pillars frame the west exit which seems to lead to an eating area, and a long hallway can be seen to the south. Various items are lying about the apartment, and a strong mildew odor gives you the feeling that whoever lives here might have other things on their mind rather than cleanliness. } {Gamer's House} {gamers_house} {} {} {1.000} {}
+E { 3598} {s} {s} {4} {0} {} {1.000} {}
+E { 3599} {w} {w} {8} {0} {} {1.000} {}
+E { 1590} {out} {out} {0} {0} {} {1.000} {}
+
+R { 3598} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3597} {n} {n} {1} {0} {} {1.000} {}
+
+R { 3599} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3597} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3600} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3601} {0} {} {Inside the Outhouse} { } {You are now standing in a relatively spacious outhouse.  But to your amazement, there is a stunning, massive, All-American, Mother Of All Toilets in here!  You are seriously boggled! } {The Outhouse} {outhouse} {} {} {1.000} {}
+E { 3602} {flush toilet} {flush toilet} {0} {0} {} {1.000} {}
+
+R { 3602} {0} {} {A Hole In The Sky} { } {The force of the flush sucked you right through the toilet and into a horrendous Space Odyssey 2001-type brown-mass flashback, anal-psychedelic horror show.  Stunned, and still totally disbelieving, you are now standing atop a strange monolith, covered from head to toe in what can only be kindly and scientifically referred to as ordure. } {The Outhouse} {} {} {} {1.000} {}
+E {   36} {search monolith} {search monolith} {0} {0} {} {1.000} {}
+
+R { 3603} {0} {} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3604} {0} {} {New Haven Pathway (n,s,w,e)} { } {You are on a narrow gravel pathway that ends, just to the west, at a well-kept cabin.  The door of the cabin is open but it is too dark inside to see much of anything.  To the east the path takes a sharp downward dip so you can't really see much more than the forest off in the distance.  You do, however, hear some coarse shouts and weird chanting coming from that direction.  There is the smell of smoke to the north. } {The Chronicles of Thomas Covenant} {covenant} {} {} {1.000} {}
+E { 3605} {n} {n} {1} {0} {} {1.000} {}
+E { 3607} {w} {w} {8} {0} {} {1.000} {}
+E { 3608} {e} {e} {2} {0} {} {1.000} {}
+E { 1587} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3605} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3604} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3606} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3604} {n} {n} {1} {0} {} {1.000} {}
+
+R { 3607} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3604} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3608} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3604} {w} {w} {8} {0} {} {1.000} {}
+
+R { 3609} {0} {} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3610} {0} {} {Bliss} {o} {You are in Bliss.  There is an opaque glow to the ceiling, and a foul smell in the air.  The room oozes with a pus-like substance.  The contractions of the walls make you feel very uncomfortable.  The place is not like the bliss you imagined. } {Chaos} {} {} {} {1.000} {}
+E { 2935} {pop blister} {pop blister} {0} {0} {} {1.000} {}
+
+R { 3611} {0} {} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3612} {0} {} {A cluttered candy store (out,e)} { } {Stepping into the store, your nose is assaulted by a wave of wonderful chocolatey smells mixed with the tang of old fashioned wood polish. To say this shop is quaint would be an understatement. It positively bursts with Old World charm.  Covering the wall behind the polished  wooden counter are numerous shelves, each packed with glass jars holding numerous types of candy and chocolate treats.  Almost hidden in this children's heaven is a small unassuming doorway. } {Chaos Candy Store} {candy_store} {} {} {1.000} {}
+E { 3614} {e} {e} {2} {0} {} {1.000} {}
+E { 1580} {out} {out} {0} {0} {} {1.000} {}
+
+R { 3613} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3614} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3612} {w} {w} {8} {0} {} {1.000} {}
+
+R { 3615} {0} {} {-=  100 Aker Woods  =- (out,n)} { } {-=  100 Aker Woods  =- This is the entrance to 100 Aker Woods, home of Winnie the Pooh and all his friends.  A cool breeze wisps through the air as you walk under a canopy of weeping willow trees.  Tall, green grass lightly sways back and forth, leading into the forest.  } {Winnie the Pooh} {pooh} {} {} {1.000} {}
+E { 3617} {n} {n} {1} {0} {} {1.000} {}
+E { 1571} {out} {out} {0} {0} {} {1.000} {}
+
+R { 3616} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3617} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3615} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3618} {0} {} {Doorway to a temple. (leave,doorway)} { } {You find yourself standing in mid-air.  All of reality seems to distort around your being here.  Behind you is a portal that you could probably use to return to where you were, and in front of you, hanging in mid-air, is an odd doorway. } {Tree of Life} {tree_of_life} {} {} {1.000} {}
+E { 3620} {doorway} {doorway} {0} {0} {} {1.000} {}
+E { 1569} {leave} {leave} {0} {0} {} {1.000} {}
+
+R { 3619} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3620} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3621} {0} {} {Center of the First Rung (d,n,s,w,e)} { } {You are standing at the center of the first rung of a celestial ladder.  Off the eastern horizon you see a deep purple planet setting.  The ground is slick and shiny like polished metal.  Loud crunching sounds emanate from the east.  Hundreds of tiny lighted objects flutter through the air around your head, distracting you as they float about aimlessly. To the west there are large CRASHING sounds and screams for help. } {Ladder} {ladder} {} {} {1.000} {}
+E { 3622} {d} {d} {32} {0} {} {1.000} {}
+E { 3623} {n} {n} {1} {0} {} {1.000} {}
+E { 3624} {s} {s} {4} {0} {} {1.000} {}
+E { 3625} {w} {w} {8} {0} {} {1.000} {}
+E { 3626} {e} {e} {2} {0} {} {1.000} {}
+E { 1569} {clap your hands} {clap your hands} {0} {0} {} {1.000} {}
+
+R { 3622} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3621} {u} {u} {16} {0} {} {1.000} {}
+
+R { 3623} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3621} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3624} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3621} {n} {n} {1} {0} {} {1.000} {}
+
+R { 3625} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3621} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3626} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3621} {w} {w} {8} {0} {} {1.000} {}
+
+R { 3627} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3628} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3629} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3630} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3631} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 1593} {d} {d} {32} {0} {} {1.000} {}
+
+R { 3632} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 1593} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3633} {0} {} {The Eleventh Floor of a Warehouse (here)} { } {The dust beneath your feet is grey and calm...more still than the corpse of a brown flower.  It looks up at you as the flower and tells you to tease it...to swish it around with your feet and tussle it between your toes.   } {A Spectral Warehouse} {warehouse} {} {} {1.000} {}
+E { 3634} {here} {here} {0} {0} {} {1.000} {}
+E { 1595} {enter hole} {enter hole} {0} {0} {} {1.000} {}
+
+R { 3634} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3635} {0} {} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3636} {0} {} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3637} {0} {} {A deep pit (u,d)} { } {You are in a very deep pit.  If you go down any further you will have a hard time climbing back out.  Coming from below, you hear horrible moans.  You wonder what torture could possibly produce that effect? } {Pandaemonium} {pandaemonium} {} {} {1.000} {}
+E { 3639} {d} {d} {32} {0} {} {1.000} {}
+E { 1596} {u} {u} {16} {0} {} {1.000} {}
+
+R { 3638} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3637} {d} {d} {32} {0} {} {1.000} {}
+
+R { 3639} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3637} {u} {u} {16} {0} {} {1.000} {}
+
+R { 3640} {0} {} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3641} {0} {} {>x< DEATH TACO ENTRANCE >x< (e,out)} { } {Death Taco Entrance This is the dimly lit interior of what must have once been some kind of 'Mexican' fast food establishment, but has since fallen into disrepair.  Some of the plastic tables are no longer upright.  A dirty menu hangs askew above the counter.  A steel door to the east is marked 'WARNING: DEATH TACO (tm) CREW ONLY.'  The way out is through a dingy glass door. } {Death Taco} {taco} {} {} {1.000} {}
+E { 3645} {e} {e} {2} {0} {} {1.000} {}
+E { 1586} {out} {out} {0} {0} {} {1.000} {}
+
+R { 3642} {0} {} {Golden Arches (s,n)} { } {As you step through the Golden Arches, you are bombarded by the smell of grease.  For a moment, you can't remember why you came in here.  Severe hunger pains remind you of the 'Big Mac Attack' you are having.  You see the end of a long line in front of you. } {Mcdonald's} {mcdonalds} {} {} {1.000} {}
+E { 3644} {n} {n} {1} {0} {} {1.000} {}
+E { 1586} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3643} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3642} {n} {n} {1} {0} {} {1.000} {}
+
+R { 3644} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3642} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3645} {0} {} {>x< DEATH TACO - CRISPY SHELLS >x< (e)} { } {Death Taco: Crispy Shells The inside of the slide looks out over a dirty red tile floor that is a VERY long drop.  You stand dwarfed by the scale of this gigantic, bland, fast food kitchen.  The metal bin right next to the tray slide is filled with stale taco shells.  You stand on the battered aluminum surface of a giant tray slide that winds alongside metal bins.  A slanted glass cover leaning toward you winds around the outside of the metal bins.  The tray slide leads towards the east, and cuts off abruptly to the west. } {Death Taco} {} {} {} {1.000} {}
+E { 3641} {w} {w} {8} {0} {} {1.000} {}
+E { 3781} {e} {e} {2} {0} {} {1.000} {}
+E { 3782} {d} {d} {32} {0} {} {1.000} {}
+
+R { 3646} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3647} {0} {} {Showcase Entrance} { } {You have entered a large multi-leveled showcase\; it is shocking to see all these lighters here for sale.  With every zippo from the plain silver, to the cool decked out hand painted ones, it's a pyromaniac's dream.  Maybe you should flip the lid and see what is up with this place.  Something feels a bit out of place here\; you might want to be careful!  If you wanted to escape this place, you could jump out from here. } {Zippos Showcase} {zippo} {} {} {1.000} {}
+E { 1579} {jump out} {jump out} {0} {0} {} {1.000} {}
+
+R { 3648} {0} {} {Eastwick Road (s,w)} { } {You are on the Eastwick road.  There is a road to the west and another to the south.  Which way do you go, you do not know. } {Zippos Showcase} {} {} {} {1.000} {}
+
+R { 3649} {0} {} {Hockey Hall of Fame (ne)} { } {You've somehow managed to land yourself in the Hockey Hall of Fame. How do you know this? Well maybe it's the big sign in front of you that says "Welcome to the Hockey Hall of Fame". The walls are adorned with tons of hockey memorabilia. All of it is labeled with little plaques that tell the history of each item. Now the only question is, once you are done absorbing this vast vault of hockey knowledge, how do you get back where you came from? } {Hockey Hall of Fame} {hockey} {} {} {1.000} {}
+E { 3650} {ne} {ne} {3} {0} {} {1.000} {}
+
+R { 3650} {0} {} {Hockey Hall of Fame (ne,sw)} {?} {The walls of this hall way are decorated with tons of hockey memorabilia that the Hall of Fame has collected over the years. The only thing that breaks up the collection is a metal door on the southeast wall. } {Hockey Hall of Fame} {} {} {} {1.000} {}
+E { 3649} {sw} {sw} {12} {0} {} {1.000} {}
+E { 3651} {ne} {ne} {3} {0} {} {1.000} {}
+
+R { 3651} {0} {} {Hockey Hall of Fame (nw,se,sw)} { } {The hallway tees off here to the southeast and northwest. On the walls hang various pieces of hockey equipment with little brass plaques below each piece. Off to the northwest you see something shimmering in the light. } {Hockey Hall of Fame} {} {} {} {1.000} {}
+E { 3650} {sw} {sw} {12} {0} {} {1.000} {}
+E { 3652} {nw} {nw} {9} {0} {} {1.000} {}
+E { 3653} {se} {se} {6} {0} {} {1.000} {}
+
+R { 3652} {0} {} {Hockey Hall of Fame (nw,ne,sw,se)} { } {This is the center of the hall and where its most coveted piece makes its home. This is the resting place of Lord Stanley's Cup. This is the only room in the hall whose walls are bare, leaving the focus directed towards the cup. } {Hockey Hall of Fame} {} {} {} {1.000} {}
+E { 3651} {se} {se} {6} {0} {} {1.000} {}
+E { 3654} {nw} {nw} {9} {0} {} {1.000} {}
+E { 3655} {ne} {ne} {3} {0} {} {1.000} {}
+E { 3656} {sw} {sw} {12} {0} {} {1.000} {}
+E { 1567} {touch cup} {touch cup} {0} {0} {} {1.000} {}
+
+R { 3653} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3651} {nw} {nw} {9} {0} {} {1.000} {}
+
+R { 3654} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3652} {se} {se} {6} {0} {} {1.000} {}
+
+R { 3655} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3652} {sw} {sw} {12} {0} {} {1.000} {}
+
+R { 3656} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3652} {ne} {ne} {3} {0} {} {1.000} {}
+
+R { 3657} {0} {} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3658} {0} {} {Outside 11 Melville Terrace (leave,n)} { } {You are standing on a badly paved path that leads to a weathered red door.  Above the door you can see a large set of windows, but you cannot see inside from here.  The path is lined on either side by a low iron fence that separates you from what some would describe as gardens.  The door has the number 'eleven' on it in brass numbers.  On the wall just to the left of the door is a panel with buttons on it. } {11 Melville Terrace} {melville} {} {} {1.000} {}
+E { 3660} {n} {n} {1} {0} {} {1.000} {}
+E { 3149} {leave} {leave} {0} {0} {} {1.000} {}
+
+R { 3659} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3660} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3658} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3661} {0} {} {Cap'n's Shore (boat)} { } {After sliding down the giant silver spoon, you find yourself dumped unceremoniously on a sandy beach. What a lovely day! The sun is warm on your face and the ocean is cool on your feet. You think you might see a ship further out from the shore and nearby, a small boat is anchored in the shallows. } {Cap'n Crunch Land} {capn_crunch} {} {} {1.000} {}
+E { 3662} {boat} {boat} {0} {0} {} {1.000} {}
+E { 3664} {shore} {shore} {0} {0} {} {1.000} {}
+
+R { 3662} {0} {} {Granny's Boat (shore)} { } {You find yourself standing in a small wooden boat. In it is a set of oars, two benches to sit on and a smiling elderly woman sitting on the front bench. } {Cap'n Crunch Land} {} {} {} {1.000} {}
+E { 3661} {shore} {shore} {0} {0} {} {1.000} {}
+E { 3665} {crunch} {crunch} {0} {0} {} {1.000} {}
+
+R { 3663} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3664} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3665} {0} {} {} { } {} {} {} {} {} {1.000} {}
+E { 3666} {'crunch} {'crunch} {0} {0} {} {1.000} {}
+
+R { 3666} {0} {} {Guppy Deck (fore,aft,cargo,nest)} { } {You're now standing on the well-scrubbed deck of the S.S. Guppy. The boards of the deck shine from their recent polishing and you can hear the waves of the ocean lapping against the edges of the hull. Above you, the mast towers and the sails of the ship flutter, white and billowing in the afternoon breeze. } {Cap'n Crunch Land} {} {} {} {1.000} {}
+E { 3667} {fore} {fore} {0} {0} {} {1.000} {}
+E { 3668} {aft} {aft} {0} {0} {} {1.000} {}
+E { 3669} {cargo} {cargo} {0} {0} {} {1.000} {}
+E { 3670} {nest} {nest} {0} {0} {} {1.000} {}
+
+R { 3667} {0} {} {The Upper Rack (d)} { } {} {Chaos} {} {} {} {1.000} {}
+
+R { 3668} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3669} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3670} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3671} {0} {} {Damp Cave (u,d)} { } {This is a very damp cave.  As a matter of fact - there is over a foot of standing water in here.  At one end of the cave, above the water, you can make out the shape of a ladder which leads down into the dark mysteries below. } {Atlantis} {atlantis} {} {} {1.000} {}
+E { 3673} {d} {d} {32} {0} {} {1.000} {}
+E { 1568} {u} {u} {16} {0} {} {1.000} {}
+
+R { 3672} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3671} {d} {d} {32} {0} {} {1.000} {}
+
+R { 3673} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3671} {u} {u} {16} {0} {} {1.000} {}
+
+R { 3674} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3169} {sw} {sw} {12} {0} {} {1.000} {}
+
+R { 3675} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3169} {w} {w} {8} {0} {} {1.000} {}
+
+R { 3676} {0} {} {An endless pink expanse} { } {Boy, it sure is hot.  Hot, hot, hot.  The sun is beating down like a suffocating blanket, superheating the air and dehydrating you instantly.  The surface you are standing on stretches to the horizon in all directions, and is slightly soft underfoot.  It's so hot you can barely think. } {MP3 CD} {mp3} {} {} {1.000} {}
+E { 3167} {sing we gotta get out of this place} {sing we gotta get out of this place} {0} {0} {} {1.000} {}
+
+R { 3677} {0} {} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3678} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3679} {0} {} {Start of a driveway (return,n)} { } {You are at the beginning of an unremarkable driveway.  To your north is a heavy gate. } {Puppy Mill} {puppymill} {} {} {1.000} {}
+E { 3681} {n} {n} {1} {0} {} {1.000} {}
+E { 1582} {return} {return} {0} {0} {} {1.000} {}
+
+R { 3680} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3681} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3679} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3682} {0} {} {} { } {} {} {mortal_kombat} {} {} {1.000} {}
+E { 3148} {exit} {exit} {0} {0} {} {1.000} {}
+
+R { 3683} {0} {} {A Horrible Sewer (n,u)} { } {You are in a hideous and stench-ridden sewer under the streets and lanes of Pinnacle.  Dark and malefic liquids drip from the slime-encrusted roof and walls.  A stream of liquid...and not so liquid...waste runs through the middle of the passage.  Only the lowliest and most desperate of adventurers would venture into this hell hole! } {Pinnacle Sewers} {sewers} {} {} {1.000} {}
+E { 3684} {n} {n} {1} {0} {} {1.000} {}
+E { 3686} {u} {u} {16} {0} {} {1.000} {}
+
+R { 3684} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3683} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3685} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3683} {d} {d} {32} {0} {} {1.000} {}
+
+R { 3686} {5130} {} {} { } {} {} {} {} {} {1.000} {}
+E {   54} {u} {u} {16} {0} {} {1.000} {}
+E { 3683} {d} {d} {32} {0} {} {1.000} {}
+
+R { 3687} {0} {} {Living Room (n,exit,w)} { } {The typical living room of a house with a young child living in it. Strewn about the floor are numerous articles of clothing, toys, and food. It looks like a tornado came through here, or maybe just a rambunctious toddler, who knows? Some kids show is blasting away on the television, which is both annoying and completely boring. There are other rooms branching off from here, however you can't really see what is going on in them. } {Toddler House} {toddler} {} {} {1.000} {}
+E { 3688} {n} {n} {1} {0} {} {1.000} {}
+E { 3690} {w} {w} {8} {0} {} {1.000} {}
+E { 2890} {exit} {exit} {0} {0} {} {1.000} {}
+
+R { 3688} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3687} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3689} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3690} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3687} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3691} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3692} {0} {} {.oOo. Kandy Mountain .oOo. (out,e)} { } {.oOo. Kandy Mountain .oOo. You land smack at the base of a large mountain that appears to be covered with kandy. Ahead is a kandy button path that leads to a sparkling cavernous tunnel. Delicious and sweet smells emanate from the mountain. You wonder what sugary treats are awaiting at the top. } {Kandy Mountain} {kandy} {} {} {1.000} {}
+E { 3694} {e} {e} {2} {0} {} {1.000} {}
+E { 2889} {out} {out} {0} {0} {} {1.000} {}
+
+R { 3693} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3694} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3692} {w} {w} {8} {0} {} {1.000} {}
+
+R { 3695} {0} {} {Chinese Checkers Board - Evil Red's Fort (ladder,nw,ne)} { } {A sense of foreboding and devious evil lurks in the corners of this fort. Red chinese checkers, reaching to your knees, roll about in a frenzy, waiting for some attack. They seem oblivious to your presence, perhaps because you aren't a chinese checker. You appear to be in the headquarters of this particular fort. The top of the ladder is at your feet. } {Chinese Checkers} {checkers} {} {} {1.000} {}
+E { 3697} {nw} {nw} {9} {0} {} {1.000} {}
+E { 3698} {ne} {ne} {3} {0} {} {1.000} {}
+E {   41} {ladder} {ladder} {0} {0} {} {1.000} {}
+
+R { 3696} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3697} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3695} {se} {se} {6} {0} {} {1.000} {}
+
+R { 3698} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3695} {sw} {sw} {12} {0} {} {1.000} {}
+
+R { 3699} {0} {} {:) Smileyland :) (e,n)} { } {This is the entrance to the fantastic world of Smileyland. Weird and wonderful tales have been told of this land. As you look around at all the beautiful trees a smile comes to your face. What a dandy place! To the north you can see a restaurant and on the ground there is a marking. } {Smileyland} {smileyland} {} {} {1.000} {}
+E { 3700} {e} {e} {2} {0} {} {1.000} {}
+E { 3701} {n} {n} {1} {0} {} {1.000} {}
+E {   87} {frown} {frown} {0} {0} {} {1.000} {}
+
+R { 3700} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3699} {w} {w} {8} {0} {} {1.000} {}
+
+R { 3701} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3699} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3702} {0} {} {Entrance to a swamp (e,leave)} { } {You stand at the beginning of a dusty old track. Gazing to the east you see the track continues and begins to weave through the thick and wet marshland of the swamp. A billboard rests here and if you choose to you could leave the swamp area. } {Dundee Poachers} {dundee} {} {} {1.000} {}
+E { 3703} {e} {e} {2} {0} {} {1.000} {}
+E {   87} {leave} {leave} {0} {0} {} {1.000} {}
+
+R { 3703} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3702} {w} {w} {8} {0} {} {1.000} {}
+
+R { 3704} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3705} {0} {} {-=  Entrance to Little People Land  =- (out,n)} { } {-=  Entrance to Little People Land  =- The town of Fisher Price's Little People is to the north.  The hustle and bustle of the Little People doing their daily tasks is quite mind-boggling.  The grass is super green and lush, the sky is almost unnaturally blue.  Perfect white clouds stand almost still in the sky. A gentle breeze sways through the trees and the friendly chirping of birds can be heard in the distance.  The busy street heads north. } {Little People Town} {little_people} {} {} {1.000} {}
+E { 3707} {n} {n} {1} {0} {} {1.000} {}
+E { 3177} {out} {out} {0} {0} {} {1.000} {}
+
+R { 3706} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3707} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3705} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3708} {0} {} {On a corner (exit,e)} { } {You are standing on a busy street corner. All around you people are rushing to the east. You can hear the sounds of children playing and singing. It sounds like everyone is having fun! Perhaps you should go join in. } {Sesame Street} {sesame_street} {} {} {1.000} {}
+E { 3710} {e} {e} {2} {0} {} {1.000} {}
+E { 1565} {exit} {exit} {0} {0} {} {1.000} {}
+
+R { 3709} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3710} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3708} {w} {w} {8} {0} {} {1.000} {}
+
+R { 3711} {0} {} {## Mahjongg ## (n,exit)} { } {         Mahjongg (castle) This interior courtyard serves as the entrance to the Castle of Mahjongg. Bas relief sculptures decorate the stone walls, depicting all manner of exotic creatures and fierce-looking warriors. A curved staircase leads around the courtyard and up to an arched doorway that stands open to visitors to the north. A decorative iron fence surrounds the garden in the middle of the courtyard, preventing you from accidently stepping on any of the lovely flora that grows beneath the bright sunshine shining down from the open ceiling above. } {Mahjongg} {mahjongg} {} {} {1.000} {}
+E { 3712} {n} {n} {1} {0} {} {1.000} {}
+E { 3173} {exit} {exit} {0} {0} {} {1.000} {}
+
+R { 3712} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3711} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3713} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3714} {0} {} {Country (leave,s)} { } {The sun is beating down on the beautiful country setting. The trees are lush with deep, rich green leaves and all the flowers are in full bloom. The smell of fresh cut hay lingers in the air. Birds gather bits of straw and twigs to aid in their nest building. The sounds of farm animals echo through the warm summer breeze. In the distance you can see a pleasant country farmhouse that has a long, gravel lane-way. } {Rampage of the Piggies} {rampage} {} {} {1.000} {}
+E { 3716} {s} {s} {4} {0} {} {1.000} {}
+E {   40} {leave} {leave} {0} {0} {} {1.000} {}
+
+R { 3715} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3716} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3714} {n} {n} {1} {0} {} {1.000} {}
+
+R { 3717} {0} {} {-< Space Port Alpha >- (comet)} { } {-< Space Port Alpha >- This is a large launching platform for Winnebagos.  The sky above is black and there are metal fences surrounding the platform.  There is a white circle on the ground.  } {Spaceport} {spaceport} {} {} {1.000} {}
+E {   86} {comet} {comet} {0} {0} {} {1.000} {}
+
+R { 3718} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3719} {0} {} {A cobblestone path. (leave)} { } {A cobblestone path As you walk through the forest you stumble upon a small clearing. Directly in front of you lies a cobblestone path. You begin to follow the path and notice that it ends abruptly. Situated at the end of the path lies a peculiar looking shoe. The shoe oddly resembles a house. There is an old woman here, perhaps you could stay and talk with her for a spell. } {Old Woman in the Shoe} {old_woman} {} {} {1.000} {}
+E {   86} {leave} {leave} {0} {0} {} {1.000} {}
+
+R { 3720} {0} {} {Strange path (portal,n)} { } {You stand in something that seems to be a small forest of some kind. All around you, you can see large trees, and it seems to be impossible to walk in any other direction than north. Next to you, the portal that you entered this area from stands, and you can enter it again. You think it could take you back to where you came from.  } {Midgard and Valhalla} {midgard} {} {} {1.000} {}
+E { 3722} {n} {n} {1} {0} {} {1.000} {}
+E {   86} {portal} {portal} {0} {0} {} {1.000} {}
+
+R { 3721} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3722} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3720} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3723} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3724} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E {  569} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3725} {0} {} {Eggland Entrance (leave,n)} { } {You stand just outside the gated entrance to Eggland Village, home to Humpty Dumpty and other less famous eggs, chickens, and humans.  The village is surrounded by a high stone wall and you can enter through an iron gateway to see what is going on in the hustle and bustle you glimpse to the north.  Alternatively, you can leave Eggland and return to the realm of Chaos. } {Humpty Dumpty} {humpty} {} {} {1.000} {}
+E { 3727} {n} {n} {1} {0} {} {1.000} {}
+E {   86} {leave} {leave} {0} {0} {} {1.000} {}
+
+R { 3726} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3727} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3725} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3728} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E {  569} {n} {n} {1} {0} {} {1.000} {}
+
+R { 3729} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E {  569} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3730} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E {  569} {w} {w} {8} {0} {} {1.000} {}
+
+R { 3731} {0} {} {Used Car Lot (nw,exit,w)} { } {This dank used car lot seems to hold onto the old stereotype about used car lots. While a few cars up front seem well cared for, the majority of the cars, trucks, and SUVs appear to be in need of repair. The lot itself extends westward, the worth and viability decreasing the farther you look. The occasional customer can be seen browsing quickly through the inventory, probably trying to get through before they encounter an unscrupulous salesman. The gravel on the lot needs to be redone, as the tiny rocks have just descended into the dirt, rather than covering it. } {Used Car Lot} {used_car_lot} {} {} {1.000} {}
+E { 3732} {nw} {nw} {9} {0} {} {1.000} {}
+E { 3734} {w} {w} {8} {0} {} {1.000} {}
+E { 2956} {exit} {exit} {0} {0} {} {1.000} {}
+
+R { 3732} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3731} {se} {se} {6} {0} {} {1.000} {}
+
+R { 3733} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3734} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3731} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3735} {0} {} {The office of P.J. Kludgenstone (exit)} { } {What a strange office, it appears to be made completely out of frankfurters!  Big ones, small ones, fat ones and skinny ones, they are everywhere you look.  Besides the door you entered, there is a large desk, behind which Mr. P.J. Kludgenstone usually sits, with a formidable bookshelf situated against the wall behind it.  There is a faint smell of sausagey goodness in the air. } {The Sausage Dimensions} {} {} {} {1.000} {}
+E { 3736} {exit} {exit;#var area Chaos;findhere} {0} {0} {} {1.000} {}
+
+R { 3736} {0} {} {A roadside (d,n,s,w,e)} { } {} {Chaos} {} {} {} {1.000} {}
+
+R { 3737} {0} {} {Chaos Laundry Services (leave)} { } {This is the Chaos Laundry, home of Zaziekl the Chaos Laundry Master. If you need clothes cleaned, scrubbed, or dried, this is the place to come! To the left of you is a line of washing machines, and to the right is a line of dryers. In the middle of the room, a worn wooden counter stands, with a small register on it. The black marble floor is layered with dust, looking like it hasn't been cleaned in ages. } {Chaos Laundry} {laundry} {} {} {1.000} {}
+E {   84} {leave} {leave} {0} {0} {} {1.000} {}
+
+R { 3738} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3739} {0} {} {Inside the Ice Cream Truck} { } {Yum! It's the Ice Cream Man! You're going to be the envy of all the kids on the block. There are eight freezers that line the inside of the truck. Each one has different flavors in it. Check out the menu to find out what flavors are available.                              _.-.                            ,'/ //\\                           /// // /)                          /// // //|                         /// // ///                        /// // ///                       (`: // ///                        `\;`: ///                        / /:`:/                       / /  `'                      / /                     (_/ } {Good Humor Truck} {good_humor} {} {} {1.000} {}
+E {   36} {out} {out} {0} {0} {} {1.000} {}
+
+R { 3740} {0} {} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3741} {0} {} {An open field (out,e)} { } {Fields of grass stretch out as far as your eye can see.  It doesn't look like construction has made it out this far yet, but the ground has definitely been trampled out by the workers coming and going.  Different pieces of equipment lie on the ground. } {Chaos} {} {} {} {1.000} {}
+E { 3743} {e} {e} {2} {0} {} {1.000} {}
+E { 1201} {out} {out;#var area Chaos;findhere} {0} {0} {} {1.000} {}
+
+R { 3742} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3743} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3741} {w} {w} {8} {0} {} {1.000} {}
+
+R { 3744} {0} {} {On a Rainbow Bridge (path)} { } {You are walking on what seem to be fluffy, billowing, white clouds. There is a path to the north and you think you can see buildings in that direction. The wind carries the sound of voices and singing. Whatever is over there, it must be a happy place. } {Care Bears} {carebears} {} {} {1.000} {}
+E { 3745} {path} {path} {0} {0} {} {1.000} {}
+E { 2833} {slide rainbow} {slide rainbow} {0} {0} {} {1.000} {}
+
+R { 3745} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3746} {0} {} {Entering the Dungeons of Doom (d,u)} { } {The light above is fading away as you descend the stone staircase into darkness. Gusts of air buffet you around as pressure changes, and it seems as though the gaping darkness below you is breathing. Somewhere in that darkness, deep within the Dungeons of Doom lies the opportunity to prove yourself a hero, or become one of the many whose lives have been forfeit in trying to subdue the abyss. } {NetHack} {nethack} {} {} {1.000} {}
+E { 3747} {d} {d} {32} {0} {} {1.000} {}
+E { 1201} {u} {u} {16} {0} {} {1.000} {}
+
+R { 3747} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3746} {u} {u} {16} {0} {} {1.000} {}
+
+R { 3748} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3746} {d} {d} {32} {0} {} {1.000} {}
+
+R { 3749} {0} {} {} { } {} {Kyoto} {} {} {} {1.000} {}
+E {   81} {backward} {backward;#var area Chaos;findhere} {0} {0} {} {1.000} {}
+
+R { 3750} {0} {} {Just south of a quiet village (n,e,path)} { } {You find yourself standing upon the brink of some sort of village, which extends northward and beyond.  Strange sounds seem to emanate from the village, a sort of lowing, mooing sound.  The atmosphere is one of peace and tranquility, as if you have stumbled upon a hidden paradise.  Green fields stretch off to the east, and a path leads through them in that direction.  There is a path that leads south, back to where you came from, though surely you would much prefer to stay here.  There is a wooden sign next to the road that heads north. } {CowVille} {cowville} {} {} {1.000} {}
+E { 3751} {n} {n} {1} {0} {} {1.000} {}
+E { 3752} {e} {e} {2} {0} {} {1.000} {}
+E { 2896} {path} {path} {0} {0} {} {1.000} {}
+
+R { 3751} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3750} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3752} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3750} {w} {w} {8} {0} {} {1.000} {}
+
+R { 3753} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3754} {0} {} {A city street in Fresh City (gallery,cafe,n,s)} { } {You are on what appears to be a busy city street.  Typical  businesses, like H&R Block and Bob's Adult Video, line the  sidewalks.  One establishment strikes you as unordinary: an  open air French cafe, where a crowd of well to do businessmen in  Armani suits are enjoying their newspapers and cafe.   } {Mentos} {mentos} {} {} {1.000} {}
+E { 3755} {gallery} {gallery} {0} {0} {} {1.000} {}
+E { 3756} {cafe} {cafe} {0} {0} {} {1.000} {}
+E { 3757} {n} {n} {1} {0} {} {1.000} {}
+E { 3758} {s} {s} {4} {0} {} {1.000} {}
+E { 2900} {try dementos} {try dementos} {0} {0} {} {1.000} {}
+
+R { 3755} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3756} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3757} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3754} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3758} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3754} {n} {n} {1} {0} {} {1.000} {}
+
+R { 3759} {0} {} {Parking Lot (w,exit)} { } {On this crisp spring afternoon you find yourself standing in a mostly-full parking lot at Tobergo Park, the neighborhood recreational area.  To the west down a slight hill are soccer fields\; a number of players are running up and down the nearest field.  From the bleachers adjoining the field are dozens of cheering spectators.  Behind you is a road leading back to the real world. } {Ultimate Tournament} {ult_tournament} {} {} {1.000} {}
+E { 3760} {w} {w} {8} {0} {} {1.000} {}
+E { 2907} {exit} {exit} {0} {0} {} {1.000} {}
+
+R { 3760} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3759} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3761} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3762} {0} {} {A Path to a Pretty Garden (nw)} { } {A well kept path leads northwest into what looks like a very pretty garden.  Small stones make up a little border that runs along the edges of the path.  Soft grass grows on both sides. } {Queen of Heart's Garden 2.0} {queen2} {} {} {1.000} {}
+E { 3763} {nw} {nw} {9} {0} {} {1.000} {}
+
+R { 3763} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3762} {se} {se} {6} {0} {} {1.000} {}
+
+R { 3764} {0} {} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3765} {0} {} {A Country Lane (out,s)} { } {You're standing on a small, pleasant dirt lane.  A small wooden fence runs along both sides of the lane, bushes entwined through the palings.  Several small trees also line it, and the fields on the far side of the fence give the whole place a pleasant rural feeling.  In the distance you can see a red-roofed farmhouse, and beyond it a dark wood.  Birds twitter and flit from the trees.  The sun shines brightly, although there is still a sharp bite in the air, as if spring has only just begun.  } {The Secret of Nimh} {nimh} {} {} {1.000} {}
+E { 3767} {s} {s} {4} {0} {} {1.000} {}
+E { 2906} {out} {out} {0} {0} {} {1.000} {}
+
+R { 3766} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3767} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3765} {n} {n} {1} {0} {} {1.000} {}
+
+R { 3768} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 2910} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3769} {0} {} {Gates to Body mansion (s,n)} { } {You're standing in front of a set of huge, ornamental iron gates. On either side of the gates, a high, brick wall stretches off as far as you can see.  The gates are open and through them you can see a driveway leading to a large mansion. } {"Body Mansion"} {body_mansion} {} {} {1.000} {}
+E { 3778} {n} {n} {1} {0} {} {1.000} {}
+E { 3777} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3770} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 2910} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3771} {0} {} {The center of Chaos (n,s,w,e,vortex)} { } {} {Chaos} {} {} {} {1.000} {}
+E { 2910} {w} {w} {8} {0} {} {1.000} {}
+
+R { 3772} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 2909} {u} {u} {16} {0} {} {1.000} {}
+
+R { 3773} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 2909} {d} {d} {32} {0} {} {1.000} {}
+
+R { 3774} {0} {} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3775} {5130} {} {} { } {} {} {} {} {} {1.000} {}
+E {   36} {e} {e} {2} {0} {} {1.000} {}
+E { 2910} {w} {w} {8} {0} {} {1.000} {}
+
+R { 3776} {5130} {} {} { } {} {} {} {} {} {1.000} {}
+E {    1} {w} {w} {8} {0} {} {1.000} {}
+E { 2910} {e} {e} {2} {0} {} {1.000} {}
+
+R { 3777} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3769} {n} {n} {1} {0} {} {1.000} {}
+
+R { 3778} {5130} {} {} { } {} {} {} {} {} {1.000} {}
+E { 2910} {n} {n} {1} {0} {} {1.000} {}
+E { 3769} {s} {s} {4} {0} {} {1.000} {}
+
+R { 3779} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3780} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3505} {n} {n} {1} {0} {} {1.000} {}
+
+R { 3781} {0} {} {>x< DEATH TACO - SHREDDED LETTUCE >x< (e,w)} { } {Death Taco: Shredded Lettuce A slanted glass cover leaning toward you winds around the outside of the metal bins.  Grit and grime from years of taco preparation are caked in the edges of the tray slide.  You stand on the battered aluminum surface of a giant tray slide that winds alongside metal bins.  The metal bin right next to the tray slide is filled with shredded lettuce.  You stand dwarfed by the scale of this gigantic, bland, fast food kitchen.  The tray slide continues to the west and the east. } {Death Taco} {} {} {} {1.000} {}
+E { 3645} {w} {w} {8} {0} {} {1.000} {}
+E { 3788} {e} {e} {2} {0} {} {1.000} {}
+E { 3782} {d} {d} {32} {0} {} {1.000} {}
+
+R { 3782} {0} {} {>x< DEATH TACO AIRSPACE >x<} { } {Death Taco Airspace You are flying through the air! } {Death Taco} {} {} {} {1.000} {}
+E { 3783} {w} {w} {8} {0} {} {1.000} {}
+
+R { 3783} {0} {} {>x< DEATH TACO FLOOR >x< (e)} { } {Death Taco Floor You somehow managed to end up on the red-tiled floor of the Death Taco kitchen.  It's really grimy down here, and a little sticky too.  You're trapped in a long rectangular space, blocked on all sides by towering aluminum walls. } {Death Taco} {} {} {} {1.000} {}
+E { 3782} {e} {e} {2} {0} {} {1.000} {}
+E { 3784} {break grating} {break grating} {0} {0} {} {1.000} {}
+E { 3785} {w} {break grating;west} {8} {0} {} {1.000} {}
+
+R { 3784} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3785} {0} {} {>x< DEATH TACO KENNEL >x< (door,hole)} { } {Death Taco Kennel The walls of this dimly lit kennel are packed with rusty metal dog cages stacked as high as the eye can see.  The stench of death and filth is pervasive.  Flickering light from a yellow bulb reveals refuse scattered everywhere in the grime - food dishes, choke collars, chew toys, wire brushes, rubber balls, pill bottles, and leather muzzles.  A greasy rubber doggie door is in the wall opposite the hole you came in through. } {Death Taco} {} {} {} {1.000} {}
+E { 3783} {hole} {hole} {0} {0} {} {1.000} {}
+E { 3641} {door} {door} {0} {0} {} {1.000} {}
+
+R { 3786} {0} {} {>x< DEATH TACO ENTRANCE >x< (e,out)} { } {} {Death Taco} {} {} {} {1.000} {}
+
+R { 3787} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 3788} {0} {} {>x< DEATH TACO - DICED TOMATOES >x< (e,w)} { } {Death Taco: Diced Tomatoes Flickering fluorescents radiate sickening light from above.  The metal bin right next to the tray slide is filled with diced tomatoes.  The inside of the slide looks out over a dirty red tile floor that is a VERY long drop.  You stand on the battered aluminum surface of a giant tray slide that winds alongside metal bins.  Grit and grime from years of taco preparation are caked in the edges of the tray slide.  The tray slide continues to the west and the east. } {Death Taco} {} {} {} {1.000} {}
+E { 3781} {w} {w} {8} {0} {} {1.000} {}
+E { 3790} {e} {e} {2} {0} {} {1.000} {}
+E { 3782} {d} {d} {32} {0} {} {1.000} {}
+
+R { 3789} {0} {} {} { } {} {} {} {} {} {1.000} {}
+E { 3781} {u} {u} {16} {0} {} {1.000} {}
+
+R { 3790} {0} {} {>x< DEATH TACO - GRATED CHEESE >x< (s,w)} { } {Death Taco: Grated Cheese Flickering fluorescents radiate sickening light from above.  You stand on the battered aluminum surface of a giant tray slide that winds alongside metal bins.  A slanted glass cover leaning toward you winds around the outside of the metal bins.  The metal bin right next to the tray slide is filled with grated cheese.  The dingy white walls seem mind-bendingly far away from you.  The tray slide bends here, leading to the west and south. } {Death Taco} {} {} {} {1.000} {}
+E { 3788} {w} {w} {8} {0} {} {1.000} {}
+E { 3791} {s} {s} {4} {0} {} {1.000} {}
+E { 3782} {d} {d} {32} {0} {} {1.000} {}
+
+R { 3791} {0} {} {>x< DEATH TACO - MYSTERY MEAT >x< (w,n)} { } {Death Taco: Mystery Meat The metal bin right next to the tray slide is filled with mystery meat.  The dingy white walls seem mind-bendingly far away from you.  You stand on the battered aluminum surface of a giant tray slide that winds alongside metal bins.  Flickering fluorescents radiate sickening light from above.  A slanted glass cover leaning toward you winds around the outside of the metal bins.  The tray slide bends at a sharp corner here, leading to the north and west. } {Death Taco} {} {} {} {1.000} {}
+E { 3790} {n} {n} {1} {0} {} {1.000} {}
+E { 3792} {w} {w} {8} {0} {} {1.000} {}
+E { 3782} {d} {d} {32} {0} {} {1.000} {}
+
+R { 3792} {0} {} {>x< DEATH TACO - SOUR CREAM >x< (e,w)} { } {Death Taco: Sour Cream Flickering fluorescents radiate sickening light from above.  You stand on the battered aluminum surface of a giant tray slide that winds alongside metal bins.  The inside of the slide looks out over a dirty red tile floor that is a VERY long drop.  The metal bin right next to the tray slide is filled with sour cream.  A slanted glass cover leaning toward you winds around the outside of the metal bins.  The tray slide continues to the west and the east. } {Death Taco} {} {} {} {1.000} {}
+E { 3791} {e} {e} {2} {0} {} {1.000} {}
+E { 3793} {w} {w} {8} {0} {} {1.000} {}
+E { 3782} {d} {d} {32} {0} {} {1.000} {}
+
+R { 3793} {0} {} {>x< DEATH TACO - GUACAMOLE >x< (e,w)} { } {Death Taco: Guacamole A slanted glass cover leaning toward you winds around the outside of the metal bins.  The inside of the slide looks out over a dirty red tile floor that is a VERY long drop.  The metal bin right next to the tray slide is filled with guacamole.  You stand on the battered aluminum surface of a giant tray slide that winds alongside metal bins.  Grit and grime from years of taco preparation are caked in the edges of the tray slide.  The tray slide continues to the west and the east. } {Death Taco} {} {} {} {1.000} {}
+E { 3792} {e} {e} {2} {0} {} {1.000} {}
+E { 3794} {w} {w} {8} {0} {} {1.000} {}
+E { 3782} {d} {d} {32} {0} {} {1.000} {}
+
+R { 3794} {0} {} {>x< DEATH TACO - HOT SAUCE >x< (e,w)} { } {Death Taco: Hot Sauce You stand dwarfed by the scale of this gigantic, bland, fast food kitchen.  A slanted glass cover leaning toward you winds around the outside of the metal bins.  You stand on the battered aluminum surface of a giant tray slide that winds alongside metal bins.  The dingy white walls seem mind-bendingly far away from you.  The metal bin right next to the tray slide is filled with packets of hot sauce.  The tray slide continues to the west and the east. } {Death Taco} {} {} {} {1.000} {}
+E { 3793} {e} {e} {2} {0} {} {1.000} {}
+E { 3795} {w} {w} {8} {0} {} {1.000} {}
+E { 3782} {d} {d} {32} {0} {} {1.000} {}
+
+R { 3795} {0} {} {>x< DEATH TACO ASSEMBLY AREA >x< (e)} { } {Death Taco Assembly Area This is the end of the line, where the magic happens, the place where lowly combinations of shells, meat, lettuce, and other goodies are transformed into delicious DEATH TACOS (tm).  There's a stack of wrappers beside the tray slide for final wrapping, and a huge laminated sign pasted on the wall here with assembly instructions.  The slide terminates against the dingy wall here, and continues off to the east. } {Death Taco} {} {} {} {1.000} {}
+E { 3794} {e} {e} {2} {0} {} {1.000} {}
+E { 3782} {d} {d} {32} {0} {} {1.000} {}
