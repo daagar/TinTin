@@ -55,5 +55,19 @@
 
     #act {^A {tasty-looking|bendy} frankfurter.} {#var mobile_areas[The Sausage Dimension] {smack frankfurter}}
     #act {^The Good Humor, Ice Cream Truck.} {#var mobile_areas[Good Humor Truck] {enter truck}}
+    #act {^Arena Ticket.} {#var mobile_areas[Kareless Kanga's] {grab arena ticket}}
+    #act {^A bouncing bingo ball.} {#var mobile_areas[Ashridge Acres] {catch ball}}
+    #act {^A plastic magnifying glass.} {#var mobile_areas[The Magic Fungus] {gaze through glass}}
+    #act {^A HUGE refrigerator.} {#var mobile_areas[Wandering Refrigerator] {open refrigerator}}
+    #act {^A mud puddle.} {#var mobile_areas[Mud Puddle] {puddle}}
+    #act {^A piece of USA(r) Today.} {#var mobile_areas[The Zodiac] {study horoscopes}}
+    #act {^A strange boy.} {#var mobile_areas[Miyu] {trace symbol}}
+    #act {^An Illuminati Pyramid.} {#var mobile_areas[Illuminati Pyramid] {enter pyramid}}
+    #act {^A Chocolate Cake.} {#var mobile_areas[Sin City] {indulge cake}}
+    #act {^An eighteenth hole flag.} {#var mobile_areas[Spooky Pines] {pull flag}}
+    #act {^A big red shoe.} {#var mobile_areas[The big red shoe] {put on shoe}}
+    #act {^Erratio Forest.} {#var mobile_areas[Erratio Forest] {enter gap}}
+    #act {^A chromatic mutant plant.} {#var mobile_areas[Greenhouse] {embrace plant}}
+    #act {^A little brown monkey doll.} {#var mobile_areas[Monkeytown] {squeeze monkey}}
 
 #class {mobile} {close}

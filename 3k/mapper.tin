@@ -310,6 +310,11 @@
  	#map goto 3741
 } {4}
 
+#NOP The Big Red Shoe
+#act {^You put the shoe on your foot and find yourself transported!} {
+	#map goto 3900
+}
+
 #NOP Calvin and Hobbes
 #NOP #act {^on the snow calls to you, and you dread another day at school.} {#map goto 23824}
 #NOP #act {^and eagerly await the freedom of the afternoon.} {#map goto 23814}
@@ -348,6 +353,10 @@
 #NOP Einstein
 #NOP #act {^Standing on the bench, you relax and the stagedive through the rift} {#map goto 7039}
 
+#NOP Erratio Forest
+#act {^You squeeze your way into the Erratio forest.} {
+	#map goto 3904
+}
 #NOP Funkytown
 #NOP #act {^The intense gravity of the sun pulls the coaster to its surface where you} {#map goto 17497}
 
@@ -358,13 +367,23 @@
 #act {^You enter the truck with one thing on your mind... ICE CREAM!} {#map goto 3739}
 
 #NOP Greenhouse
-#NOP #act {^You embrace the plant and lose yourself among the vines.} {
+#act {^You embrace the plant and lose yourself among the vines.} {
 #NOP 	#map get {roomvnum} {greenhouse_room};
-#NOP 	#map goto 22315
-#NOP }
+ 	#map goto 4030
+}
 #NOP #act {^You follow the trail away from the field.} {
 #NOP 	#map goto $greenhouse_room
 #NOP }
+
+#NOP Illuminati Pyramid
+#act {^You grab onto the edge of the pyramid and pull yourself up.} {
+	#map goto 3885
+}
+
+#NOP Kareless Kanga's
+#act {^You grab for the ticket and disappear.} {
+	#map goto 3878
+}
 
 #NOP Kayos Portal
 #NOP #act {^You leap into the unknown!} {
@@ -384,6 +403,21 @@
 
 #NOP The Lost Village of Willothorn
 #NOP #act {^You swim for your life for the surface and end up back where} {#map goto 14087}
+
+#NOP The Magic Fungus
+#act {^You gaze through the magnifying glass and see a tiny fungus...} {
+	#map goto 3882
+}
+
+#NOP Monkeytown
+#act {^You squeeze the doll and hear a faint song... da-da-da-da-da... Monkeytown!} {
+	#map goto 4050
+}
+
+#NOP Mud Puddle
+#act {^You sink deep into the mud puddle!} {
+	#map goto 3884
+}
 
 #NOP Necromancers
 #NOP #act {^You tumble down the river and find yourself on a rocky bank inside} {#map goto 7613}
@@ -420,12 +454,6 @@
 #NOP #act {^At last, the Cliffs of Insanity tower above you!} {#map goto 23763}
 #NOP #act {^At last, the shore of Florin!} {#map goto 23737}
 
-#NOP Puddle
-#NOP #act {^You sink deep into the mud puddle!  The mud presses in on you from all} {
-#NOP 	#map get {roomvnum} {puddle_room};
-#NOP 	#map goto 22485
-#NOP }
-
 #NOP Ravenloft Castle
 #NOP #act {^You warily step out onto the cold, damp ground.} {#map goto 20756}
 #NOP #act {^You then step out of the coach and find yourself back} {#map goto 4631}
@@ -440,12 +468,27 @@
 #NOP Serinth
 #NOP #act {^The World of Serinth Board containing } {#map goto 16722}
 
+#NOP Sin City
+#act {^You indulge yourself in the cake, becoming so entranced} {
+	#map goto 3889
+}
+
+#NOP Spooky Pines
+#act {^You pull out the flag.} {
+	#map goto 3898
+}
+
 #NOP Starcraft:Broodwar
 #NOP #act {^Door number: 3, Access Code: %1$} {#var starcraft_code %1}
 
 #NOP Xaxis
 #NOP #act {^Welcome to Xaxis!} {#map goto 15875}
 #NOP #act {^Here we are folks. Welcome to the Isle of Equinity!} {#map goto 15913}
+
+#NOP Wandering Refrigerator
+#act {^You open the huge refrigerator and step inside.} {
+	#map goto 3880
+}
 
 #NOP Wayhaven Ferry
 #NOP #act {^The ferryman says: Well, here you are.} {#map goto 7354}
