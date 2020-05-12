@@ -6,9 +6,18 @@
 #NOP Stepper settings
 #var hardmode 0
 #var bot_repeat 0
+#var resumebot 0
 
 #var have_corpse 0
-#var last_round 0
+#var rounds[last_fight] 0
+#var rounds[total] 0
+
+#alias {gxp} {
+    #var rounds[total] 0;
+    #var rounds[last_fight] 0;
+    #math {my[gxp][start]} {$my[gxp][pct]};
+    #showme <028>::GXP Counter Activated::<088>;
+}
 
 #act {{HP: (\d+)\[(\d+)\]\((\d+)\) PWR: (\d+)\[(\d+)\]\(([\d\-]+)\) HT: \[(\d+)\%\] SI: \[([\d\.]+)\%\]}} {
     #var my[hp][current]	%2;
@@ -18,9 +27,10 @@
     #var my[gp1][max]	%6;
     #var my[gp1][delta]	%7;
     #var my[gp2][current]	%8;
-    #var gxp		%9;
-    #format {glvl} {%d} {$gxp};
-    #math {gxp_per} {($gxp-$glvl)*100};
+    #var my[gxp][full]		%9;
+    #format {my[glvl]} {%d} {$my[gxp][full]};
+    #math {my[gxp][pct]} {($my[gxp][full]-$my[glvl])*100};
+
     update_status;
 }
 
@@ -32,9 +42,9 @@
 
 #alias {update_status} {
     
-    #if {$my[gp1][current] > $my[gp1][max] * .95 && $my[gp2][current] < 3 && $my[hp][current] == $my[hp][max] && $resumebot} {
+    #if {$my[gp1][current] > $my[gp1][max] * .95 && $my[gp2][current] < 3 && $my[hp][current] >= $my[hp][max] && $resumebot} {
         #echo {RESUME - Safe levels reached};
-        #unvar resumebot;
+        #var resumebot 0;
         .resume;
     };
     
@@ -60,9 +70,6 @@
                 #var have_corpse 0; 
             };
         } {0.5};
-
-
-
     };
 
     #if {"$cooler" == "on" || $corpses[cooler] > 0} {
@@ -96,11 +103,15 @@
     #format {corpses[freezer]} {%+2s} {$corpses[freezer]};
     #showme {<088>HP:$hp/$hp_max PR:$gp1/$gp1_max HT:   $gp2\%    E:$ehealth\%    IC:<130>${corpses[inventory]}<088> ${sb1_cooler}} {-4};
     #showme {H:${my[hp][graph]} P:${my[gp1][graph]} HT:${my[gp2][graph]} E:${enemy[graph]} CF:<130>${corpses[coffin]}<088>${sb2_freezer}} {-3};
-    #showme {$mip[gline][1]  $mip[gline][2]  RND: $mip[round]($last_round)} {-6}
+    #showme {$mip[gline][1]  $mip[gline][2]<028>RND: <130>$mip[round]<028>(<130>$rounds[last_fight]<028>) GXP: <130>$my[gxp][average]<088>} {-6}
 }
 
 #alias {corpsetrig} {
-    #var last_round $mip[round];
+    #var rounds[last_fight] $mip[round];
+    #math {rounds[total]} {$rounds[total]+$rounds[last_fight]};
+
+    #NOP #math gxp_fight {($gxp_per-$start_gxp)/$last_round};
+    #math my[gxp][average] {($my[gxp][pct]-$my[gxp][start])/$rounds[total]};
 
     #if {$my[hp][current] < $my[hp][max] * .80} {
         !reconstruct;
@@ -117,19 +128,19 @@
 
     #if {$bot} {
         #if {$my[hp][current] < $my[hp][max] * .90} {
-            #echo {STOPPING - Health threshold reached};
+            #echo {<028>::STOPPING - Health threshold reached::<088>};
             .stop;
             #var resumebot 1;
         };
 
         #if {$my[gp1][current] < $my[gp1][max] * .4} {
-            #echo {STOPPING - Power threshold reached};
+            #echo {<028>::STOPPING - Power threshold reached::<088>};
             .stop;
             #var resumebot 1;
         };
 
         #if {$my[gp2][current] > 50} {
-            #echo {STOPPING - Heat limit reached};
+            #echo {<028>::STOPPING - Heat limit reached::<088>};
             .stop;
             #var resumebot 1;
         };
