@@ -122,8 +122,9 @@ prompt >$nl$
 
 /* Detect Players */
 #act {^=P= %*} {
-	#regex {%1} {Nauda} {#nop} {#var foundplayer 1};
-	#regex {%1} {Glowie} {#nop} {#var foundplayer 1}
+	#NOP #regex {%1} {Nauda} {#nop} {#var foundplayer 1};
+	#NOP #regex {%1} {Glowie} {#nop} {#var foundplayer 1}
+	#var foundplayer 1;
 } {6}
 
 /* Skip room on Mob */

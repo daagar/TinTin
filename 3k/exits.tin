@@ -69,5 +69,10 @@
     #act {^Erratio Forest.} {#var mobile_areas[Erratio Forest] {enter gap}}
     #act {^A chromatic mutant plant.} {#var mobile_areas[Greenhouse] {embrace plant}}
     #act {^A little brown monkey doll.} {#var mobile_areas[Monkeytown] {squeeze monkey}}
+    #act {^A fairy (Twinkling).} {#var mobile_areas[Myth Area] {chase fairy}}
+    #act {^A hip doorway.} {#var mobile_areas[B Sharp Jazz Club] {enter doorway}}
+    #act {^A very greasy hamburger.} {#var mobile_areas[PGs] {eat hamburger}}
+    #act {^A patch of mist.} {#var mobile_areas[Chaotic Forest] {let go}}
+    #act {^An ancient runestone.} {#var mobile_areas[Midgard and Valhalla] {read runes}}
 
 #class {mobile} {close}

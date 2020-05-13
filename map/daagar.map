@@ -18,7 +18,7 @@ F 8455
 
 G 0
 
-I 2923
+I 1590
 
 L {ASCII NESW LINE} {NO EXITS} {x}
 L {ASCII NESW LINE} {N} {o}
@@ -253,15 +253,15 @@ T {} { } {}
 
 
 R {    1} {0} {} {The Center of Town (d,n,s,w,e,omp,jump)} { } {This is the center of Pinnacle.  A well-kept but simple cobbled street runs north and south.  There is a statue of a man here in the middle of the street.  To the east a low-hung whitewashed building buzzes with activity.  A towering and ornately decorated Lodestone edifice looms to the west.  A strange and mottled sky hangs low casting weird shadows which are barely dispelled by the lights on the oddly shaped streetposts.  You shiver. Hovering far in the air here is a strange looking hemispherical structure.  You could probably jump up to it if you wanted.  In the base of the structure is a huge iron trapdoor. } {Pinnacle} {cot} {} {} {1.000} {}
-E {    2} {d} {d} {32} {0} {} {1.000} {}
 E {    3} {n} {n} {1} {0} {} {1.000} {}
 E {    4} {s} {s} {4} {0} {} {1.000} {}
 E {    7} {omp} {omp} {0} {0} {} {1.000} {}
 E {    8} {jump} {jump} {0} {0} {} {1.000} {}
 E {  165} {w} {w} {8} {0} {} {1.000} {}
 E {    6} {e} {e} {2} {0} {} {1.000} {}
+E { 4239} {d} {d} {32} {0} {} {1.000} {}
 
-R {    2} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+R {    2} {0} {} {>x< DEATH TACO ENTRANCE >x< (e,out)} { } {} {Death Taco} {} {} {} {1.000} {}
 E {    1} {u} {u} {16} {0} {} {1.000} {}
 
 R {    3} {0} {} {North of Center (n,s,w,e)} { } {The cobbles give way to a weird, twisting tile that makes your stomach churn uneasily.  This must be North lane. You stand at an intersection where the cobbles of Main Street, which stretches to the south, meet the stomach- wrenching oddity of an undulating tile-covered path that goes left to right.  Just to the north there is a small, unimpressive brick building with a massive iron door. } {Pinnacle} {} {} {} {1.000} {}
@@ -439,6 +439,7 @@ E { 2887} {w} {w} {8} {0} {} {1.000} {}
 E { 3384} {leap haze} {leap haze} {0} {0} {} {1.000} {}
 E { 3434} {enter fog} {enter fog} {0} {0} {} {1.000} {}
 E { 3484} {push brick} {push brick} {0} {0} {} {1.000} {}
+E { 4248} {climb tower} {climb tower} {0} {0} {} {1.000} {}
 
 R {   40} {0} {} {A road heading south \x7Bmaybe\x7D (n,s,e)} {R} {Well, for some unexplained reason you are now standing in a vast pasture.  The sun is shining, and grass is growing.  This is too weird.  You look back north but the vortex is no longer visible.  Come to mention it, nothing is very visible there, except for a lush green hill further to the east. } {Chaos} {} {} {} {1.000} {}
 E {   36} {n} {n} {1} {0} {} {1.000} {}
@@ -668,6 +669,7 @@ E { 3176} {w} {w} {8} {0} {} {1.000} {}
 E { 3177} {s} {s} {4} {0} {} {1.000} {}
 E { 3699} {smile} {smile} {0} {0} {} {1.000} {}
 E { 3702} {enter swamp} {enter swamp} {0} {0} {} {1.000} {}
+E { 4243} {eat hamburger} {eat hamburger} {0} {0} {} {1.000} {}
 
 R {   88} {0} {} {At the base of a hill (n,w)} { } {Before you lies a well worn path leading up a gently rolling hill. Drifting in on the gentle summer breeze is the sound of fiddle,  faintly playing some kind of reel or jig.  Overhead starlings  and swallows dart about on the summer breeze.  Everything here is peaceful and quiet, sighing contentedly you feel at one with  nature, heck even the grass seems greener than usual.  } {Leprechaun Village} {leprechaun} {} {} {1.000} {}
 E {  260} {w} {w} {8} {0} {} {1.000} {}
@@ -6189,8 +6191,9 @@ E { 1228} {s} {s} {4} {0} {} {1.000} {}
 E { 1257} {n} {n} {1} {0} {} {1.000} {}
 E { 1235} {e} {e} {2} {0} {} {1.000} {}
 
-R { 1226} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+R { 1226} {0} {} {Larissa's front lawn (n,s)} { } {Stepping through the shrubs, you find yourself on a concrete walkway leading up through the lawn to a very strange looking house.  The house is surrounded by a dark blue fence that has orange polka dots all over it.  To the north appears to be the front porch of the house. A small mailbox sits here. } {Larissa's Funhouse} {larissa} {} {} {1.000} {}
 E {   85} {s} {s} {4} {0} {} {1.000} {}
+E { 4229} {n} {n} {1} {0} {} {1.000} {}
 
 R { 1227} {0} {} {\*\x7B A Dock \x7D* (n)} { } {\*\x7B A Dock \x7D* The forest comes to an end here at a small dock.  Beyond the dock you can see the rolling waves of the ocean crashing on the shore.  The sun beats down on you from overhead, and suddenly the water looks very inviting. } {Kelon} {kelon} {} {} {1.000} {}
 E { 1268} {n} {n} {1} {0} {} {1.000} {}
@@ -6857,6 +6860,7 @@ E { 1553} {e} {e} {2} {0} {} {1.000} {}
 
 R { 1357} {0} {} {A quiet cul de sac (n)} { } {Silicon row ends its southward run here, in what can only be termed the Residential Complex of Pinnacle.  A quiet cul de sac has been carved out of the surrounding woodlands to shelter the homes of 3Kingdom's wealthy patrons.  Columned southern mansions stand side by side with medieval castles and classic victorian homes.  To have a home in this crime free, exclusive neighborhood is a sign of wealth and success in the realms. } {Pinnacle} {} {} {} {1.000} {}
 E { 1354} {n} {n} {1} {0} {} {1.000} {}
+E { 4230} {home 270} {home 270} {0} {0} {} {1.000} {}
 
 R { 1358} {0} {} {A Strange Archway (w,e)} { } {You can vaguely make out the shapes of Pinnacle to the west. A dense smog cloud, laced with strange bursts of dazzling micro-lightning hovers about you.  A smell of ozone is in the air, almost certainly coming from the impressive archway before you.  Made of a strange oily metal, and covered with odd glyphs, it is filled with an inky darkness. } {Pinnacle} {} {} {} {1.000} {}
 E { 1354} {w} {w} {8} {0} {} {1.000} {}
@@ -6886,8 +6890,9 @@ R { 1364} {0} {} {Pinnacle Row (w,e)} { } {You are walking along a small stone p
 E { 1352} {e} {e} {2} {0} {} {1.000} {}
 E {   50} {w} {w} {8} {0} {} {1.000} {}
 
-R { 1365} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+R { 1365} {0} {} {Mario's Bistro (se,w)} { } {Mario's Bistro The delicious smells of Italian cooking hang heavy in the air.  The floor is covered with faded red brick, as are the walls. Each table is identical in appearance, bearing a red and white checkered tablecloth, a white candle stuck in an empty bottle of wine, and a small white flower in a glass vase.  Towards the back of the restaurant, is the kitchen.  Two large brick ovens can be seen as well as the large stainless steel stove. Beautiful music is playing from the speakers, which are strategically placed behind gorgeous hanging plants. } {Marble Castle} {} {} {} {1.000} {}
 E { 1352} {w} {w} {8} {0} {} {1.000} {}
+E { 4217} {se} {se} {6} {0} {} {1.000} {}
 
 R { 1366} {0} {} {Newbie tower courtyard (s,w,n)} { } {The doors of a large majestic tower lie open to the south, and it appears as if the building itself was inviting wanderers inside.  To the north and west, a weathered path veers away from the current courtyard and tower.  Tall green trees lined up in rows and columns surround the majestic building, and a small wooden sign is nailed up onto the trunk of the closest tree. } {Pinnacle} {} {} {} {1.000} {}
 E { 1363} {n} {n} {1} {0} {} {1.000} {}
@@ -7759,7 +7764,7 @@ E { 3148} {n} {n} {1} {0} {} {1.000} {}
 E { 1563} {s} {s} {4} {0} {} {1.000} {}
 E { 3679} {follow tracks} {follow tracks} {0} {0} {} {1.000} {}
 
-R { 1583} {0} {} {Eastwick (u,n,w,e)} { } {Your sense of direction suffers a new jolt.  There is a bubbling pool to the west and a road heading south.  The only way you can see around the pool is by jumping it. } {Chaos} {} {} {} {1.000} {}
+R { 1583} {0} {} {Eastwick Road (n,s)} { } {Your sense of direction suffers a new jolt.  There is a bubbling pool to the west and a road heading south.  The only way you can see around the pool is by jumping it. } {Chaos} {} {} {} {1.000} {}
 E { 1564} {s} {s} {4} {0} {} {1.000} {}
 E { 1586} {n} {n} {1} {0} {} {1.000} {}
 E { 1599} {jump pool} {jump pool} {0} {0} {} {1.000} {}
@@ -7776,7 +7781,6 @@ R { 1586} {0} {} {Eastwick Road Food Court (s,taco,mcd)} {*} {The road ends here
 E { 1583} {s} {s} {4} {0} {} {1.000} {}
 E { 3641} {taco} {taco} {0} {0} {} {1.000} {}
 E { 3642} {mcd} {mcd} {0} {0} {} {1.000} {}
-E { 4029} {embrace plant} {embrace plant} {0} {0} {} {1.000} {}
 
 R { 1587} {0} {} {Eastwick Road (n,e)} {B} {The road suddenly leads through the reading room of a small library.  There is a passage north and another to the east. Which way do you go, you do not know. } {Chaos} {} {} {} {1.000} {}
 E { 1585} {n} {n} {1} {0} {} {1.000} {}
@@ -7831,13 +7835,11 @@ E { 3637} {enter whirlpool} {enter whirlpool} {0} {0} {} {1.000} {}
 R { 1597} {0} {} {Eastwick Road (n,s)} {} {As you travel west you start to realize... You are going south. The world in eastwick is chaotic and turned around.  To the south is a barren wasteland.  It looks as though it has been hit by an atomic weapon.  The gooey tar-like substance was once an asphalt road.  You can almost feel the radiation pouring through your shoes. The road to the north leads into eastwick.  The road south trails off into a steamy, twisted world. } {Chaos} {} {} {} {1.000} {}
 E { 1596} {n} {n} {1} {0} {} {1.000} {}
 E { 1598} {s} {s} {4} {0} {} {1.000} {}
-E { 3640} {grasp tendril} {grasp tendril} {0} {0} {} {1.000} {}
 
 R { 1598} {0} {} {Nuclear Wasteland (n,e)} {T} {You meander through a glowing rockpile glancing nervously over you shoulder as you hear slight rustlings on all sides. } {Chaos} {} {} {} {1.000} {}
 E { 1597} {n} {n} {1} {0} {} {1.000} {}
 E { 1599} {e} {e} {2} {0} {} {1.000} {}
 E { 1600} {enter sleigh} {enter sleigh} {0} {0} {} {1.000} {}
-E { 3900} {put on shoe} {put on shoe} {0} {0} {} {1.000} {}
 
 R { 1599} {0} {} {Nuclear Wasteland (w)} { } {There is a vast, bubbling pool to the east.  It looks like you're going to have to jump the pool and hope for the best! } {Chaos} {} {} {} {1.000} {}
 E { 1598} {w} {w} {8} {0} {} {1.000} {}
@@ -13234,7 +13236,6 @@ E { 3249} {w} {w} {8} {0} {} {1.000} {}
 R { 2849} {0} {} {Store Entrance (s,w)} { } {You have just walked through a set of sliding doors and entered a new store called 'Groceries are Life'.  You have the feeling that this may be a health food store, but you couldn't be more wrong.  Have a look around, and remember if you break it, you bought it! } {Grocery Store} {grocery_store} {} {} {1.000} {}
 E { 2853} {s} {s} {4} {0} {} {1.000} {}
 E { 2854} {w} {w} {8} {0} {} {1.000} {}
-E { 2855} {u} {u} {16} {0} {} {1.000} {}
 
 R { 2850} {0} {<g09>} {* The Soda Jerk * (out)} { } {* The Soda Jerk * A long white counter, with short red vinyl-padded swivel chairs, spans the entire west wall.  A mirror, reflecting back the customers' images, hangs on the wall behind the service counter.  A large plastic banana split and frothy milkshakes hang from the ceiling by small wires.  Booths with red vinyl bench seats and white laminate tables are to the north.  Mini jukeboxes adorn each table, while the sounds of Elvis Presley boom out from the overhead speakers.  A large plastic-coated menu hangs at the front of the counter. } {The Soda Jerk} {soda_jerk} {} {} {1.000} {}
 E {   39} {out} {out} {0} {0} {} {1.000} {}
@@ -13332,9 +13333,10 @@ E { 2867} {e} {e} {2} {0} {} {1.000} {}
 E { 2872} {n} {n} {1} {0} {} {1.000} {}
 E { 2873} {w} {w} {8} {0} {} {1.000} {}
 
-R { 2872} {0} {} {Meats Aisle (n,s)} { } {You are in the middle of the meats aisle.  There is a couple here arguing whether or not to buy bacon or to buy Sizzlean.  You think they ought to just get a soy pizza, but nobody asked you.  There are more dead animals to the north and to the south. } {Grocery Store} {} {} {} {1.000} {}
+R { 2872} {0} {} {Meats Aisle (n,s)} {T} {You are in the middle of the meats aisle.  There is a couple here arguing whether or not to buy bacon or to buy Sizzlean.  You think they ought to just get a soy pizza, but nobody asked you.  There are more dead animals to the north and to the south. } {Grocery Store} {} {} {} {1.000} {}
 E { 2871} {s} {s} {4} {0} {} {1.000} {}
 E { 2870} {n} {n} {1} {0} {} {1.000} {}
+E { 4226} {enter box} {enter box} {0} {0} {} {1.000} {}
 
 R { 2873} {0} {} {Paper Items Aisle (n,w,e)} { } {This is one end of the paper items aisle.  There is Charmin toilet paper lying around here and you could probably take some.  If I were you, I would be careful though.  You never know who might be watching.  There are more paper-type items to the north and other things to the east and to the west. } {Grocery Store} {} {} {} {1.000} {}
 E { 2871} {e} {e} {2} {0} {} {1.000} {}
@@ -13621,12 +13623,13 @@ R { 2934} {0} {} {A warm feeling (n,light)} { } {You stand before a gaping, swir
 E { 2942} {n} {n} {1} {0} {} {1.000} {}
 E { 2943} {light} {light} {0} {0} {} {1.000} {}
 
-R { 2935} {0} {} {Eastwick Road (s,w,e)} {?} {Wow!  Looks like you're back on Eastwick Road.  But this variant is a bit different.  The road is made of some white gooey liquid and larvae are crawling in and through it.  I'd move on fast if I were you!  Although that weird howling down south is ...odd! } {Chaos} {} {} {} {1.000} {}
+R { 2935} {0} {} {Eastwick Road (s,w,e)} {*} {Wow!  Looks like you're back on Eastwick Road.  But this variant is a bit different.  The road is made of some white gooey liquid and larvae are crawling in and through it.  I'd move on fast if I were you!  Although that weird howling down south is ...odd! } {Chaos} {} {} {} {1.000} {}
 E { 2931} {e} {e} {2} {0} {} {1.000} {}
 E { 2931} {w} {w} {8} {0} {} {1.000} {}
 E { 2936} {s} {s} {4} {0} {} {1.000} {}
 E { 3985} {enter hole} {enter hole} {0} {0} {} {1.000} {}
 E { 3986} {stroke pelt} {stroke pelt} {0} {0} {} {1.000} {}
+E { 4246} {let go} {let go} {0} {0} {} {1.000} {}
 
 R { 2936} {0} {} {Beside a Farm (n,gate)} {G} {In front of you stands a gate, beyond which there appears to be a dusty, rocky savanna of some sort. You think you can see some small animals milling around in the distance. There is a sign here. } {Happy Ed's Chinchilla Farm} {} {} {} {1.000} {}
 E { 2935} {n} {n} {1} {0} {} {1.000} {}
@@ -14541,8 +14544,8 @@ E { 3151} {nw} {nw} {9} {0} {} {1.000} {}
 R { 3154} {0} {} {An electron (u,n,s,cave)} { } {A strong glow is playing havoc with your sense of sight here, and there is constant motion whirring around you.   A humming sound comes to you from everywhere, and is really annoying you beyond what you feel you can handle.  The air vibrates with energy, and the hairs on your body fire off in all directions. } {Electric Cave} {} {} {} {1.000} {}
 E { 3150} {u} {u} {16} {0} {} {1.000} {}
 E { 3157} {s} {s} {4} {0} {} {1.000} {}
-E { 3158} {cave} {cave} {0} {0} {} {1.000} {}
 E { 3159} {n} {n} {1} {0} {} {1.000} {}
+E { 3158} {cave} {cave} {0} {0} {} {1.000} {}
 
 R { 3155} {5130} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 E { 3150} {n} {n} {1} {0} {} {1.000} {}
@@ -14557,7 +14560,9 @@ E { 3154} {n} {n} {1} {0} {} {1.000} {}
 E { 3159} {nw} {nw} {9} {0} {} {1.000} {}
 
 R { 3158} {0} {} {A cave (s,enter)} { } {This is a single room cave about 50 feet high and 40 feet deep.  The  entrance is large enough to shed some light into the room.  In the  corner you see a fresh campfire.  Against the back wall is a strange electric blue glow, it looks like some sort of entrance to something. You see strange LARGE footprints on the ground, something very big has been living here.  You are in somebody's house. Unfortunately for the resident of this cave, it seems that recently the dwelling has become the home of a small stream, which flows through the cave from behind some stalagmites. } {Electric Cave} {} {} {} {1.000} {}
+E { 4111} {s} {s} {4} {0} {} {1.000} {}
 E { 3154} {enter} {enter} {0} {0} {} {1.000} {}
+E { 4113} {squeeze between stalagmites} {squeeze between stalagmites} {0} {0} {} {1.000} {}
 
 R { 3159} {0} {} {An electron (se,s)} {o} {This room is dead...no energy at all.  There are tiny charged dust particles in the air which light your way......but the life of this room has been sucked out of it......nothing left but a heavy grey mist.  The room contains active electric dust but the awesome glow has left it..... } {Electric Cave} {} {} {} {1.000} {}
 E { 3157} {se} {se} {6} {0} {} {1.000} {}
@@ -14622,6 +14627,7 @@ R { 3177} {0} {} {South Forest (n,s)} {P} {The non-forest continues south.  But 
 E {   87} {n} {n} {1} {0} {} {1.000} {}
 E { 3180} {s} {s} {4} {0} {} {1.000} {}
 E { 3705} {enter playhouse} {enter playhouse} {0} {0} {} {1.000} {}
+E { 4224} {enter mist} {enter mist} {0} {0} {} {1.000} {}
 
 R { 3178} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 E { 3175} {s} {s} {4} {0} {} {1.000} {}
@@ -16155,8 +16161,9 @@ R { 3505} {0} {} {Dog Pound Office (exit,s)} { } {You've entered the Chaos Dog P
 E { 2847} {exit} {exit} {0} {0} {} {1.000} {}
 E { 3780} {s} {s} {4} {0} {} {1.000} {}
 
-R { 3506} {0} {<g09>} {} { } {} {} {unknown} {} {} {1.000} {}
+R { 3506} {0} {} {A Gray, Cloying, Gross Mist (onward,retreat)} { } {You are falling through a humid, grasping, hormone-laden mist. As you plummet downward, you begin to hear the sounds of teenage angst and despair.  Turn back now or get ready for a nostalgic rerun of Clearasil, Computer Club, and Jock Lines. } {Unknown} {unknown} {} {} {1.000} {}
 E { 2846} {retreat} {retreat} {0} {0} {} {1.000} {}
+E { 4221} {onward} {onward} {0} {0} {} {1.000} {}
 
 R { 3507} {0} {} {JJJ Enterprises (leave)} { } {You are at the headquarters of JJJ Enterprises, which consists of a single office with just enough space for two office chairs and a large oak desk.  The air smells of cigar smoke and french fries.  An open doorway provides an exit into swirling mists. } {JJJ Enterprises} {jjj_enterprises} {} {} {1.000} {}
 E { 2846} {leave} {leave} {0} {0} {} {1.000} {}
@@ -16331,6 +16338,7 @@ E { 3545} {s} {s} {4} {0} {} {1.000} {}
 E { 3549} {n} {n} {1} {0} {} {1.000} {}
 E { 3565} {wear ring} {wear ring} {0} {0} {} {1.000} {}
 E { 3567} {read book} {read book} {0} {0} {} {1.000} {}
+E { 4254} {browse magazine} {browse magazine} {0} {0} {} {1.000} {}
 
 R { 3549} {0} {} {A room full of books (ne,s)} {*} {Books surround you, covering the walls nearly to the ceiling.  There are even a few free standing shelves about the room, usually  strategically placed to add privacy to the small reading tables which are scattered about the room. } {The Book Nook} {} {} {} {1.000} {}
 E { 3548} {s} {s} {4} {0} {} {1.000} {}
@@ -16386,7 +16394,7 @@ E { 3562} {n} {n} {1} {0} {} {1.000} {}
 
 R { 3564} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 
-R { 3565} {0} {} {Path to Solace (sw)} { } {You are walking on a long path leading downwards to a lovely valley. The mountainside below forms a bowl cradled between the mountains. Vallenwood trees fill the valley and blaze in the season colors. Behind the valley you can see distant and high peaks. A big lake in the middle of the valley catches your eyes, its waters blue and inviting. Columns of smoke can be seen around the treetops and the aroma of home fires tingles your nose. } {The Book Nook} {solace} {} {} {1.000} {}
+R { 3565} {0} {} {Path to Solace (sw)} { } {You are walking on a long path leading downwards to a lovely valley. The mountainside below forms a bowl cradled between the mountains. Vallenwood trees fill the valley and blaze in the season colors. Behind the valley you can see distant and high peaks. A big lake in the middle of the valley catches your eyes, its waters blue and inviting. Columns of smoke can be seen around the treetops and the aroma of home fires tingles your nose. } {Dragonlance Solace} {solace} {} {} {1.000} {}
 E { 3566} {sw} {sw} {12} {0} {} {1.000} {}
 E { 3548} {ride dragon} {ride dragon} {0} {0} {} {1.000} {}
 
@@ -16771,7 +16779,7 @@ R { 3680} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 R { 3681} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 E { 3679} {s} {s} {4} {0} {} {1.000} {}
 
-R { 3682} {0} {} {Cart Track (exit,n)} { } {You almost get a sense of relief as you step out onto this dirt and don't feel the mind-numbing effects of Chaos quite as bad. In fact the further north you travel the more you become infused with a sense of peace and calm. Far in the distance you can see the snow-capped tip of a lone mountain rising above the plain. There is a small sign pointing north here. } {Mortal Kombat} {mortal_kombat} {} {} {1.000} {}
+R { 3682} {0} {} {Cart Track (exit,n)} { } {You almost get a sense of relief as you step out onto this dirt and don't feel the mind-numbing effects of Chaos quite as bad. In fact the further north you travel the more you become infused with a sense of peace and calm. Far in the distance you can see the snow-capped tip of a lone mountain rising above the plain. There is a small sign pointing north here. } {Mortal Kombat} {tencho} {} {} {1.000} {}
 E { 3148} {exit} {exit} {0} {0} {} {1.000} {}
 E { 4018} {n} {n} {1} {0} {} {1.000} {}
 
@@ -16953,8 +16961,9 @@ E { 1201} {out} {out;#var area Chaos;findhere} {0} {0} {} {1.000} {}
 
 R { 3742} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
 
-R { 3743} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
-E { 3741} {w} {w} {8} {0} {} {1.000} {}
+R { 3743} {0} {} {PG's (exit,w)} { } {The smell of burned hamburgers, over fried onion rings and people stinking with sweat almost makes you gag as you enter this greasy joint named PG's. Old hamburgers and french fries lie scattered all over the floor, which is almost impossible to see from all the grease that has been worn into it during the last years. The tables are covered with red pieces of cloth which nobody has ever cleaned. In the corner is a door leading towards a toilet and also a pile of garbage that almost reaches up to the ceiling. A menu stands on the greasy counter in front of you.  } {PG} {} {} {} {1.000} {}
+E {   36} {exit} {exit;#var area Chaos;findhere} {0} {0} {} {1.000} {}
+E { 4245} {w} {w} {8} {0} {} {1.000} {}
 
 R { 3744} {0} {} {On a Rainbow Bridge (path)} { } {You are walking on what seem to be fluffy, billowing, white clouds. There is a path to the north and you think you can see buildings in that direction. The wind carries the sound of voices and singing. Whatever is over there, it must be a happy place. } {Care Bears} {carebears} {} {} {1.000} {}
 E { 3745} {path} {path} {0} {0} {} {1.000} {}
@@ -17085,7 +17094,9 @@ E { 3782} {e} {e} {2} {0} {} {1.000} {}
 E { 3784} {break grating} {break grating} {0} {0} {} {1.000} {}
 E { 3785} {w} {break grating;west} {8} {0} {} {1.000} {}
 
-R { 3784} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+R { 3784} {0} {} {>x< DEATH TACO KENNEL >x< (door,hole)} { } {Death Taco Kennel The walls of this dimly lit kennel are packed with rusty metal dog cages stacked as high as the eye can see.  The stench of death and filth is pervasive.  Flickering light from a yellow bulb reveals refuse scattered everywhere in the grime - food dishes, choke collars, chew toys, wire brushes, rubber balls, pill bottles, and leather muzzles.  A greasy rubber doggie door is in the wall opposite the hole you came in through. } {Death Taco} {} {} {} {1.000} {}
+E { 4237} {door} {door} {0} {0} {} {1.000} {}
+E { 3783} {hole} {hole} {0} {0} {} {1.000} {}
 
 R { 3785} {0} {} {>x< DEATH TACO KENNEL >x< (door,hole)} { } {Death Taco Kennel The walls of this dimly lit kennel are packed with rusty metal dog cages stacked as high as the eye can see.  The stench of death and filth is pervasive.  Flickering light from a yellow bulb reveals refuse scattered everywhere in the grime - food dishes, choke collars, chew toys, wire brushes, rubber balls, pill bottles, and leather muzzles.  A greasy rubber doggie door is in the wall opposite the hole you came in through. } {Death Taco} {} {} {} {1.000} {}
 E { 3783} {hole} {hole} {0} {0} {} {1.000} {}
@@ -18247,9 +18258,912 @@ R { 4060} {0} {} {The Lab's Computer Room (s,e)} { } {The room is divided into s
 E { 4000} {s} {s} {4} {0} {} {1.000} {}
 E { 4061} {e} {e} {2} {0} {} {1.000} {}
 
-R { 4061} {0} {} {Main Test Room (s,w)} { } {This appears to be the main test room for the laboratory.  There are several desks in the room, on them sit various items of testing equipment and apparatus.  The majority of the items look like they are used for electrical or electronic purposes.  The walls, floor and ceiling are slightly blackened and damaged in some places. } {Wormhole Laboratory} {} {} {} {1.000} {}
+R { 4061} {0} {} {Main Test Room (s,w)} {D} {This appears to be the main test room for the laboratory.  There are several desks in the room, on them sit various items of testing equipment and apparatus.  The majority of the items look like they are used for electrical or electronic purposes.  The walls, floor and ceiling are slightly blackened and damaged in some places. } {Wormhole Laboratory} {} {} {} {1.000} {}
 E { 4060} {w} {w} {8} {0} {} {1.000} {}
 E { 4062} {s} {s} {4} {0} {} {1.000} {}
+E { 4065} {open door} {open door} {0} {0} {} {1.000} {}
 
 R { 4062} {0} {} {Storage Room (n)} { } {This appears to be the main storage room for the laboratory.  Shelving is arranged along the walls, and more shelving forms aisles through the middle of the room.  On the shelving are various boxes of all shapes and sizes, test equipment, and things that look like they would be more at home in an alien spacecraft. } {Wormhole Laboratory} {} {} {} {1.000} {}
 E { 4061} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4063} {0} {} {Forest (leave)} { } {In a forest. The warmth of the sunlight slips between the branches of the trees and casts its glow on your face.  You are enveloped in the sweet smell of honeysuckle.  The only noise is the muffled sounds of the wildlife in this forest.  This is the most peaceful spot in the forest and you have the sudden urge to sleep and dream about lands in another world.  You think you see a huge mountain in the distance, but your head feels heavy and you are unsure of what is real and what is fiction in this mysterious land. } {Myth Area} {myths} {} {} {1.000} {}
+E {   36} {leave} {leave;#var area Chaos;findhere} {0} {0} {} {1.000} {}
+
+R { 4064} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 4065} {0} {} {A very experimental room (out)} { } {This room is laid out neatly, consisting of several tables, some computer gear, and several weird looking devices.  Four of the devices seem to be positioned in a square shape, facing towards the centre of the room.  Data cables run between these devices and the computers, either for monitoring or controlling purposes.  Much thicker power cables are also connected to the devices, capable of supplying a large current on demand.  The walls, floor and ceiling here appear to be solid cement, differing from the rest of the lab. A control panel sits on a stool near the south door from which you entered. } {Wormhole Laboratory} {} {} {} {1.000} {}
+E { 4061} {out} {out} {0} {0} {} {1.000} {}
+E { 4066} {enter portal} {enter portal} {0} {0} {} {1.000} {}
+E { 4109} {enter wormhole} {enter wormhole} {0} {0} {} {1.000} {}
+
+R { 4066} {0} {} {A murky swamp (sw,nw,w)} { } {You stand in foul smelling and filthy swamp waters, about three feet deep. Gnarled trees and stunted plantlife do their best to cling to life in this cursed muck, the waters dark and devoid of life.  The ground underneath the waters that you walk upon is relatively spongy, your feet sticking and threatening to sink further.  The air is thick with a dense mist, obscuring your vision and assaulting your nose with its bad stench.  To the west you see a large deformed tree that seems to be larger than the rest in this swamp. } {Murky Swamps} {} {} {} {1.000} {}
+E { 4067} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4068} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4069} {w} {w} {8} {0} {} {1.000} {}
+E { 4071} {s} {s} {4} {0} {} {1.000} {}
+E { 4080} {se} {se} {6} {0} {} {1.000} {}
+E { 4078} {e} {e} {2} {0} {} {1.000} {}
+E { 4084} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4070} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4067} {0} {} {A murky swamp (ne,se,nw,sw,e,s,n,w)} { } {Cursed swamp waters stretch as far as the eye can see in all directions, like a giant watery desert.  Broken trees and doomed plantlife is scattered about the area, like the victims of a raging fire and disease.  Sickly mud oozes about under the swamp waters, attempting to swallow all that which comes in contact with it.  Hovering like a rain cloud over the swamp is a white mist, its cloudy depths blocking the light and obscuring your vision.  To the north a large deformed tree grows, its trunk gnarled and branches bare. } {Murky Swamps} {} {} {} {1.000} {}
+E { 4066} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4069} {n} {n} {1} {0} {} {1.000} {}
+E { 4075} {se} {se} {6} {0} {} {1.000} {}
+E { 4074} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4076} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4071} {e} {e} {2} {0} {} {1.000} {}
+E { 4077} {s} {s} {4} {0} {} {1.000} {}
+E { 4073} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4068} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4066} {se} {se} {6} {0} {} {1.000} {}
+E { 4069} {s} {s} {4} {0} {} {1.000} {}
+E { 4070} {e} {e} {2} {0} {} {1.000} {}
+
+R { 4069} {0} {} {A murky swamp (ne,se,nw,sw,e,s,n,w)} { } {You stand three feet deep in foul smelling and filthy swamp waters, the muck under the water threatening to suck and pull you under.  Dominating the swamp here is a large deformed tree, which seems to have grown larger than the others in this swamp.  Its branches are leafless and drooping, as though slumped in defeat.  Decaying vegetation is scattered about the area, the swamp waters dark and devoid of life.  The air is thick with a dense mist, obscuring your vision and assaulting your nose with its stench. } {Murky Swamps} {} {} {} {1.000} {}
+E { 4066} {e} {e} {2} {0} {} {1.000} {}
+E { 4070} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4071} {se} {se} {6} {0} {} {1.000} {}
+E { 4072} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4073} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4067} {s} {s} {4} {0} {} {1.000} {}
+E { 4068} {n} {n} {1} {0} {} {1.000} {}
+E { 4074} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4070} {0} {} {A murky swamp (ne,se,nw,sw,e,s,n,w)} { } {Dead and decaying plant matter floats in the swamp's waters, making travelling through it all the more difficult.  A thick layer of mud lies about three feet under the water's surface, which oozes about and threatens to suck you under.  Creeping like ghostly fingers, a white mist billows over the swamp, its density blocking the majority of the light.  To the south of you a large healthy bush grows, a strange sight in this dead place. } {Murky Swamps} {} {} {} {1.000} {}
+E { 4069} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4078} {se} {se} {6} {0} {} {1.000} {}
+E { 4084} {e} {e} {2} {0} {} {1.000} {}
+E { 4087} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4088} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4066} {s} {s} {4} {0} {} {1.000} {}
+E { 4086} {n} {n} {1} {0} {} {1.000} {}
+E { 4068} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4071} {0} {} {A murky swamp (ne,se,nw,sw,e,s,n,w)} { } {Eerie mist creeps across the swamp, parted slightly as it flows past gnarled and decaying trees, which rise up out of the swamp in futile attempt for life.  The putrid swamp waters surround you, thick with mud and decaying plant matter, the smell almost nauseous.  To the north of you a large healthy bush grows, a strange sight in this dead place. } {Murky Swamps} {} {} {} {1.000} {}
+E { 4069} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4067} {w} {w} {8} {0} {} {1.000} {}
+E { 4078} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4079} {se} {se} {6} {0} {} {1.000} {}
+E { 4077} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4080} {e} {e} {2} {0} {} {1.000} {}
+E { 4075} {s} {s} {4} {0} {} {1.000} {}
+E { 4066} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4072} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4069} {se} {se} {6} {0} {} {1.000} {}
+
+R { 4073} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4069} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4067} {e} {e} {2} {0} {} {1.000} {}
+
+R { 4074} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4069} {e} {e} {2} {0} {} {1.000} {}
+E { 4067} {se} {se} {6} {0} {} {1.000} {}
+
+R { 4075} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4067} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4071} {n} {n} {1} {0} {} {1.000} {}
+E { 4080} {ne} {ne} {3} {0} {} {1.000} {}
+
+R { 4076} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4067} {ne} {ne} {3} {0} {} {1.000} {}
+
+R { 4077} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4067} {n} {n} {1} {0} {} {1.000} {}
+E { 4071} {ne} {ne} {3} {0} {} {1.000} {}
+
+R { 4078} {0} {} {A murky swamp (ne,se,nw,sw,s,n,w)} { } {Immediately to the east the mud rises up above the swamp waters, forming a lip around a large sinkhole which is about twenty feet in diameter.  The sinkhole seems to be the source for the mist which covers this swamp, gases rise up out of it and creep across the muddy swamp waters.  To the west a healthy looking bush can be seen growing up out of the swamp. } {Murky Swamps} {} {} {} {1.000} {}
+E { 4071} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4080} {s} {s} {4} {0} {} {1.000} {}
+E { 4083} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4082} {se} {se} {6} {0} {} {1.000} {}
+E { 4070} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4084} {n} {n} {1} {0} {} {1.000} {}
+E { 4066} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4079} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4071} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4080} {n} {n} {1} {0} {} {1.000} {}
+E { 4082} {ne} {ne} {3} {0} {} {1.000} {}
+
+R { 4080} {0} {} {A murky swamp (se,nw,sw,e,s,n,w)} { } {You stand knee deep in foul smelling and filthy swamp waters.  Gnarled trees and stunted plantlife do their best to cling to life in this cursed muck, the waters dark and devoid of life.  The swamp makes disgusting sucking and slurping noises as you walk through it, the mud threatening to trap your feet. The air is thick with a dense mist, obscuring your vision and assaulting your nose with its stench.  Off to the northwest of you a large healthy bush grows, a strange sight in this dead place.  A large mud bank is visible to the northeast, serving as a lip to hold back the swamp waters from flowing into the sinkhole that is visible on the other side of it.  Off to the southeast of you the swamp bubbles and froths, little jets of water shooting into the air. } {Murky Swamps} {} {} {} {1.000} {}
+E { 4071} {w} {w} {8} {0} {} {1.000} {}
+E { 4081} {se} {se} {6} {0} {} {1.000} {}
+E { 4066} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4075} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4082} {e} {e} {2} {0} {} {1.000} {}
+E { 4079} {s} {s} {4} {0} {} {1.000} {}
+E { 4078} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4081} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4080} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4082} {n} {n} {1} {0} {} {1.000} {}
+E { 4095} {ne} {ne} {3} {0} {} {1.000} {}
+
+R { 4082} {0} {} {A murky swamp (ne,se,nw,sw,e,w,s)} { } {The mud is particularly slimy here, causing you to sink even deeper into it. Several logs of fallen trees float about, half submerged and waterlogged. The swamp waters to the south bubble and froth, jets of swampy water spraying into the air.  To the north, you see a large muddy lip surrounding a sinkhole, holding back the swamp waters, mist rising up out of it and spreading across the swamp. } {Murky Swamps} {} {} {} {1.000} {}
+E { 4080} {w} {w} {8} {0} {} {1.000} {}
+E { 4078} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4090} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4096} {se} {se} {6} {0} {} {1.000} {}
+E { 4079} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4095} {e} {e} {2} {0} {} {1.000} {}
+E { 4081} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4083} {0} {} {A murky swamp (ne,se,nw,sw,e,n,w)} { } {The waters are roughly three feet deep here, the mist hanging low over the water's surface.  Gnarled trees and stunted plantlife do their best to cling to life in this cursed muck, the waters dark and devoid of life.  The water becomes shallow towards the south, the mud rising up and forming a lip around a large sinkhole.  Off to the north a large rock protrudes up from the swamp, moss and lichen covering its surface. } {Murky Swamps} {} {} {} {1.000} {}
+E { 4078} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4084} {w} {w} {8} {0} {} {1.000} {}
+E { 4089} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4090} {se} {se} {6} {0} {} {1.000} {}
+E { 4087} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4091} {e} {e} {2} {0} {} {1.000} {}
+E { 4085} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4084} {0} {} {A murky swamp (ne,nw,sw,e,s,n,w)} { } {Dead trees and decaying plantlife rot slowly in this cursed muck, the swamp waters dark and devoid of life. The water becomes shallow towards the southeast, the mud rising up and forming a lip around a large sinkhole. Hanging heavily in the air is a dense mist, the moisture it contains saturating you.  To the southwest of you a large healthy bush grows, a strange sight in this dead place.  Off to the northeast a large rock protrudes up from the swamp, moss and lichen covering its surfaces. } {Murky Swamps} {} {} {} {1.000} {}
+E { 4078} {s} {s} {4} {0} {} {1.000} {}
+E { 4085} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4086} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4066} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4083} {e} {e} {2} {0} {} {1.000} {}
+E { 4087} {n} {n} {1} {0} {} {1.000} {}
+E { 4070} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4085} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4084} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4083} {s} {s} {4} {0} {} {1.000} {}
+E { 4091} {se} {se} {6} {0} {} {1.000} {}
+
+R { 4086} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4084} {se} {se} {6} {0} {} {1.000} {}
+E { 4070} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4087} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4084} {s} {s} {4} {0} {} {1.000} {}
+E { 4070} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4083} {se} {se} {6} {0} {} {1.000} {}
+
+R { 4088} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4070} {se} {se} {6} {0} {} {1.000} {}
+
+R { 4089} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4083} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4092} {se} {se} {6} {0} {} {1.000} {}
+E { 4091} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4090} {0} {} {A murky swamp (ne,se,nw,sw,e,n,s)} { } {Dense mist surrounds you, blocking the sunlight and reducing the visibility. To the west the swamp seems to rise up slightly, forming a lip around a large sinkhole which is about twenty feet in diameter.  The sinkhole seems to be the source for the mist which covers this swamp, gases rise up out of the hole and creep across the waters.  There is a large deformed tree off to the east, it seems to be larger than the rest that are commonly seen around here. } {Murky Swamps} {} {} {} {1.000} {}
+E { 4083} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4092} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4093} {se} {se} {6} {0} {} {1.000} {}
+E { 4082} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4094} {e} {e} {2} {0} {} {1.000} {}
+E { 4091} {n} {n} {1} {0} {} {1.000} {}
+E { 4095} {s} {s} {4} {0} {} {1.000} {}
+E { 4108} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4091} {0} {} {A murky swamp (ne,se,nw,e,n,w,s)} { } {The stench of the swamp is almost overpowering, the decaying plant matter, stagnant waters and sickly mud all contributing to the smell.  Dense white mist floats over the swamp, like low flying clouds, breaking only slightly when it filters through the gnarled trees.  To the southeast a large deformed tree grows, while to the northwest a large rock protruding from the swamp's waters can be seen.  Off to the southwest the waters are broken by the lip of a large sinkhole, gases and fumes billowing out of it. } {Murky Swamps} {} {} {} {1.000} {}
+E { 4083} {w} {w} {8} {0} {} {1.000} {}
+E { 4090} {s} {s} {4} {0} {} {1.000} {}
+E { 4094} {se} {se} {6} {0} {} {1.000} {}
+E { 4092} {e} {e} {2} {0} {} {1.000} {}
+E { 4103} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4085} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4089} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4092} {0} {} {A murky swamp (ne,se,nw,sw,e,s,n,w)} { } {Swampy waters slosh and swirl about you, the muddy bottom that you walk upon obscured completely by the thick muck in the water.  Dead and decaying vegetation litter the swamp\; sticks and chunks floating on the water's surface.  Lying over the swamp like a blanket is a dense white mist, reducing the visibility greatly.  To the south you see a large deformed tree that seems to be larger than the others in the area. } {Murky Swamps} {} {} {} {1.000} {}
+E { 4090} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4094} {s} {s} {4} {0} {} {1.000} {}
+E { 4100} {se} {se} {6} {0} {} {1.000} {}
+E { 4102} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4089} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4098} {e} {e} {2} {0} {} {1.000} {}
+E { 4103} {n} {n} {1} {0} {} {1.000} {}
+E { 4091} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4093} {0} {} {A murky swamp (ne,se,nw,sw,e,s,n,w)} { } {Cursed swamp waters stretch as far as the eye can see in all directions, like a giant watery desert.  Broken trees and doomed plantlife is scattered about the area, like the victims of a raging fire and disease.  Sickly mud oozes about under the swamp waters, attempting to swallow all that which comes in contact with it.  Hovering like a rain cloud over the swamp is a white mist, its cloudy depths blocking the light and obscuring your vision.  To the north a large deformed tree grows, its trunk gnarled and branches bare. } {Murky Swamps} {} {} {} {1.000} {}
+E { 4090} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4095} {w} {w} {8} {0} {} {1.000} {}
+E { 4094} {n} {n} {1} {0} {} {1.000} {}
+E { 4100} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4101} {se} {se} {6} {0} {} {1.000} {}
+E { 4096} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4099} {e} {e} {2} {0} {} {1.000} {}
+E { 4097} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4094} {0} {} {A murky swamp (ne,se,nw,sw,e,s,n,w)} { } {You stand three feet deep in foul smelling and filthy swamp waters, the muck under the water threatening to suck and pull you under.  Dominating the swamp here is a large deformed tree, which seems to have grown larger than the others in this swamp.  Its branches are leafless and drooping, as though slumped in defeat.  Decaying vegetation is scattered about the area, the swamp waters dark and devoid of life.  The air is thick with a dense mist, obscuring your vision and assaulting your nose with its stench. } {Murky Swamps} {} {} {} {1.000} {}
+E { 4090} {w} {w} {8} {0} {} {1.000} {}
+E { 4095} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4098} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4099} {se} {se} {6} {0} {} {1.000} {}
+E { 4091} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4100} {e} {e} {2} {0} {} {1.000} {}
+E { 4093} {s} {s} {4} {0} {} {1.000} {}
+E { 4092} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4095} {0} {} {A murky swamp (ne,se,sw,e,w,n,s)} { } {The mud is fairly soft here, a person of average height would have to struggle to keep their head above the water.  Looking around the area you'd swear that you can see the dead trees sinking slowly down into the swamp waters.  Like early morning fog, the mist hovers above the water surface, obscuring your vision and making it even easier to get lost in this place. The swamp waters to the southwest bubble and froth, jets of swampy water spraying into the air.  Off to the northwest, you see a large muddy lip surrounding a sinkhole, holding the swamp waters at bay.  Foul gases and mist spew up out of the sinkhole, which creep and across the swamp like ghostly fingers.  To the northeast of here, a large gnarled tree can be seen rising up out of the swamp, its branches bare and deformed. } {Murky Swamps} {} {} {} {1.000} {}
+E { 4090} {n} {n} {1} {0} {} {1.000} {}
+E { 4082} {w} {w} {8} {0} {} {1.000} {}
+E { 4094} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4097} {se} {se} {6} {0} {} {1.000} {}
+E { 4081} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4093} {e} {e} {2} {0} {} {1.000} {}
+E { 4096} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4096} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4082} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4095} {n} {n} {1} {0} {} {1.000} {}
+E { 4093} {ne} {ne} {3} {0} {} {1.000} {}
+
+R { 4097} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4095} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4093} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4098} {0} {} {A murky swamp (ne,se,nw,sw,e,s,n,w)} { } {The foul smelling and filthy swamp waters are about four feet deep here, which bubble and froth, shooting jets of foul water into the air.  Gnarled trees and stunted plantlife do their best to cling to life in this cursed muck, the waters dark and devoid of life.  The ground you walk upon is relatively spongy, your feet sticking and threatening to sink further.  Dense mist hovers in the air, obscuring your vision and assaulting your nose with its stench.  You get the feeling that this isn't the safest place to be right now. } {Murky Swamps} {} {} {} {1.000} {}
+E { 4094} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4092} {w} {w} {8} {0} {} {1.000} {}
+E { 4104} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4105} {se} {se} {6} {0} {} {1.000} {}
+E { 4103} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4106} {e} {e} {2} {0} {} {1.000} {}
+E { 4100} {s} {s} {4} {0} {} {1.000} {}
+E { 4102} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4099} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4094} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4093} {w} {w} {8} {0} {} {1.000} {}
+E { 4100} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4100} {0} {} {A murky swamp (sw,nw,w)} { } {You stand in foul smelling and filthy swamp waters, about three feet deep. Gnarled trees and stunted plantlife do their best to cling to life in this cursed muck, the waters dark and devoid of life.  The ground underneath the waters that you walk upon is relatively spongy, your feet sticking and threatening to sink further.  The air is thick with a dense mist, obscuring your vision and assaulting your nose with its bad stench.  To the west you see a large deformed tree that seems to be larger than the rest in this swamp. } {Murky Swamps} {} {} {} {1.000} {}
+E { 4094} {w} {w} {8} {0} {} {1.000} {}
+E { 4093} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4092} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4098} {n} {n} {1} {0} {} {1.000} {}
+E { 4106} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4107} {se} {se} {6} {0} {} {1.000} {}
+E { 4105} {e} {e} {2} {0} {} {1.000} {}
+E { 4099} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4101} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4093} {nw} {nw} {9} {0} {} {1.000} {}
+
+R { 4102} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4092} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4098} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4103} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4092} {s} {s} {4} {0} {} {1.000} {}
+E { 4091} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4098} {se} {se} {6} {0} {} {1.000} {}
+
+R { 4104} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4098} {sw} {sw} {12} {0} {} {1.000} {}
+
+R { 4105} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4098} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4100} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4106} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4098} {w} {w} {8} {0} {} {1.000} {}
+E { 4100} {sw} {sw} {12} {0} {} {1.000} {}
+
+R { 4107} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4100} {nw} {nw} {9} {0} {} {1.000} {}
+
+R { 4108} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4090} {e} {e} {2} {0} {} {1.000} {}
+
+R { 4109} {0} {} {} { } {} {} {} {} {} {1.000} {}
+
+R { 4110} {0} {} {A road leading north-south (se,n,s)} { } {} {Chaos} {} {} {} {1.000} {}
+
+R { 4111} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3158} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4112} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 4113} {0} {} {Small cavern (n)} { } {This rocky chamber surrounds a thin blue stream, which continues through a winding tunnel to the north. Small beams of light from behind the  stalagmites glitter off of the mica that covers the stone of the cavern. } {Otyugh Cave} {otyugh} {} {} {1.000} {}
+E { 4114} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4114} {0} {} {tunnel (ne,s)} { } {A non-descript tunnel winding its way through the otherwise solid rock.  The stream has gotten a little higher, and your feet splash through a few  inches of water as you walk. } {Otyugh Cave} {} {} {} {1.000} {}
+E { 4113} {s} {s} {4} {0} {} {1.000} {}
+E { 4115} {ne} {ne} {3} {0} {} {1.000} {}
+
+R { 4115} {0} {} {tunnel (nw,sw)} { } {A nondescript tunnel winding its way through the otherwise solid rock.  The stream is starting to speed up a little here, and you are forced to take precautions not to lose your footing.  There is a little engraving on the eastern wall, but it's in an unfamiliar language. } {Otyugh Cave} {} {} {} {1.000} {}
+E { 4114} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4116} {nw} {nw} {9} {0} {} {1.000} {}
+
+R { 4116} {0} {} {tunnel (se,n)} { } {A nondescript tunnel winding its way through the otherwise solid rock.  The stream is a good four or five inches deep now.  You think you feel slimy things running against your legs. There is a scribble on the eastern wall which looks readable. } {Otyugh Cave} {} {} {} {1.000} {}
+E { 4115} {se} {se} {6} {0} {} {1.000} {}
+E { 4117} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4117} {0} {} {Dam it! (s,ne)} {J} {You watch your step in the now half-foot-deep waters as you come to a  slightly cleared out portion of the tunnel, a bit larger than the previous  few areas were. This is mainly due to the fact that there is no wall on the  west edge, just a dam which stands about four feet high and which reeks of  something you think you recognize. Maybe you should take a closer look at it? } {Otyugh Cave} {} {} {} {1.000} {}
+E { 4116} {s} {s} {4} {0} {} {1.000} {}
+E { 4118} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4119} {jump dam} {jump dam} {0} {0} {} {1.000} {}
+
+R { 4118} {0} {} {Small waterfall (sw)} {H} {The muddy ground drops away here like a swimming pool, and all of a sudden you are up to your boobies in the dark water of this cavern. You feel all sorts of gross things sliding around under the water, and  you thank your gods that all of your equipment is somehow waterproof. The pool feeds into the stream which you have been travelling through, to the southwest. The pool is in turn fed by a man-sized hole on the opposite side of the cavern, roughly fifteen feet off the ground. Water pours out from the hole and splashes noisily into the murky pool that surrounds you. There is a trickle of light escaping from the hole as well. } {Otyugh Cave} {} {} {} {1.000} {}
+E { 4117} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4120} {enter hole} {enter hole} {0} {0} {} {1.000} {}
+
+R { 4119} {0} {} {Otyugh lair (e,nw,sw)} { } {You find yourself in a dark, abhorrently fetid abode, if this place can actually be refered to as such. Feces and scum cover the ground, walls, and everything else in sight, and the smell of putrid waste and decay threatens to disrupt your digestive process in a BIG way. Bones lay scattered about, and there is a pool of blood at the far end of this 'home sweet home'. A  tiny trickle of water passes through the dam on the eastern side of the room, but it's well contained by the packed dung. } {Otyugh Cave} {} {} {} {1.000} {}
+E { 4124} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4125} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4117} {e} {e} {2} {0} {} {1.000} {}
+
+R { 4120} {0} {} {tunnel (n)} { } {You are crawling though a long tunnel in which a smooth current flows over your body, and you have to strain your neck to keep your head above the waterline. The water is extremely cold, and as it splashes into your mouth you notice that it is salt water. You see light coming from an opening up ahead to the north. You have no choice but to head towards it, since you don't think you could wiggle your way backwards through the tunnel. } {Otyugh Cave} {} {} {} {1.000} {}
+E { 4121} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4121} {0} {} {Pod chamber (s,n)} { } {The first thing you notice about this room is that it is lit. You cannot tell where the light comes from\; there are no torches, fires, lamps, or any other conventional light source- not even a nuclear reactor. The light fills the room with a wonderful white aura, a blessed change from the areas you just passed through. As you look around, you see that the walls are lined  with eight metal pods, each with a small, closed entrance door. There is a long cord hanging from the ceiling in the center of the room. The stream here is getting rather strong, and you have to pay attention to staying on  your feet. } {Otyugh Cave} {} {} {} {1.000} {}
+E { 4120} {s} {s} {4} {0} {} {1.000} {}
+E { 4122} {n} {n} {1} {0} {} {1.000} {}
+E { 3158} {pull cord} {pull cord} {0} {0} {} {1.000} {}
+E { 4134} {pod 3} {pod 3} {0} {0} {} {1.000} {}
+E { 4212} {pod 5} {pod 5} {0} {0} {} {1.000} {}
+
+R { 4122} {0} {} {Oceans Edge (s)} { } {You force yourself into the room, pushing against the heavy current, and are immediately dumbfounded by what you see here. You are in a wide corridor which ends about thirty feet up ahead at a dead end. The incredible part is that the dead end is not rock- it's a sheet of water! You must be underneath an ocean! You are shocked when you realize that part of this vertical waterwall has broken, and the water pouring  through the seams of this wall has become the stream which you've been following for some time now. } {Otyugh Cave} {} {} {} {1.000} {}
+E { 4121} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4123} {0} {} {Otyugh lair (ne,nw,n)} { } {You find yourself in the nightmarish quarters of what must be absolutely vile creatures. There are small piles of dung scattered about, and some  random small animal bones have been thrown about, leaving not an inch of  the place uncovered by filth. You think you smell vomit, but you can't really distinguish any scents anymore, it all smells like your grandma's beanfarts. You are forced to ask yourself, 'What the HELL could live in  this place?!?' } {Otyugh Cave} {} {} {} {1.000} {}
+E { 4125} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4133} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4127} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4124} {0} {} {Otyugh lair (se,nw,s,w)} { } {You find yourself in the nightmarish quarters of what must be absolutely vile creatures. There are small piles of dung scattered about, and some  random small animal bones have been thrown about, leaving not an inch of  the place uncovered by filth. You think you smell vomit, but you can't really distinguish any scents anymore, it all smells like decayed nose- hairs. You are forced to ask yourself, 'What the HELL could live in  this place?!?' } {Otyugh Cave} {} {} {} {1.000} {}
+E { 4119} {se} {se} {6} {0} {} {1.000} {}
+E { 4126} {s} {s} {4} {0} {} {1.000} {}
+E { 4129} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4130} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4125} {0} {} {Otyugh lair (sw,ne,n,w)} { } {You find yourself in the nightmarish quarters of what must be absolutely vile creatures. There are small piles of dung scattered about, and some  random small animal bones have been thrown about, leaving not an inch of  the place uncovered by filth. You think you smell vomit, but you can't really distinguish any scents anymore, it all smells like your grandma's beanfarts. You are forced to ask yourself, 'What the HELL could live in  this place?!?' } {Otyugh Cave} {} {} {} {1.000} {}
+E { 4119} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4123} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4126} {n} {n} {1} {0} {} {1.000} {}
+E { 4127} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4126} {0} {} {Otyugh lair (w,n,s)} { } {You didn't think these rooms could get any worse, but this one takes the cake. It seems the otyugh leader is a cannibal, as you see hunks of otyugh meat strewn about, covered in a greyish mixture of blood and  dung. There seems to be a recently killed humanoid body in the corner, and a pool of warm urine sits stagnantly by the southern wall. Of course, this room is not without heaps of dung and scattered, half-eaten bones. } {Otyugh Cave} {} {} {} {1.000} {}
+E { 4125} {s} {s} {4} {0} {} {1.000} {}
+E { 4128} {w} {w} {8} {0} {} {1.000} {}
+E { 4124} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4127} {0} {} {Otyugh lair (e,s,w)} { } {You find yourself in the nightmarish quarters of what must be absolutely vile creatures. There are small piles of dung scattered about, and some  random small animal bones have been thrown about, leaving not an inch of  the place uncovered by filth. You think you smell vomit, but you can't really distinguish any scents anymore, it all smells like your grandma's beanfarts. You are forced to ask yourself, 'What the HELL could live in  this place?!?' } {Otyugh Cave} {} {} {} {1.000} {}
+E { 4125} {e} {e} {2} {0} {} {1.000} {}
+E { 4133} {w} {w} {8} {0} {} {1.000} {}
+E { 4123} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4128} {0} {} {Otyugh Dungheap (e)} { } {This room is just one enormous pile of excrement. The otyughs come here to get their delicious meals, when they can't find any fresh droppings in the caves and tunnels leading to their lair. Everywhere you walk your feet sink into the feces, and you think 'Gee, if mom could see me now...'. } {Otyugh Cave} {} {} {} {1.000} {}
+E { 4126} {e} {e} {2} {0} {} {1.000} {}
+
+R { 4129} {0} {} {Otyugh lair (se,sw,s)} { } {You find yourself in the nightmarish quarters of what must be absolutely vile creatures. There are small piles of dung scattered about, and some  random small animal bones have been thrown about, leaving not an inch of  the place uncovered by filth. You think you smell vomit, but you can't really distinguish any scents anymore, it all smells like your grandma's beanfarts. You are forced to ask yourself, 'What the HELL could live in  this place?!?' } {Otyugh Cave} {} {} {} {1.000} {}
+E { 4124} {se} {se} {6} {0} {} {1.000} {}
+E { 4131} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4130} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4130} {0} {} {Otyugh lair (e,n,w)} { } {You find yourself in the nightmarish quarters of what must be absolutely vile creatures. There are small piles of dung scattered about, and some  random small animal bones have been thrown about, leaving not an inch of  the place uncovered by filth. You think you smell vomit, but you can't really distinguish any scents anymore, it all smells like your grandma's beanfarts. You are forced to ask yourself, 'What the HELL could live in  this place?!?' } {Otyugh Cave} {} {} {} {1.000} {}
+E { 4124} {e} {e} {2} {0} {} {1.000} {}
+E { 4129} {n} {n} {1} {0} {} {1.000} {}
+E { 4131} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4131} {0} {} {Otyugh lair (e,ne,s)} { } {You find yourself in the nightmarish quarters of what must be absolutely vile creatures. There are small piles of dung scattered about, and some  random small animal bones have been thrown about, leaving not an inch of  the place uncovered by filth. You think you smell vomit, but you can't really distinguish any scents anymore, it all smells like your grandma's beanfarts. You are forced to ask yourself, 'What the HELL could live in  this place?!?' } {Otyugh Cave} {} {} {} {1.000} {}
+E { 4129} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4130} {e} {e} {2} {0} {} {1.000} {}
+E { 4132} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4132} {0} {} {Otyugh lair (s,n)} { } {You didn't think these rooms could get any worse, but this one takes the cake. It seems the otyugh leader is a cannibal, as you see hunks of otyugh meat strewn about, covered in a greyish mixture of blood and  dung. There seems to be a recently killed humanoid body in the corner, and a pool of warm urine sits stagnantly by the southern wall. Of course, this room is not without heaps of dung and scattered, half-eaten bones. } {Otyugh Cave} {} {} {} {1.000} {}
+E { 4131} {n} {n} {1} {0} {} {1.000} {}
+E { 4133} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4133} {0} {} {Otyugh lair (se,e,n)} { } {You find yourself in the nightmarish quarters of what must be absolutely vile creatures. There are small piles of dung scattered about, and some  random small animal bones have been thrown about, leaving not an inch of  the place uncovered by filth. You think you smell vomit, but you can't really distinguish any scents anymore, it all smells like your grandma's beanfarts. You are forced to ask yourself, 'What the HELL could live in  this place?!?' } {Otyugh Cave} {} {} {} {1.000} {}
+E { 4132} {n} {n} {1} {0} {} {1.000} {}
+E { 4123} {se} {se} {6} {0} {} {1.000} {}
+E { 4127} {e} {e} {2} {0} {} {1.000} {}
+
+R { 4134} {0} {} {R'lyeh (s,e)} { } {You are just inside the great city of R'lyeh.  You see signs of a lot of activity here recently.  Apparently, the ancient creatures that inhabit this place are once again active.  Better watch your step. What's even stranger, is that you notice some obvious signs that other humans have been here.  Most likely, environmentalists.  You're not sure which is worse, them or the slimy inhabitants of this island. } {R'lyeh} {r'lyeh} {} {} {1.000} {}
+E { 4135} {s} {s} {4} {0} {} {1.000} {}
+E { 4136} {e} {e} {2} {0} {} {1.000} {}
+
+R { 4135} {0} {} {R'lyeh (e,s,n)} { } {There is a lot of slime here.  Better watch your step or you might slip and fall.  You smell a lot of dead fish around here, but all you see is bones.  Something around here has been eating them.  Hope you don't find out what. } {R'lyeh} {} {} {} {1.000} {}
+E { 4134} {n} {n} {1} {0} {} {1.000} {}
+E { 4138} {e} {e} {2} {0} {} {1.000} {}
+E { 4142} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4136} {0} {} {R'lyeh (se,w,s)} { } {There is no telling what might lurk beneath the muck.  It will be hard to leave, but it shouldn't be impossible.  You notice that other sea creatures are also swimming in the muck.  Well, at least it's not toxic. } {R'lyeh} {} {} {} {1.000} {}
+E { 4134} {w} {w} {8} {0} {} {1.000} {}
+E { 4137} {se} {se} {6} {0} {} {1.000} {}
+E { 4138} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4137} {0} {} {R'lyeh (se,nw,s,w)} { } {You are on the coast of the island.  Even with the fresh sea air coming in, you still smell that awful fishy smell that covers the island.  Maybe it's just all this muck that covers almost everything here. } {R'lyeh} {} {} {} {1.000} {}
+E { 4136} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4139} {se} {se} {6} {0} {} {1.000} {}
+E { 4140} {s} {s} {4} {0} {} {1.000} {}
+E { 4138} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4138} {0} {} {R'lyeh (e,s,w,n)} { } {You are wandering the ruins of R'lyeh.  All around you, you smell a strong, fishy odor.  The buildings are mostly covered with slime, but you notice that some effort has been made to clear some of the slime off. The isle is not as dead as it would seem. } {R'lyeh} {} {} {} {1.000} {}
+E { 4136} {n} {n} {1} {0} {} {1.000} {}
+E { 4137} {e} {e} {2} {0} {} {1.000} {}
+E { 4141} {s} {s} {4} {0} {} {1.000} {}
+E { 4135} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4139} {0} {} {R'lyeh (e,nw,s,w)} { } {You are on the shore of the black isle of R'lyeh.  Directly to your south is a tall, black tower.  You think you see things flying around the top of it. } {R'lyeh} {} {} {} {1.000} {}
+E { 4137} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4140} {w} {w} {8} {0} {} {1.000} {}
+E { 4145} {e} {e} {2} {0} {} {1.000} {}
+E { 4146} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4140} {0} {} {R'lyeh (e,s,w,n)} { } {The fishy smell is back again. It is rather annoying.  The streets here are covered in slime. It does allow you to notice that there are some recently placed footsteps here. To the southeast, you see a very tall tower of obsidian. Considering that everything around it is in poor repair, it is quite odd that this tower is in good shape. } {R'lyeh} {} {} {} {1.000} {}
+E { 4137} {n} {n} {1} {0} {} {1.000} {}
+E { 4141} {w} {w} {8} {0} {} {1.000} {}
+E { 4139} {e} {e} {2} {0} {} {1.000} {}
+E { 4144} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4141} {0} {} {R'lyeh (e,s,w,n)} { } {Wandering the ancient streets of R'lyeh.  Most of the buildings here are in poor, dilapidated condition, but you notice what looks like a tower and a temple standing towards the southeastern part of the island. } {R'lyeh} {} {} {} {1.000} {}
+E { 4138} {n} {n} {1} {0} {} {1.000} {}
+E { 4142} {w} {w} {8} {0} {} {1.000} {}
+E { 4140} {e} {e} {2} {0} {} {1.000} {}
+E { 4143} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4142} {0} {} {R'lyeh (se,e,n)} { } {You are on the coast of the island.  It is quite quiet and peaceful here.  In fact, you don't hear much of anything here.  Just the constant lapping of the waves on the shore. } {R'lyeh} {} {} {} {1.000} {}
+E { 4135} {n} {n} {1} {0} {} {1.000} {}
+E { 4143} {se} {se} {6} {0} {} {1.000} {}
+E { 4141} {e} {e} {2} {0} {} {1.000} {}
+
+R { 4143} {0} {} {R'lyeh (se,nw,e,n)} { } {This is the shore of the island.  You smell a fishy smell coming with the breeze from the east.  You wonder why that smell seems to cling to this island. } {R'lyeh} {} {} {} {1.000} {}
+E { 4142} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4141} {n} {n} {1} {0} {} {1.000} {}
+E { 4144} {e} {e} {2} {0} {} {1.000} {}
+E { 4161} {se} {se} {6} {0} {} {1.000} {}
+
+R { 4144} {0} {} {R'lyeh (e,s,w,n)} { } {Walking the streets of R'lyeh amid all the slime is strange.  Who knows how long this island was underwater, what it was like in the past before it sank, and what might lurk within it still.  You see a tall, black tower directly to the east.  It looks like swarms of flying creatures lurk at its lofty heights. } {R'lyeh} {} {} {} {1.000} {}
+E { 4140} {n} {n} {1} {0} {} {1.000} {}
+E { 4146} {e} {e} {2} {0} {} {1.000} {}
+E { 4161} {s} {s} {4} {0} {} {1.000} {}
+E { 4143} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4145} {0} {} {R'lyeh (e,s,w)} { } {You are wandering along the shore of the island.  That fishy smell is really strong here.  It almost makes your eyes water.  The breeze off the ocean is doing very little to blow it away. } {R'lyeh} {} {} {} {1.000} {}
+E { 4139} {w} {w} {8} {0} {} {1.000} {}
+E { 4147} {e} {e} {2} {0} {} {1.000} {}
+E { 4148} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4146} {0} {} {R'lyeh (enter,e,n,w,s)} { } {You are at the base of a tall, obsidian tower.  It is possible to enter it, but you might want to consider that option carefully.  Very little stands here.  It's as if something is clearing the area around the tower. } {R'lyeh} {} {} {} {1.000} {}
+E { 4139} {n} {n} {1} {0} {} {1.000} {}
+E { 4148} {e} {e} {2} {0} {} {1.000} {}
+E { 4155} {enter} {enter} {0} {0} {} {1.000} {}
+E { 4144} {w} {w} {8} {0} {} {1.000} {}
+E { 4156} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4147} {0} {} {R'lyeh (se,w,s)} { } {You are walking along the shore.  It is pretty quiet here.  A nice place to relax, but remember where you are.  There are things out here that would eat you as an hors-d'oeuvre. } {R'lyeh} {} {} {} {1.000} {}
+E { 4145} {w} {w} {8} {0} {} {1.000} {}
+E { 4149} {se} {se} {6} {0} {} {1.000} {}
+E { 4150} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4148} {0} {} {R'lyeh (e,s,w,n)} { } {You are in the shadow of the western tower. You are somewhat uncomfortable here. The shadows are deeper and darker than you would expect. You think you hear movement, but that might just be the things flying above you around the tower. } {R'lyeh} {} {} {} {1.000} {}
+E { 4145} {n} {n} {1} {0} {} {1.000} {}
+E { 4150} {e} {e} {2} {0} {} {1.000} {}
+E { 4154} {s} {s} {4} {0} {} {1.000} {}
+E { 4146} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4149} {0} {} {R'lyeh (se,nw,s,w)} { } {You are on the shore of the isle.  The remains of the city come right up to the shore here and even go into the water for a ways.  Strangely enough, this seems to be one of the more used sections of the city. } {R'lyeh} {} {} {} {1.000} {}
+E { 4147} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4151} {se} {se} {6} {0} {} {1.000} {}
+E { 4152} {s} {s} {4} {0} {} {1.000} {}
+E { 4150} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4150} {0} {} {R'lyeh (e,s,w,n)} { } {There appears to be a temple to the south of you.  The fishy smell is particularly strong over there.  It is one of the few buildings that is not completely covered in slime. } {R'lyeh} {} {} {} {1.000} {}
+E { 4147} {n} {n} {1} {0} {} {1.000} {}
+E { 4149} {e} {e} {2} {0} {} {1.000} {}
+E { 4153} {s} {s} {4} {0} {} {1.000} {}
+E { 4148} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4151} {0} {} {R'lyeh (se,nw,s,w)} { } {You are walking along the shore of R'lyeh.  You notice some odd, large tracks emerging from the ocean and leaving into the city.  Judging from the size of the tracks, you'd say that the thing that made them is at least 20 feet tall!  If you're lucky, it is still deep in the city. } {R'lyeh} {} {} {} {1.000} {}
+E { 4149} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4184} {se} {se} {6} {0} {} {1.000} {}
+E { 4186} {s} {s} {4} {0} {} {1.000} {}
+E { 4152} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4152} {0} {} {R'lyeh (n,s,w,e)} { } {Most of the buildings here are either ruined or covered with muck except for the temple to the west.  There has been a lot of activity here recently and at least one big creature has been through here in the last couple of hours, judging by the footprints you see. } {R'lyeh} {} {} {} {1.000} {}
+E { 4149} {n} {n} {1} {0} {} {1.000} {}
+E { 4153} {w} {w} {8} {0} {} {1.000} {}
+E { 4151} {e} {e} {2} {0} {} {1.000} {}
+E { 4188} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4153} {0} {} {Temple in R'lyeh (enter,e,n,w,s)} { } {You stand before a large temple. The entranceway is usually well guarded by a troop of deep ones, so you assume something still resides inside, something of importance. There are a number of engravings thickly chiselled into the walls. } {R'lyeh} {} {} {} {1.000} {}
+E { 4150} {n} {n} {1} {0} {} {1.000} {}
+E { 4154} {w} {w} {8} {0} {} {1.000} {}
+E { 4165} {enter} {enter} {0} {0} {} {1.000} {}
+E { 4152} {e} {e} {2} {0} {} {1.000} {}
+E { 4166} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4154} {0} {} {R'lyeh (e,s,w,n)} { } {You are between two temples, one to the east, and one to the south. It's odd to have two temples in such close proximity unless the two dieties are somehow related, or if there is some kind of ancient religious freedom among the R'lyehites. } {R'lyeh} {} {} {} {1.000} {}
+E { 4148} {n} {n} {1} {0} {} {1.000} {}
+E { 4156} {w} {w} {8} {0} {} {1.000} {}
+E { 4153} {e} {e} {2} {0} {} {1.000} {}
+E { 4164} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4155} {0} {} {Ground level of the tower (u,out)} { } {You are in the ground level of the tower.  From above you, you hear a lot of fluttering.  It sounds much like the sounds a bat would make while in flight.  It isn't too late to turn back.  You could venture further up into the tower. } {R'lyeh} {} {} {} {1.000} {}
+E { 4157} {u} {u} {16} {0} {} {1.000} {}
+E { 4146} {out} {out} {0} {0} {} {1.000} {}
+
+R { 4156} {0} {} {R'lyeh (e,s,w,n)} { } {The stench here is downright awful.  The things wandering this island must not have noses or they wouldn't be able to stand it either.  A gas mask would be nice right about now. There is an obsidian tower to the north. } {R'lyeh} {} {} {} {1.000} {}
+E { 4146} {n} {n} {1} {0} {} {1.000} {}
+E { 4161} {w} {w} {8} {0} {} {1.000} {}
+E { 4154} {e} {e} {2} {0} {} {1.000} {}
+E { 4163} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4157} {0} {} {Second level of the tower (u,d)} { } {This is the second level of the tower of the nightgaunts. It's getting darker as you go up. You've also noticed more roosts for the nightgaunts as you go up.  Who knows how many there are at the top. } {R'lyeh} {} {} {} {1.000} {}
+E { 4155} {d} {d} {32} {0} {} {1.000} {}
+E { 4159} {u} {u} {16} {0} {} {1.000} {}
+
+R { 4158} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 4159} {0} {} {Third level of the tower (u,d)} { } {You have made it to the third level.  It is getting nasty up here. It looks like the top level is approaching.  Venture on if you dare. } {R'lyeh} {} {} {} {1.000} {}
+E { 4157} {d} {d} {32} {0} {} {1.000} {}
+E { 4160} {u} {u} {16} {0} {} {1.000} {}
+
+R { 4160} {0} {} {Top level of the tower (d)} { } {Well, you've reached the top level of the tower, but whether you should be glad of this is another story. It seems this is the home of a rather large nightgaunt, and if he is here, you could be in a world of hurt. } {R'lyeh} {} {} {} {1.000} {}
+E { 4159} {d} {d} {32} {0} {} {1.000} {}
+
+R { 4161} {0} {} {R'lyeh (nw,e,s,n)} { } {Walking along the shores of R'lyeh.  It gives you a strange feeling to be on an island that has been on the bottom of the sea for thousands of years.  You wonder what it's like to live under the ocean. } {R'lyeh} {} {} {} {1.000} {}
+E { 4144} {n} {n} {1} {0} {} {1.000} {}
+E { 4143} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4156} {e} {e} {2} {0} {} {1.000} {}
+E { 4162} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4162} {0} {} {R'lyeh (se,n,e)} { } {You are walking along the shore.  This area seems to have been undisturbed for quite some time.  Only the waves breaking against the shore breaks the silence. } {R'lyeh} {} {} {} {1.000} {}
+E { 4161} {n} {n} {1} {0} {} {1.000} {}
+E { 4189} {se} {se} {6} {0} {} {1.000} {}
+E { 4163} {e} {e} {2} {0} {} {1.000} {}
+
+R { 4163} {0} {} {R'lyeh (n,s,w,e)} { } {There is a temple to the east.  Unusual that it is one of the few structures here that is still intact and not covered with muck.  There must be some activity over there. } {R'lyeh} {} {} {} {1.000} {}
+E { 4156} {n} {n} {1} {0} {} {1.000} {}
+E { 4162} {w} {w} {8} {0} {} {1.000} {}
+E { 4189} {s} {s} {4} {0} {} {1.000} {}
+E { 4164} {e} {e} {2} {0} {} {1.000} {}
+
+R { 4164} {0} {} {Temple in R'lyeh (n,s,w,e,enter)} { } {You are in front of a large temple. It is covered with engravings of deep ones as well as another creature which you can't make out very well. The writing on the walls is in a very old and probably very dead language. The temple itself is a large white building devoid of slime, thankfully. For some reason, you are scared of what lurks inside. } {R'lyeh} {} {} {} {1.000} {}
+E { 4154} {n} {n} {1} {0} {} {1.000} {}
+E { 4163} {w} {w} {8} {0} {} {1.000} {}
+E { 4190} {s} {s} {4} {0} {} {1.000} {}
+E { 4166} {e} {e} {2} {0} {} {1.000} {}
+E { 4191} {enter} {enter} {0} {0} {} {1.000} {}
+
+R { 4165} {0} {} {Temple of Mother Hydra (in,out)} { } {Inside the temple is rather fantastic.  Obsidian accented with the green metal that the deep ones seem to use so much create grand pictures along the walls, floor, and ceiling.  All the pictures are of monsters that are quite hideous.  The occupants of the temple keep mumbling a phrase over and over again that sounds vaguely like 'Mother Hydra'.  That can't be good. Just hope that you didn't disturb anyone within this area. } {R'lyeh} {} {} {} {1.000} {}
+E { 4167} {in} {in} {0} {0} {} {1.000} {}
+E { 4153} {out} {out} {0} {0} {} {1.000} {}
+
+R { 4166} {0} {} {R'lyeh (n,s,w,e)} { } {Strange things are going on in this area.  Two temples, one to the west and one to the north, do not make you feel comfortable.  You also thought you saw something very large moving around to the east.  This is not a good position to be in. } {R'lyeh} {} {} {} {1.000} {}
+E { 4153} {n} {n} {1} {0} {} {1.000} {}
+E { 4164} {w} {w} {8} {0} {} {1.000} {}
+E { 4195} {s} {s} {4} {0} {} {1.000} {}
+E { 4188} {e} {e} {2} {0} {} {1.000} {}
+
+R { 4167} {0} {} {Inner sanctum of Mother Hydra (out)} { } {This is the inner sanctum of Mother Hydra.  Better hope she's not in or else you're in deep crap.  This area is rather simple in comparison to the elaborate outer chamber.  You do notice a hole in the floor filled with non-stagnant salt water.  There must be a connection to the ocean somewhere down there. } {R'lyeh} {} {} {} {1.000} {}
+E { 4165} {out} {out} {0} {0} {} {1.000} {}
+E { 4170} {dive hole} {dive hole} {0} {0} {} {1.000} {}
+
+R { 4168} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 4169} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 4170} {0} {} {Underwater tunnels (u,sw,n)} { } {Swimming underwater.  It's not easy to breathe without air.  If you had gills, it wouldn't be a problem. } {R'lyeh} {} {} {} {1.000} {}
+E { 4172} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4173} {n} {n} {1} {0} {} {1.000} {}
+E { 4167} {u} {u} {16} {0} {} {1.000} {}
+
+R { 4171} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4170} {d} {d} {32} {0} {} {1.000} {}
+
+R { 4172} {0} {} {Underwater tunnels (sw,ne)} { } {You are swimming in the tunnels.  The tunnels are smooth.  There is no undertow in either direction here. } {R'lyeh} {} {} {} {1.000} {}
+E { 4170} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4180} {sw} {sw} {12} {0} {} {1.000} {}
+
+R { 4173} {0} {} {Underwater tunnels (s,n)} { } {The undertow here is somewhat strong.  It is pulling you towards the south.  The opening to the sea must be near. } {R'lyeh} {} {} {} {1.000} {}
+E { 4170} {s} {s} {4} {0} {} {1.000} {}
+E { 4185} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4174} {0} {} {Underwater tunnels (sw,s,n)} { } {The undertow is very strong here.  The tunnel goes to the north and into the open ocean. } {R'lyeh} {} {} {} {1.000} {}
+E { 4185} {s} {s} {4} {0} {} {1.000} {}
+E { 4175} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4177} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4175} {0} {} {Underwater tunnels (sw,ne)} { } {This is a side passage in the tunnels.  There's no undertow here, but there is something to the southwest disturbing the water. } {R'lyeh} {} {} {} {1.000} {}
+E { 4174} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4187} {sw} {sw} {12} {0} {} {1.000} {}
+
+R { 4176} {0} {} {R'lyeh (se,s,w)} { } {You are walking along the shore.  It is pretty quiet here.  A nice place to relax, but remember where you are.  There are things out here that would eat you as an hors-d'oeuvre. } {R'lyeh} {} {} {} {1.000} {}
+E { 4174} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4177} {5130} {} {} { } {} {} {} {} {} {1.000} {}
+E { 4147} {n} {n} {1} {0} {} {1.000} {}
+E { 4174} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4178} {0} {} {Underwater lair of a lloigor (s,ne)} { } {You are in what looks like the lair of some large, underwater beast. The claw marks on the wall are wider than both of your hands. These could have been made by a lloigor which means bad news for you. } {R'lyeh} {} {} {} {1.000} {}
+E { 4187} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4182} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4179} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4173} {ne} {ne} {3} {0} {} {1.000} {}
+
+R { 4180} {0} {} {Underwater tunnels (u,ne,nw,s)} { } {You are underwater.  It's pretty hard to breath down here since there is no air.  What you could use are gills. } {R'lyeh} {} {} {} {1.000} {}
+E { 4172} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4181} {u} {u} {16} {0} {} {1.000} {}
+E { 4182} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4183} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4181} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4180} {d} {d} {32} {0} {} {1.000} {}
+
+R { 4182} {0} {} {Underwater tunnels (se,n)} { } {You are in a side passage of the underwater tunnels.  There is a slight undertow coming from the north.  Something else also seems to be moving the water quite a bit towards the north. } {R'lyeh} {} {} {} {1.000} {}
+E { 4180} {se} {se} {6} {0} {} {1.000} {}
+E { 4178} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4183} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4180} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4184} {0} {} {R'lyeh (se,nw,s,w)} {D} {You are along the shore of the island.  The shore has been torn up here by the passage of several gigantic creatures.  There is a steep dropoff   into the water here.  It seems you have found one of those creatures with the giant footsteps you were hoping to avoid. } {R'lyeh} {} {} {} {1.000} {}
+E { 4151} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4186} {w} {w} {8} {0} {} {1.000} {}
+E { 4199} {se} {se} {6} {0} {} {1.000} {}
+E { 4200} {s} {s} {4} {0} {} {1.000} {}
+E { 4121} {dropoff} {dropoff} {0} {0} {} {1.000} {}
+
+R { 4185} {4104} {} {} { } {} {} {} {} {} {1.000} {}
+E { 4174} {n} {n} {1} {0} {} {1.000} {}
+E { 4173} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4186} {0} {} {Somewhere in R'lyeh (e,s,w,n)} { } {The streets are wide here and the entrances into the buildings are also rather high.  This area was built for large creatures.  There has been a lot of traffic through here recently. It seems the farther east you go, the nastier the creatures get. } {R'lyeh} {} {} {} {1.000} {}
+E { 4151} {n} {n} {1} {0} {} {1.000} {}
+E { 4188} {w} {w} {8} {0} {} {1.000} {}
+E { 4184} {e} {e} {2} {0} {} {1.000} {}
+E { 4197} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4187} {4104} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4178} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4175} {ne} {ne} {3} {0} {} {1.000} {}
+
+R { 4188} {0} {} {R'lyeh (n,s,w,e)} { } {Looking at the tracks in the slime covering the ground, you know that something monstrously huge lurks around here.  With any luck,  you won't see it. The streets here seem to have been built wide enough to accommodate such large creatures. } {R'lyeh} {} {} {} {1.000} {}
+E { 4152} {n} {n} {1} {0} {} {1.000} {}
+E { 4166} {w} {w} {8} {0} {} {1.000} {}
+E { 4196} {s} {s} {4} {0} {} {1.000} {}
+E { 4186} {e} {e} {2} {0} {} {1.000} {}
+
+R { 4189} {0} {} {R'lyeh (nw,n,e)} { } {Walking along the shore.  The fishy smell is very strong to the northeast This area is fairly clear of slime.  The waves are fairly high here and go pretty far up the shore. } {R'lyeh} {} {} {} {1.000} {}
+E { 4162} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4163} {n} {n} {1} {0} {} {1.000} {}
+E { 4190} {e} {e} {2} {0} {} {1.000} {}
+
+R { 4190} {0} {} {R'lyeh (n,w,e)} {?} {You are walking on the beach.  You see a sand castle here.  Now why would there be a sand castle here?  This place just keeps getting more and more unusual. } {R'lyeh} {} {} {} {1.000} {}
+E { 4164} {n} {n} {1} {0} {} {1.000} {}
+E { 4195} {e} {e} {2} {0} {} {1.000} {}
+E { 4189} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4191} {0} {} {Temple of Father Dagon (in,out)} { } {You are inside the temple.  The occupants in here seems to be chanting 'Father Dagon' over and over again. That doesn't sound good. The carvings are even more ornate inside. Murals of Father Dagon fighting all sorts of great beasts and coming out victorious in all of them plaster the walls. } {R'lyeh} {} {} {} {1.000} {}
+E { 4192} {in} {in} {0} {0} {} {1.000} {}
+E { 4164} {out} {out} {0} {0} {} {1.000} {}
+
+R { 4192} {0} {} {Inner sanctum of Father Dagon (out)} { } {You have just walked into the inner sanctum of Father Dagon.  You might want to consider leaving before he gets pissed off.  There isn't much in here except a hole in the floor filled with fresh salt water.  There must be access to the open sea somewhere down there. } {R'lyeh} {} {} {} {1.000} {}
+E { 4191} {out} {out} {0} {0} {} {1.000} {}
+
+R { 4193} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 4194} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 4195} {0} {} {R'lyeh (se,n,w,e)} { } {This looks like the top of an amphitheater. The only problem is that it extends underwater. This looks like it was designed that way. What sort of theater works could be performed underwater? } {R'lyeh} {} {} {} {1.000} {}
+E { 4166} {n} {n} {1} {0} {} {1.000} {}
+E { 4196} {e} {e} {2} {0} {} {1.000} {}
+E { 4206} {se} {se} {6} {0} {} {1.000} {}
+E { 4190} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4196} {0} {} {R'lyeh (n,s,w,e)} { } {The buildings are enormous here.  Whatever lived in them could probably have gulped you down without a second thought, but these buildings are abandoned.  Right? } {R'lyeh} {} {} {} {1.000} {}
+E { 4188} {n} {n} {1} {0} {} {1.000} {}
+E { 4197} {e} {e} {2} {0} {} {1.000} {}
+E { 4206} {s} {s} {4} {0} {} {1.000} {}
+E { 4195} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4197} {0} {} {R'lyeh (e,s,w,n)} { } {You feel as if you are surrounded by creatures.  You also feel as if you are getting close to something big.  Maybe even important.  Do you dare press on, or go back now? } {R'lyeh} {} {} {} {1.000} {}
+E { 4186} {n} {n} {1} {0} {} {1.000} {}
+E { 4200} {e} {e} {2} {0} {} {1.000} {}
+E { 4205} {s} {s} {4} {0} {} {1.000} {}
+E { 4196} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4198} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 4199} {0} {} {R'lyeh (nw,s,w)} { } {You are on a walkway along the shore.  The walkway leads to a gigantic temple to the south.  The temple has to be at least ten stories high, but appears to have only one floor.  The sea along the walkway churns violently as if some great force is upsetting the sea itself. } {R'lyeh} {} {} {} {1.000} {}
+E { 4184} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4203} {s} {s} {4} {0} {} {1.000} {}
+E { 4200} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4200} {0} {} {R'lyeh (e,s,w,n)} { } {The fishy smell is back and it's almost overpowering.  To the southeast you see a gigantic temple.  What could that one be dedicated to?  It looks well-guarded.  Be on your guard. } {R'lyeh} {} {} {} {1.000} {}
+E { 4184} {n} {n} {1} {0} {} {1.000} {}
+E { 4199} {e} {e} {2} {0} {} {1.000} {}
+E { 4204} {s} {s} {4} {0} {} {1.000} {}
+E { 4197} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4201} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 4202} {0} {} {} { } {} {} {} {} {} {1.000} {}
+
+R { 4203} {0} {} {Entrance to the temple of an ancient god (enter,n,w)} { } {You stand before a great temple.  Engravings line the archway into the temple. They seem to be one word repeated in countless different languages. The temple itself is a huge stone structure, and it seems to taunt you, daring you to enter it. } {R'lyeh} {} {} {} {1.000} {}
+E { 4199} {n} {n} {1} {0} {} {1.000} {}
+E { 4204} {w} {w} {8} {0} {} {1.000} {}
+E { 4207} {enter} {enter} {0} {0} {} {1.000} {}
+
+R { 4204} {0} {} {R'lyeh (e,w,n)} { } {The walkway continues to the east.  The temple that it leads to is at least ten stories high!  Either they just wanted a lot of airspace or something absolutely titanic walks around in there. } {R'lyeh} {} {} {} {1.000} {}
+E { 4200} {n} {n} {1} {0} {} {1.000} {}
+E { 4205} {w} {w} {8} {0} {} {1.000} {}
+E { 4203} {e} {e} {2} {0} {} {1.000} {}
+
+R { 4205} {0} {} {R'lyeh (n,w,e)} { } {You are on a walkway along the shore.  The walkway leads to the temple that lies east.  The sea seems to be more violent as you get closer to the temple as if the temple itself is the cause for the disturbance. } {R'lyeh} {} {} {} {1.000} {}
+E { 4197} {n} {n} {1} {0} {} {1.000} {}
+E { 4206} {w} {w} {8} {0} {} {1.000} {}
+E { 4204} {e} {e} {2} {0} {} {1.000} {}
+
+R { 4206} {0} {} {R'lyeh (nw,e,n)} { } {You are walking along the shore.  As you look around, you notice a lot of tracks in the sand.  Mostly small ones, but a few very big ones.  You also notice that to the east, there is a very large temple. } {R'lyeh} {} {} {} {1.000} {}
+E { 4196} {n} {n} {1} {0} {} {1.000} {}
+E { 4195} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4205} {e} {e} {2} {0} {} {1.000} {}
+
+R { 4207} {0} {} {The temple of an ancient god (nw,e)} { } {The inside of this area is monstrous.  You could store several jet liners in here.  The only furniture you see is an altar at the far end of the temple.  Better watch out.  Whatever would come here to worship a god like this one must not be too pleasant itself. } {R'lyeh} {} {} {} {1.000} {}
+E { 4203} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4208} {e} {e} {2} {0} {} {1.000} {}
+
+R { 4208} {0} {} {Temple of an ancient god (w,e)} { } {You are halfway into the temple.  You hear strange sounds here.  It sounds like a flute, but has a strange, unearthly tone to it.  You find it hard to concentrate.  Your mind seems flooded with strange thoughts, but you can't seem to think what they are. } {R'lyeh} {} {} {} {1.000} {}
+E { 4207} {w} {w} {8} {0} {} {1.000} {}
+E { 4209} {e} {e} {2} {0} {} {1.000} {}
+
+R { 4209} {0} {} {Altar in the Temple of an ancient god (w)} { } {You have reached the altar.  There is a pit here that looks as if sacrifices are thrown into with frequency.  You should be able to get around it if you can move about unhindered, but you'd better make sure you can make it before you try.. you wouldn't want to become the latest sacrifice.  } {R'lyeh} {} {} {} {1.000} {}
+E { 4208} {w} {w} {8} {0} {} {1.000} {}
+E { 4210} {e} {e} {2} {0} {} {1.000} {}
+
+R { 4210} {0} {} {Behind the altar of an ancient god (w)} { } {This is the innermost sanctum of the temple. Hidden behind the altar which you have just passed, it is home to one of the most feared creations in existence... } {R'lyeh} {} {} {} {1.000} {}
+E { 4209} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4211} {0} {} {} { } {} {} {} {} {} {1.000} {}
+
+R { 4212} {0} {} {Entrance to the Linux promotion (s,n,w)} { } {This room is filled with bright fluorescent lights.  It has plain, grey carpeting on the floor, and seems to be filled with posters, display cases, and soft background muzak.  It seems to be a large promotion for something called Linux.  The room continues on to the north, where you think you see camera flashes.  To the west there is a doorway to what looks like a shop.  The way out of this strange place is to the south. } {Linux Fair} {} {} {} {1.000} {}
+E { 4214} {n} {n} {1} {0} {} {1.000} {}
+E { 4215} {w} {w} {8} {0} {} {1.000} {}
+E { 4121} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4213} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4212} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4214} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4212} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4215} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4212} {e} {e} {2} {0} {} {1.000} {}
+
+R { 4216} {0} {} {A long corridor (nw,ne)} { } {Leaving the smells and sounds of the bistro behind, you step into a long and narrow corridor.  Tall, metal sconces line the walls of the corridor.  Hanging upon the wall, is a small, wooden sign.  At the far end of the corridor, along the northeast wall, stands a huge, wooden door.  Directly across from the door, nestled into the corner, is a charming, potted tree. } {Marble Castle} {} {} {} {1.000} {}
+E { 4217} {nw} {nw} {9} {0} {} {1.000} {}
+E { 4218} {ne} {ne} {3} {0} {} {1.000} {}
+
+R { 4217} {4104} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4216} {se} {se} {6} {0} {} {1.000} {}
+E { 1365} {nw} {nw} {9} {0} {} {1.000} {}
+
+R { 4218} {0} {} {Public Toilets (sw,e,w)} { } {A white tiled wall stares you in the face as you enter this sparkling and clean building. There is a large sign attached to the north wall, below which is a coin slot and some writing. Metal doors, devoid of handles, block your way east and west. } {Public Restrooms} {} {} {} {1.000} {}
+E { 4216} {sw} {sw} {12} {0} {} {1.000} {}
+E { 4219} {e} {e} {2} {0} {} {1.000} {}
+E { 4220} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4219} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4218} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4220} {0} {} {Public Toilets (e,n)} { } {The same white tiles that greeted you outside are also here. The main items of interest in the room are the row of sinks on the west wall, and the metal hand dryer mounted near the north doorway. A garbage bin sits in the corner. } {Public Restrooms} {} {} {} {1.000} {}
+E { 4218} {e} {e} {2} {0} {} {1.000} {}
+
+R { 4221} {0} {} {Central's Parking lot. (s,mist)} { } {Hmmm.  You have come to the parking lot of Walled Lake Central High School, home to many schlepps and idiots.  There are many cars in the lot.  School, it would appear, is in session...  To the west, a strange mist is visible.  } {Walled Lake Central High School} {highschool} {} {} {1.000} {}
+E { 4222} {s} {s} {4} {0} {} {1.000} {}
+E { 3506} {mist} {mist} {0} {0} {} {1.000} {}
+
+R { 4222} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4221} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4223} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 4224} {0} {} {Time twist (s)} { } {As you enter this room you notice a strange instability in time.  The sun flickers back and forth crazily in the sky.  You consider the shuddering of the scenery to the south, and wonder if it's safe to go that way. Who knows where... or indeed WHEN you could end up? There is a strange purple looking mist here. } {Land of the Dinosaurs} {dinosaurs} {} {} {1.000} {}
+E { 4225} {s} {s} {4} {0} {} {1.000} {}
+E { 3177} {enter mist} {enter mist} {0} {0} {} {1.000} {}
+
+R { 4225} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4224} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4226} {0} {} {Gateway of the Para-Elemental Plane of Soy (sw,enter)} { } {You are taken aback by the bleakness of your surroundings: shades of grey, white, taupe, dun, and khaki dominate the landscape, providing a depressingly limited chromatic variety in your environs.  The ground beneath your feet seems somewhat spongy and gelatinous, yet firm.  There is a very strong and salty smell of protein in the air that permeates everything.  A vast stretch of rolling hills of tofu extends to the southwest as far as you can see.  There is a gigantic open box of tofu here, lying on its side. } {The Para-Elemental Plane of Soy} {soy} {} {} {1.000} {}
+E { 4227} {sw} {sw} {12} {0} {} {1.000} {}
+E { 2872} {enter} {enter} {0} {0} {} {1.000} {}
+
+R { 4227} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4226} {ne} {ne} {3} {0} {} {1.000} {}
+
+R { 4228} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 4229} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 1226} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4230} {0} {} {Fluffy's house (n,s,w,e,sci,chaos,guild,gypsy,shop,magic,new} { } {You are Here ... BIG FUCKING "X" } {Pinnacle's Residential Complex} {} {} {} {1.000} {}
+E {    5} {login} {login} {0} {0} {} {1.000} {}
+E { 4231} {n} {n} {1} {0} {} {1.000} {}
+E { 4232} {s} {s} {4} {0} {} {1.000} {}
+E { 4233} {w} {w} {8} {0} {} {1.000} {}
+E { 4234} {e} {e} {2} {0} {} {1.000} {}
+E { 1357} {resid} {resid} {0} {0} {} {1.000} {}
+
+R { 4231} {0} {} {Field of Plasties (sw,s)} { } {A boring room.  Perhaps you should decorate it. } {Pinnacle's Residential Complex} {} {} {} {1.000} {}
+E { 4230} {s} {s} {4} {0} {} {1.000} {}
+E { 4233} {sw} {sw} {12} {0} {} {1.000} {}
+
+R { 4232} {0} {} {Fodder Items/Donates (n)} { } {This is a bare room.  It could do with some decorations. } {Pinnacle's Residential Complex} {} {} {} {1.000} {}
+E { 4230} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4233} {0} {} {Good Items/Eq Here (ne,u,d,e)} { } {A boring room.  Perhaps you should decorate it. } {Pinnacle's Residential Complex} {} {} {} {1.000} {}
+E { 4230} {e} {e} {2} {0} {} {1.000} {}
+E { 4231} {ne} {ne} {3} {0} {} {1.000} {}
+E { 4235} {u} {u} {16} {0} {} {1.000} {}
+E { 4236} {d} {d} {32} {0} {} {1.000} {}
+
+R { 4234} {0} {} {Fodder Plasts/Overflow (w)} { } {This is a bare room.  It could do with some decorations. } {Pinnacle's Residential Complex} {} {} {} {1.000} {}
+E { 4230} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4235} {0} {} {crafting krap (d)} { } {An empty room. Crafting Items Only x } {Pinnacle's Residential Complex} {} {} {} {1.000} {}
+E { 4233} {d} {d} {32} {0} {} {1.000} {}
+
+R { 4236} {0} {} {Crypt (u)} { } {An empty room. } {Pinnacle's Residential Complex} {} {} {} {1.000} {}
+E { 4233} {u} {u} {16} {0} {} {1.000} {}
+
+R { 4237} {0} {} {>x< DEATH TACO ENTRANCE >x< (e,out)} { } {} {Death Taco} {} {} {} {1.000} {}
+
+R { 4238} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 4239} {0} {} {} { } {} {} {} {} {} {1.000} {}
+E {    1} {u} {u} {16} {0} {} {1.000} {}
+
+R { 4240} {0} {} {Club Entrance (s,n)} { } {You're in a small room with plain, black plywood walls and a small sign tacked to the east wall.  A red velvet rope cordons off the northern door and the jazz sound heard outside is absent here. } {B Sharp Jazz Club} {} {} {} {1.000} {}
+E { 4242} {n} {n} {1} {0} {} {1.000} {}
+E { 1599} {s} {s;#var area Chaos;findhere} {4} {0} {} {1.000} {}
+
+R { 4241} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4240} {n} {n} {1} {0} {} {1.000} {}
+
+R { 4242} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4240} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4243} {0} {} {} { } {} {} {} {} {} {1.000} {}
+
+R { 4244} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 4245} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 3743} {e} {e} {2} {0} {} {1.000} {}
+
+R { 4246} {0} {} {The border of a chaotic wood (e)} { } {You find yourself standing at the border of a chaotic wood.  Looking around you, you find it difficult to focus on anything in particular.  It's almost as though your surroundings are vibrating so quickly that they appear blurred and indistinct.  Colors and sounds merge together to create wild panoramic views of nothing in particular.  A cold chill breeze rustles through the branches of the trees to the east. } {Chaotic Forest} {} {} {} {1.000} {}
+E { 4247} {e} {e} {2} {0} {} {1.000} {}
+E {   36} {surrender reality} {surrender reality;#var area Chaos;findhere} {0} {0} {} {1.000} {}
+
+R { 4247} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4246} {w} {w} {8} {0} {} {1.000} {}
+
+R { 4248} {0} {} {Top of a tower (d)} { } {Flat on top, the tower is only about six feet square, though it appears taller from on top than it did from below.  Looking down, Chaos is wrapped in mist, nothing but a recent memory.  A vacant sky overhead, shaded deep blue above, fades into the mist on the horizon. } {Night of Colour} {nightofcolor} {} {} {1.000} {}
+E { 4250} {d} {d} {32} {0} {} {1.000} {}
+
+R { 4249} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4248} {u} {u} {16} {0} {} {1.000} {}
+
+R { 4250} {10} {} {} { } {} {} {} {} {} {1.000} {}
+E {   39} {d} {d} {32} {0} {} {1.000} {}
+E { 4248} {u} {u} {16} {0} {} {1.000} {}
+
+R { 4251} {0} {} {Strange path (portal,n)} { } {You stand in something that seems to be a small forest of some kind. All around you, you can see large trees, and it seems to be impossible to walk in any other direction than north. Next to you, the portal that you entered this area from stands, and you can enter it again. You think it could take you back to where you came from.  } {Midgard and Valhalla} {} {} {} {1.000} {}
+E { 4253} {n} {n} {1} {0} {} {1.000} {}
+E {   36} {portal} {portal;#var area Chaos;findhere} {0} {0} {} {1.000} {}
+
+R { 4252} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 4253} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4251} {s} {s} {4} {0} {} {1.000} {}
+
+R { 4254} {0} {} {On a path to a huge stadium (reality,e)} { } {You are walking down a dirt road.  The sun is shining brightly in the midday sky.  Ahead of you is a large stadium.  You can smell the aroma of peanuts and hear the sounds of a large crowd cheering in the distance. } {WWF Ring} {wwf} {} {} {1.000} {}
+E { 4256} {e} {e} {2} {0} {} {1.000} {}
+E { 3548} {reality} {reality} {0} {0} {} {1.000} {}
+
+R { 4255} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+
+R { 4256} {0} {<g09>} {} { } {} {} {} {} {} {1.000} {}
+E { 4254} {w} {w} {8} {0} {} {1.000} {}
