@@ -2,9 +2,11 @@
 #NOP REQUIRED:  draw.tin
 
 #regex {"$world"} {3s} {
-	#map read .tt/map/3s.map
+	#map read .tt/map/3s.map;
+	#map write .tt/map/3s-session-backup.map
 } {
-	#map read .tt/map/daagar.map
+	#map read .tt/map/daagar.map;
+	#map write .tt/map/daagar-session-backup.map
 }
 
 #var map[height] 17
@@ -230,8 +232,13 @@
 }
 
 #alias {mapsave} {
-	#map write .tt/map/daagar.map;
-	#echo {<128>Saved map to .tt/map/daagar.map<088>}
+	#regex {"$world"} {3s} {
+		#map write .tt/map/3s.map;
+		#echo {<128>Saved map to .tt/map/3s.map<088>}
+	} {
+		#map write .tt/map/daagar.map;
+		#echo {<128>Saved map to .tt/map/daagar.map<088>}
+	}
 }
 
 #alias {mapon} {
@@ -288,6 +295,37 @@
 #event {SCREEN RESIZE} {
 	#read .tt/3k/draw.tin
 }
+
+/* Allow clicking on a room to get map info */
+#event {MAP SHORT-CLICKED MOUSE BUTTON ONE} {
+    lfr {%0};
+};
+#alias lr {
+    #if {"%1" == ""} {
+        #map get;
+    } {
+        #if {%2 || %2 == 0} {
+            #map jump %1 %2 %3;
+            #map get;
+            #map undo;
+        } {
+            #map at {%1} #map get;
+        };
+    };
+};
+#alias lfr {
+    #if {"%1" == ""} {
+        #map info;
+    } {
+        #if {%2 || %2 == 0} {
+            #map jump %1 %2 %3;
+            #map info;
+            #map undo;
+        } {
+            #map at {%1} #map info;
+        };
+    };
+};
 
 /* Transports */
 #NOP Abyss
