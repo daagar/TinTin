@@ -3,10 +3,11 @@
 #echo {Alts:};
 #echo {};
 
-#echo {1) Fl(changeling)};
-#var {my[alts][1][name]}{fl};
+#echo {1) Splat (changeling)};
+#var {my[alts][1][name]}{splat};
 #var {my[alts][1][guild]}{changeling};
 
+#NOP {
 #echo {2) Floobi(mage) (summoner)};
 #var {my[alts][2][name]}{floobi};
 #var {my[alts][2][guild]}{mage};
@@ -127,6 +128,7 @@
 #var {my[alts][24][name]}{flyybi};
 #var {my[alts][24][guild]}{jedi};
 #var {my[alts][24][subguild]}{sith};
+};
 
 #echo {};
 #echo {con <number>:};
