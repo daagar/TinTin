@@ -3,7 +3,7 @@
 #regex {"$world"} {3s} {
 	#var {mapfile}{3s.map}
 } {
-	#var {mapfile}{3k.map}
+	#var {mapfile}{daagar.map}
 }
 #map read .tt/map/${mapfile}
 
