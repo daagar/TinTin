@@ -1,9 +1,5 @@
 #CLASS {mip} {kill}
 #CLASS {mip} {open}
-#NOP REQUIRED:  draw.tin  //Used for drawing chats and caption
-
-/* !NOTE! */
-#NOP If your guild hides the hpbar with MIP turned on, try using the mud command 'forcehp'
 
 #NOP ***** Set MIP ID Code **********
 #VAR {mip} {}
@@ -18,7 +14,8 @@
 #DELAY {2} {
 	#SEND 3klient $mip[id]~~$info[SYSTEM][CLIENT_NAME]$info[SYSTEM][CLIENT_VERSION];
 	#SEND 3klient LINEFEED on;
-	#SEND 3klient HAA off
+	#SEND 3klient HAA off;
+	#SEND forcehp;
 }
 
 #NOP ***** Extract Raw Data *********
@@ -143,7 +140,7 @@
 	};
 	#IF {"$mip[FFF][$mip[FFF][flag]][data]" != ""} {
 		.mipProcessFFFSub {$mip[FFF][flag]} {$mip[FFF][${mip[FFF][flag]}][data]}
-	};
+	}
 }
 
 #NOP ***** Separated Stats Data *****
@@ -196,7 +193,48 @@
 			#CASE {"necromancer"}	{.mipProcessGlineNecromancer {%1}};
 			#CASE {"psicorp"}	{.mipProcessGlinePsicorp {%1}};
 			#CASE {"sii"}		{.mipProcessGlineSii {%1}}
+			#CASE {"angel"}		{.mipProcessGlineAngel {%1}}
+			#CASE {"mages"}		{.mipProcessGlineMages {%1}}
 		}
+	}
+}
+
+#ALIAS {.mipProcessGlineMages} {
+	#IF {%1 == 1} {#NOP
+	}; #ELSEIF {%1 == 2} {
+		#replace {mip[gline][2]}{Bridge}{Bri};
+		#replace {mip[gline][2]}{Inevitability}{Ine};
+		#replace {mip[gline][2]}{Stability}{Sta};
+		#replace {mip[gline][2]}{conglomeration}{Con};
+		#replace {mip[gline][2]}{elemental}{Ele};
+		#replace {mip[gline][2]}{maelstrom}{Mae};
+		#replace {mip[gline][2]}{Flame}{Fl};
+		#replace {mip[gline][2]}{Moonlight}{Mo};
+		#replace {mip[gline][2]}{Lightning}{Li};
+		#replace {mip[gline][2]}{Mist}{Mi};
+	}; #ELSE {
+		#ECHO {<171 Invalid Gline Number <088>}
+	}
+}
+
+#ALIAS {.mipProcessGlineAngel} {
+	#IF {%1 == 1} {
+		#REGEX {$mip[gline][1]}	{Station: %d.%d\%} {
+			#VAR {my[station][current]}		{&1.&2};
+		};
+	}; #ELSEIF {%1 == 2} {
+		#REGEX {$mip[gline][2]}	{Pos: %* Con:} {
+			#VAR {my[possess][body]}		{&1};
+		}{
+			#REGEX {$mip[gline][2]}	{Pos: %*} {
+				#VAR {my[possess][body]}		{&1};
+				#replace {my[possess][body]}{  }{};
+			}{
+				#var {my[possess][body]}{None};
+			};
+		};
+	}; #ELSE {
+		#ECHO {<171> Invalid Gline Number <088>}
 	}
 }
 
@@ -214,6 +252,18 @@
 			#VAR {my[ff][current]}		{&3.&4};
 			#VAR {my[form]}			{&5}
 		}
+		#REGEX {$mip[gline][1]}	{FF(%d)} {
+			#VAR {my[ff][level]}		{&1};
+		};
+		#REGEX {$mip[gline][1]}	{IL(%d)} {
+			#VAR {my[ff][level]}		{&1+};
+		};
+		#REGEX {$mip[gline][1]}	{FF(MAX)} {
+			#VAR {my[ff][level]}		{MAX};
+		};
+		#REGEX {$mip[gline][1]}	{IL(_MAX_)} {
+			#VAR {my[ff][level]}		{_MAX_};
+		};
 	}; #ELSEIF {%1 == 2} {
 		#REGEX {$mip[gline][2]}	{\[Bioplasts: %d\]} {#VAR {my[bioplasts]}	{&1}}
 	}; #ELSE {
@@ -223,22 +273,22 @@
 
 #ALIAS {.mipProcessGlineElemental} {
 	#IF {%1 == 1} {
-		#REGEX {$mip[gline][1]} {Emit<099> : <%d>%d}	{#VAR {my[emit][level]}		{&2}};
-		#REGEX {$mip[gline][1]} {Equipollent}		{#VAR {my[equip]}		{on}}
-								{#VAR {my[equip]}		{off}};
-		#REGEX {$mip[gline][1]} {Form<099>: <869>%w<099>\(<819>%d<099>\)}		{
+		#REGEX {Emit<099> : <%d>%d<099>}	{#VAR {my[emit][level]}		{&2}};
+		#REGEX {Equipollent}			{#VAR {my[equip]}		{on}}
+							{#VAR {my[equip]}		{off}};
+		#REGEX {Form<099>: <869>%w<099>\(<819>%d<099>\)}		{
 			#VAR {my[form][type]}		{&1};
 			#VAR {my[form][size]}		{&2}
 		};
-		#REGEX {$mip[gline][1]} {Rating<099>: <819>%d<099>}			{#VAR {my[rating]}		{&1}}
+		#REGEX {Rating<099>: <819>%d<099>}			{#VAR {my[rating]}		{&1}}
 	}; #ELSEIF {%1 == 2} {
-		#REGEX {$mip[gline][2]} {Stones/Waves/Shrouds<099>: <%d>%d<099>/<%d>%d<099>/<%d>%d<099>\(%d\%\)}
+		#REGEX {Stones/Waves/Shrouds<099>: <%d>%d<099>/<%d>%d<099>/<%d>%d<099>\(%d\%\)}
 			#VAR {my[blasts]		{&2};
 			#VAR {my[waves]}		{&4};
 			#VAR {my[shrouds]}		{&6};
 			#VAR {my[reset]}		{&7}
 		};
-		#REGEX {$mip[gline][2]} {G2N: <%d>%d<099>}		{#VAR {my[g2n]}			{&2}}
+		#REGEX {G2N: <%d>%d<099>}		{#VAR {my[g2n]}			{&2}}
 	}; #ELSE {
 		#ECHO {<171> Invalid Gline Number <088>}
 	}
@@ -443,6 +493,13 @@
 	#REGEX {%0} {~Your~palms begin to sweat as you successfully fight off an infection.} {#var mipgag 1};
 	#REGEX {%0} {~Your~neck aches slightly as you successfully fight off an infection.} {#var mipgag 1};
 
+	#NOP Mages;
+	#REGEX {%0} {~Torrential~energies stream momentarily through the nexus of stability into the material world.} {#var mipgag 1};
+	#REGEX {%0} {~Blazing~with strange energies, the nexus of stability momentarily becomes a conduit for extradimensional forces.} {#var mipgag 1};
+
+	#NOP Changelings;
+	#REGEX {%0} {tiny translucent bombardier beetle} {#var mipgag 1};
+
 	#NOP Hell Cows;
 	#REGEX {%0} {~A~cow falls, but the herd continues on!} {#var mipgag 1};
 	#REGEX {%0} {~The~lonesome cow topples to the ground, the herd finally slain.} {#var mipgag 1};
@@ -457,6 +514,7 @@
 
 	#NOP Party Divvy;
 	#REGEX {%0} {[PARTY] GOLD divvy called by } {#var mipgag 1};
+	#REGEX {%0} {[PARTY] coins called by } {#var mipgag 1};
 	#REGEX {%0} {[PARTY] All gold divvied, total: } {#var mipgag 1};
 
 	#NOP Sii;
@@ -465,6 +523,7 @@
 
 	#NOP Zelligar's Headband;
 	#REGEX {%0} { stumbles in confusion as the headband hypnotizes } {#var mipgag 1};
+	#REGEX {%0} { stumbles in confusion as the amulet hypnotizes } {#var mipgag 1};
 
 	#IF {$mipgag == 0} {.mipProcessBAB %0}
 }
@@ -472,6 +531,7 @@
 #var chat[rows] 17
 #var chat[page] 1
 #var chat[max] 100
+
 #ALIAS {show_chat} {
 	#math chat[start]	{$chat[rows] * $chat[page]};
 	#math chat[end]		{$chat[rows] * $chat[page] - $chat[rows] + 1};
@@ -479,6 +539,7 @@
 		#line sub {var} #draw {tile} 1 1 $chat[rows] $chat[right] $chat[log][-$chat[start]..-$chat[end]]
 	}
 }
+
 #ALIAS {update_chat} {
 	#if {&chat[log][] > $chat[max]} {
 		#list chat[log] del 1
@@ -488,6 +549,19 @@
 	#class {chat} {write} {.tt/3k/vars/${mud}chat.var};
 	show_chat
 }
+
+#ALIAS {resume_chat}{
+	#if {$my[config][db][chat] == 1}{
+		db_query_chat 99;
+		#loop {1}{99}{count}{
+			#list chat[log] ins -1 {${db_chat_query[$count][timestamp]} ${db_chat_query[$count][message]}};
+		};
+	}{
+		#script {tail -n 99 /tintin/logs/3s.chat | awk '{print "#list chat[log] ins -1 {"$0"}"}'};
+	};
+	show_chat;
+};
+
 #ALIAS {chatup} {
 	#if {$chat[rows]*{$chat[page]+1} <= $chat[max] &&
 	     $chat[rows]*{$chat[page]+1} <= &chat[log][]} {
@@ -513,19 +587,30 @@
 			#var mip[comm][source]	{&3};
 			#var mip[comm][line]	{Tell};
 			#var mip[comm][command]	{tell $mip[comm][source]};
-			#format {timestamp} {%t} {<108>[<268>%H<108>:<268>%M<108>]<088> };
+			#format {timestamp} {%t} {[<268>%H<088>:<268>%M<088>] };
+			#format {dbtimestamp} {%t} {[%Y:%m:%d %H:%M:%S]};
 			#IF {"&2" == "x"} {
 				#NOP Message to another player;
 				#var mip[comm][twoway] {to};
-				#line log {.tt/logs/3k.chat} {$timestamp\};
-				#line log {.tt/logs/3k.chat} {<128>To &3<088>: &4};
-				update_chat ${timestamp}<128>To &3<088>: &4
+				#if {$my[config][db][chat] == 1}{
+					#var {dbmess}{To &3: &4};
+					db_submit_chat $dbmess;
+				}{
+					#line log {.tt/logs/${mud}.chat} {$timestamp\};
+					#line log {.tt/logs/${mud}.chat} {<178>To &3<088>: &4};
+				};
+				update_chat ${timestamp}<178>To &3<088>: &4;
 			} {
 				#NOP Message from another player;
 				#var mip[comm][twoway] {from};
-				#line log {.tt/logs/3k.chat} {$timestamp\};
-				#line log {.tt/logs/3k.chat} {<128>&3<088>: &4};
-				update_chat ${timestamp}<128>&3<088>: &4;
+				#if {$my[config][db][chat] == 1}{
+					#var {dbmess}{&3: &4};
+					db_submit_chat $dbmess;
+				}{
+					#line log {.tt/logs/${mud}.chat} {$timestamp\};
+					#line log {.tt/logs/${mud}.chat} {<178>&3<088>: &4};
+				};
+				update_chat ${timestamp}<178>&3<088>: &4;
 				#bell;
 
 				#NOP Chat Tools;
@@ -587,6 +672,8 @@
 
 	#NOP Party Divvy gagsd	#NOP Party Divvy;
         #REGEX {%0} {[PARTY] GOLD divvy called by } {#var mipgag 1};
+	#REGEX {%0} {[PARTY] coins called by} {#var mipgag 1};
+	#REGEX {%0} {[PARTY] Divvy of %d coins called by} {#var mipgag 1};
         #REGEX {%0} {[PARTY] All gold divvied, total: } {#var mipgag 1};
 
 	#IF {$mipgag == 0} {.mipProcessCAA %0}
@@ -597,7 +684,8 @@
 		#var {mip[comm][line]}		{&3};
 		#var {mip[comm][source]}	{&4};
 		#var {mip[comm][data]}		{&5};
-		#format {timestamp} {%t} {<108>[<268>%H<108>:<268>%M<108>]<088> };
+		#format {timestamp} {%t} {[<268>%H<088>:<268>%M<088>] };
+		#format {dbtimestamp} {%t} {[%Y:%m:%d %H:%M:%S]};
 
 		#NOP Ansify lines;
 		#var {commcol} {<178>};
@@ -605,7 +693,7 @@
 			#case {"ADMIN"}			{#var {commcol} {<158>}};
 			#case {"Auction"}		{#var {commcol} {<108>}};
 			#case {"Bear"}			{#var {commcol} {<168>}};
-			#case {"Bloodname"}		{#var {commcol} {<218>}};
+			#case {"Bloodname"}		{#var {commcol} {<138>}};
 			#case {"Clan Cad"}		{#var {commcol} {<158>}};
 			#case {"Com"}			{#var {commcol} {<128>}};
 			#case {"Council"}		{#var {commcol} {<108>}};
@@ -644,13 +732,16 @@
 		
 
 		#var {mip[comm][cdata]} {$mip[comm][data]};
-		#replace {mip[comm][cdata]} {: } {:<099> };
+		#replace {mip[comm][cdata]} {: } {: <099>};
 		#var {mip[comm][cdata]} {$commcol$mip[comm][cdata]<099>};
-
-		#line log {.tt/logs/3k.chat} {$timestamp\};
-		#line log {.tt/logs/3k.chat} {$mip[comm][cdata]};
+		#if {$my[config][db][chat] == 1}{
+			#var {dbmess}{$mip[comm][data]};
+			db_submit_chat $dbmess;
+		}{
+			#line log {.tt/logs/${mud}.chat} {$timestamp\};
+			#line log {.tt/logs/${mud}.chat} {$mip[comm][cdata]};
+		};
 		update_chat ${timestamp}$mip[comm][cdata];
-
 		#if {$idle <= 900} {
 			#NOP 8Inix;
 			#if {"$8inix" == "on"} {
