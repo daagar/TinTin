@@ -1,27 +1,56 @@
 #class {aliases} {open}
 
+
+/* MySQL Aliases */
+
+#alias {db_submit_chat}{
+        db_submit {db_return}{%s}{insert into chat_log (timestamp, author, message) VALUES (`$dbtimestamp`, `$world`, `%0`)};
+};
+#alias {db_query_chat}{
+        db_submit {db_chat_query}{%s}{select * from (select * from chat_log order by timestamp desc limit %0)var1 order by timestamp asc};
+};
+
+#alias {db_submit_kill}{
+        db_submit {db_return}{%s}{insert into kill_log (timestamp, author, guildstring, foe, rounds, total, average) VALUES (`$dbtimestamp`, `$world`, `$my[damagetracker][guildstring]`, `$my[damagetracker][foe-full]`, `$my[damagetracker][dbrounds]`, `$my[damagetracker][dbtotal]`, `$my[damagetracker][dbaverage]`)};
+};
+#alias {db_query_kill}{
+        db_submit {killstats}{%s}{select * from kill_log where foe=`%0` and total>0 order by timestamp desc limit 10};
+	#nop {
+	#echo {Last 10 results for kill %0:};
+	#echo {};
+	#loop {1}{10}{count}{
+        	#echo {$killstats[$count][timestamp]: $killstats[$count][author] - $killstats[$count][total] - $killstats[$count][rounds] Rounds};
+        };
+	};
+};
+
+#alias {db_submit_damage}{
+        db_submit {db_return}{%s}{insert into damage_log (timestamp, author, guildstring, foe, hits, damage, average) VALUES (`$dbtimestamp`, `$world`, `$my[damagetracker][guildstring]`, `$my[damagetracker][foe-full]`, `$my[damagetracker][hits]`, `$my[damagetracker][damage]`, `$my[damagetracker][average]`)};
+};
+
 /* 3K Aliases */
 
 #alias {mipon} {#read .tt/3k/mip.tin}
 #alias {mipoff} {#class mip kill}
 
-#alias {dg} {divvy gold}
-#alias {fol} {follow}
 #alias {ga} {get all}
 #alias {gac} {get all from corpse}
-#alias {gc} {get coins}
-#alias {goto} {houseedit gotoroom}
 #alias {gl} {glance}
-#alias {k} {kill}
-#alias {los} {lineofsight}
-#alias {cl} {ctell}
 #alias {pt} {ptell}
 #alias {pth} {ptell -h}
-#alias {th} {tellhist}
-#alias {rem} {remove}
-#alias {efor} {portal eforest}
-#alias {wfor} {portal wforest}
-#alias {pnam} {pname Whiteout}
+
+#alias {nex}{
+	#if {"%1" != ""}{
+		#send {nex %0};
+	}{
+		#echo {};
+		#echo {agnosco};
+		#echo {orare};
+		#echo {erus};
+		#echo {notitia};
+		#echo {};
+	};
+};
 
 #alias {/start} {
         d;
@@ -89,10 +118,21 @@
         n
 }
 
-/* Custom */
-#alias {startup} {
-        #read .tt/3k/user_setup.tin
-        fixportal
+#var {my[autocorpse][method]}{guild};
+#alias {swc}{togglecorpse}
+#alias {togglecorpse} {
+	#switch {"${my[autocorpse][method]}"}{
+		#case {"nex"}{
+			#var {my[autocorpse][method]}{off};
+		};
+		#case {"guild"}{
+			#var {my[autocorpse][method]}{nex};
+		};
+		#case {"off"}{
+			#var {my[autocorpse][method]}{guild};
+		};
+    	}
+	#echo {Corpse trigger is now $my[autocorpse][method]};
 }
 
 #alias {colorpalette}
@@ -110,5 +150,4 @@
           }
      }
 }
-
 #class {aliases} {close}

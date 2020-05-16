@@ -37,24 +37,23 @@
 	#read .tt/start.tin;
 	#read .tt/char/%0.tin;
 
-    #EVENT {SESSION DISCONNECTED} {
-        mapsave;      
-    }
+        #EVENT {SESSION DISCONNECTED} {
+            mapsave;      
+        }
 }
 
 #var world {}
 
 /* Character Switching */
 #alias {switchto} {
-    #zap;
-    #read .tt/start.tin;
-    #if {"%0" == ""} {
-        connect null
-    } {
-        connect %0
-    }
+        #zap;
+        #read .tt/start.tin;
+        #if {"%0" == ""} {
+                connect splat3s
+        } {
+                connect %0
+        }
 }
-
 #alias {connect} {
         #regex {%0} {3s} {
                 #ses {%0} {3scapes.org} {3200};
@@ -78,3 +77,5 @@
         $ses_name;
         #read .tt/.pass
 }
+
+#read .tt/menu.tin

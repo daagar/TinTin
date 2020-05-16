@@ -3,19 +3,15 @@
 
 #alias {-cl} {
         #format {datestamp} {%t} {%Y-%m-%d.log};
-        #format {timestamp} {%t} {[%H:%M] };
+	#format {timestamp} {%t} {[<268>%H<088>:<268>%M<088>] };
 	#regex {"$world"} {3s} {
 		#line log .tt/logs/3s.chat {$timestamp\}
 	} {
 		#line log .tt/logs/3k.chat {$timestamp\}
 	};
-	#regex {"$world"} {3s} {
-		#line log .tt/logs/3s.chat
-	} {
-		#line log .tt/logs/3k.chat
-	};
         -xchatlog
         }
+
 #alias {-xchatlog}
         {
         #class {xchatlog} {open};
@@ -29,10 +25,34 @@
 /* TELLS LINKTELLS AUCTION HM SHOUTS GSHOUTS CLAN PROFESSIONS CRAFTING*/
 #act {{^((A ghostly form of )?[A-z0-9@]+ (<HM-[A-z]+(\s[A-z]+)?>:|-=\(OMP\)=-|LTs? \([\[\]0-9A-z\[\], ]+\)|says?|whispers?|tells?( you)? \(?[A-z0-9,@]+\)?:|g?shouts:|flaps :)|\[(Clan|PARTY|Auction)\] [A-z\(\) ]+:?)}} {-cl}
 
-#act {{[A-z]+ tells you:}} {
+#act {{[A-z0-9@]+ tells you:}} {
 	-cl;
 	#bell
 } {4};
+#act {%1@3k tells you: %2} {
+	#format {timestamp} {%t} {[<268>%H<088>:<268>%M<088>] };
+        #format {dbtimestamp} {%t} {[%Y:%m:%d %H:%M:%S]};
+	#if {$my[config][db][chat] == 1}{
+		#var {dbmess}{%0};
+		db_submit_chat $dbmess;
+	}{
+		#line log {/tintin/logs/3s.chat} {$timestamp\};
+		#line log {/tintin/logs/3s.chat} {<178>To &3<088>: &4};
+	};
+	update_chat ${timestamp}<178>%0<088>;
+}{1};
+#act {^\[%1 reconnects\]} {
+	#format {timestamp} {%t} {[<268>%H<088>:<268>%M<088>] };
+        #format {dbtimestamp} {%t} {[%Y:%m:%d %H:%M:%S]};
+	#if {$my[config][db][chat] == 1}{
+		#var {dbmess}{%0};
+		db_submit_chat $dbmess;
+	}{
+		#line log {/tintin/logs/3s.chat} {$timestamp\};
+		#line log {/tintin/logs/3s.chat} {<178>To &3<088>: &4};
+	};
+	update_chat ${timestamp}<178>%0<088>;
+}{1};
 
 /*	#var IdleTimeout 600
 	#undelay {deadmanSwitch};
@@ -51,7 +71,6 @@
 #act {^[PARTY] {GOLD divvy called by|All gold divvied}} {#nop} {3}
 #act {~^\e[0m[PARTY]} {#nop} {3}
 
-#act {Lupin tells} {#nop} {0}
 
 /* GUILD SPECIFIC */
 /* BARD */
@@ -73,7 +92,10 @@
 
 /* Necro */
 #act {^{[A-z]+ \[[A-z0-9-]+\]:}} {-cl}
-#act {Jezabel tells you:} {#nop}
+#act {Quoth tells you:} {#nop}{1}
+#act {F tells you:} {#nop}{1}
+#act {A tiny translucent bombardier beetle tells you:} {#nop}{1}
+#act {Talia tells you:} {#nop}{1}
 
 /* PROFESSIONS */
 

@@ -59,3 +59,21 @@
                 #default 	{#return <088>%1};
         }
 }
+
+#function {rcolscale} {
+	#math per {100*%1/%2};
+        #switch {1} {
+                #case {$per > 100}	{#return <faa>%1<088>};
+                #case {$per > 90}	{#return <eaa>%1<088>};
+                #case {$per > 80}	{#return <eba>%1<088>};
+                #case {$per > 70}	{#return <dba>%1<088>};
+                #case {$per > 60}	{#return <dca>%1<088>};
+                #case {$per > 50}	{#return <cda>%1<088>};
+                #case {$per > 40}	{#return <bda>%1<088>};
+                #case {$per > 30}	{#return <bea>%1<088>};
+                #case {$per > 20}	{#return <aea>%1<088>};
+                #case {$per > 10}	{#return <afa>%1<088>};
+                #case {$per >= 0}	{#return <168>%1<088>};
+                #default 	{#return <088>%1};
+        }
+}
