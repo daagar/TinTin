@@ -64,11 +64,16 @@
 
 #math split[top]	{$chat[height] + $caption[height]}
 #var split[bottom]	$status[height]
-#var split[left]	$alert[width]
+#if {"$draw[alert]" == "on"} {
+	#var split[left] $alert[width];
+} {
+	#var split[left] 0;
+}
 #if {"$draw[exitpanel]" == "on" || "$draw[canvas]" == "on"} {
 	#var split[right] $right_split
-} 
-#nop #var split[right]	$canvas[width]
+} {
+	#var split[right] 0
+}
 
 /* Perform Split */
 #split $split[top] $split[bottom] $split[left] $split[right]
@@ -89,9 +94,9 @@
 	chatend
 }
 
-#NOP #if {"$draw[exits]" == "on"} {
-#NOP 	#draw {line} $chat[height]
-#NOP }
+#if {"$draw[exits]" == "on"} {
+	#draw {line} $chat[height]
+}
 
 #if {"$draw[gline]" == "on"} {
 	#draw {line} -$hpbar[height]-$gline[height]-2 1 -$hpbar[height]-$gline[height]-2 -1
@@ -110,10 +115,10 @@
 	#showme {<088>\u2534<088>} -$hpbar[height]-$gline[height]-2 -$right_split;
 }
 
-#if {"$draw[exitpanel]" == "on"} {
-	#draw {line} $chat[height]+$caption[height]+$exitpanel[height]+1 -$right_split+1 $chat[height]+$caption[height]+$exitpanel[height]+1 -1;
-	show_exits
-}
+#NOP #if {"$draw[exitpanel]" == "on"} {
+#NOP 	#draw {line} $chat[height]+$caption[height]+$exitpanel[height]+1 -$right_split+1 $chat[height]+$caption[height]+$exitpanel[height]+1 -1;
+#NOP 	show_exits
+#NOP }
 
 #if {"$draw[canvas]" == "on"} {
 	botdraw

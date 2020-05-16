@@ -3,7 +3,7 @@
 #regex {"$world"} {3s} {
 	#var {mapfile}{3s.map}
 } {
-	#var {mapfile}{3k.map}
+	#var {mapfile}{daagar.map}
 }
 #map read .tt/map/${mapfile}
 #map write .tt/map/${mud}-session-backup.map
@@ -11,7 +11,7 @@
 #var map[height] 17
 #var map[width] 42
 
-#map goto {roomnote} {home}
+#map goto {roomnote} {cot}
 
 /* Move Event */
 #alias {mapupdate} {
@@ -32,8 +32,8 @@
 		#draw {tile} $map[height]-1 -$map[width] $map[height]-1 -1 {<020>$roomarea <140>(<120>$room_cnt<140>)<099>};
 		#draw {tile} $map[height] -$map[width] $map[height] -1 {<140>[<030>$roomvnum<140>] <130>$name_trunc<099>}
 	};
-
 }
+
 #event {MAP UPDATED VTMAP} {
 	#delay {0.05} {mapupdate}
 }
@@ -221,7 +221,6 @@
 	#var area %2
 }
 
-
 /* Aliases */
 #NOP count the # of rooms mapped
 #alias {area_mapped %1} {
@@ -292,7 +291,6 @@
 	}
 }
 
-
 #alias {mapsearch} {
 	#line ignore #show <129>Name matches:<088>;
 	#map list {%i%*%0%*};
@@ -315,8 +313,9 @@
 
 #alias {mapsave} {
 	#map write .tt/map/${mapfile};
-	#echo {<128>Saved map to .tt/map/${mud}.map<088>
+	#echo {<128>Saved map to .tt/map/${mud}.map<088>}
 }
+
 #alias {mapon} {
 	!brief off yes;
 	#map flag static off;
