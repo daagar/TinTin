@@ -4,7 +4,7 @@
 #echo {};
 
 #echo {1) Splat (changeling)};
-#var {my[alts][1][name]}{splat};
+#var {my[alts][1][name]}{splat3s};
 #var {my[alts][1][guild]}{changeling};
 
 #NOP {
@@ -134,6 +134,6 @@
 #echo {con <number>:};
 
 #alias {con}{
-	connect ${my[alts][%1][name]}3s;
+	connect ${my[alts][%1][name]};
 	#unalias {con};
 };
