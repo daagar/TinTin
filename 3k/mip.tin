@@ -212,6 +212,7 @@
 		#replace {mip[gline][2]}{Moonlight}{Mo};
 		#replace {mip[gline][2]}{Lightning}{Li};
 		#replace {mip[gline][2]}{Mist}{Mi};
+		#replace {mip[gline][2]}{V:%d, }{V,};
 	}; #ELSE {
 		#ECHO {<171 Invalid Gline Number <088>}
 	}
@@ -321,7 +322,6 @@
 		#ECHO {<171> Invalid Gline Number <088>}
 	}
 }
-
 #ALIAS {.mipProcessGlineJedi} {
 	#IF {%1 == 1} {
 		#REGEX {GXP:%s{[\d\.]+}\%}		{#VAR {my[gxp][current]}	{&2}};
@@ -479,13 +479,6 @@
 	#NOP Byron crying OW;
 	#REGEX {%01} {~Byron~cries 'OW!!'} {#var mipgag 1};
 
-	#NOP Bards;
-	#REGEX {%0} {~takes a deep breath.} {#var mipgag 1};
-	#REGEX {%0} {~takes a breath.} {#var mipgag 1};
-	#REGEX {%0} {~pauses for a moment...} {#var mipgag 1};
-	#REGEX {%0} {~ceases his performance.} {#var mipgag 1};
-	#REGEX {%0} {~finishes his performance with a bow.} {#var mipgag 1};
-
 	#NOP Dundee;
 	#REGEX {%0} {~A~shiver runs through you as you successfully fight off an infection.} {#var mipgag 1};
 	#REGEX {%0} {~Your~head throbs briefly as you successfully fight off an infection.} {#var mipgag 1};
@@ -566,7 +559,7 @@
 	#if {$chat[rows]*{$chat[page]+1} <= $chat[max] &&
 	     $chat[rows]*{$chat[page]+1} <= &chat[log][]} {
 		#math chat[page] {$chat[page]+1};
-		show_chat
+		show_chat;
 	}
 }
 #ALIAS {chatdown} {

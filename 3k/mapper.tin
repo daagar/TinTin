@@ -157,6 +157,7 @@
 		};
 		#delay 0 mapupdate
 	};
+#nop {Fl Stepper Stuff};
         #if {$stepper == 1}{
                 #if {${domove} == 1}{
                         #if {$findexit == 1}{
@@ -174,6 +175,22 @@
 			dir_selection;
 		};
 	};
+#nop {Fl Stepper Stuff Ends};
+#nop {Automagic Kill Path Generation Begins Here};
+        #if {$stepper2 == 1}{
+                #if {${domove2} == 1}{
+                	#if {"$mapping" == "on"}{
+                		#delay {0.15}{kill-loop};
+                	}{
+                                #delay {0.05}{kill-loop};
+                	};
+                };
+	}{
+		#if {${domove2} == 1}{
+			dir_selection;
+		};
+	};
+#nop {End of Magic Stepper};
 }
 
 #NOP Room Short with No Exits, Lowered Priority
@@ -213,13 +230,6 @@
 	}
 } {1}
 
-#act {AREA NAME: %1 [%2]} {
-	#var area %1
-}
-
-#act {AREA RATING -> %1 [%2]}{
-	#var area %2
-}
 
 /* Aliases */
 #NOP count the # of rooms mapped
@@ -251,10 +261,13 @@
 	};
         #map flag static on;
         #var domove 0;
+        #var domove2 0;
 	#map find {roomnote} {%0%*};
         #map get roomvnum returnroom;
         #var returnpathroom $room_num;
-	#path run
+	#path run;
+	#var {mapindex}{0};
+	rating;
 }
 
 #alias goback {
@@ -291,12 +304,24 @@
 	}
 }
 
+
 #alias {mapsearch} {
 	#line ignore #show <129>Name matches:<088>;
 	#map list {%i%*%0%*};
 	#line ignore #show \n;
 	#line ignore #show <129>Note matches:<088>;
 	#map list {} {} {} {} {%i%*%0%*};
+}
+
+#alias {notelist} {
+    #unvar {notes};
+    #if {"%1" != ""}{
+	#map list {roomnote}{%i%*%0%*}{variable}{noterooms};
+    }{
+    	#map list {roomnote} {{\w+}} {variable} {noterooms};
+    };
+   #foreach {*noterooms[]} {room} {#map get {roomnote} {notes[$room]} {$room}};
+   #var notes
 }
 
 #alias {mapname %1} {
@@ -315,7 +340,6 @@
 	#map write .tt/map/${mapfile};
 	#echo {<128>Saved map to .tt/map/${mud}.map<088>}
 }
-
 #alias {mapon} {
 	!brief off yes;
 	#map flag static off;
@@ -351,12 +375,6 @@
 #unvar mapstatic
 
 #alias {ma} {#map set roomarea {$area}}
-
-#alias {notelist} {
-	#map list {roomnote} {{\w+}} {variable} {noterooms};
-	#foreach {*noterooms[]} {room} {#map get {roomnote} {notes[$room]} {$room}};
-	#var notes
-}
 
 #NOP Search Room Nouns (built by MIP)
 #alias {sn} {
