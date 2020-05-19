@@ -67,18 +67,18 @@
 		};
 	};
 	#if {"$guild" == "changeling"}{
-		#regex {$tkstr}{chromatic cuckoo owlet}{
-			#var tkstr none
-			#math {critter_room}{$critter_room - 1}
-		};
-		#regex {$tkstr}{tiny translucent bombardier beetle}{
-			#var tkstr none;
-			#math {critter_room}{$critter_room - 1}
-		};
-		#regex {$tkstr}{tiny translucent wandering spider}{
-			#var tkstr none;
-			#math {critter_room}{$critter_room - 1}
-		};
+		#NOP #regex {$tkstr}{chromatic cuckoo owlet}{
+		#NOP 	#var tkstr none
+		#NOP 	#math {critter_room}{$critter_room - 1}
+		#NOP };
+		#NOP #regex {$tkstr}{tiny translucent bombardier beetle}{
+		#NOP 	#var tkstr none;
+		#NOP 	#math {critter_room}{$critter_room - 1}
+		#NOP };
+		#NOP #regex {$tkstr}{tiny translucent wandering spider}{
+		#NOP 	#var tkstr none;
+		#NOP 	#math {critter_room}{$critter_room - 1}
+		#NOP };
 	};
 	#if {"$guild" == "changeling" && "$area" == "Changeling"}{
 		#format {timestamp} {%t} {[<268>%H<088>:<268>%M<088>] };
@@ -92,7 +92,7 @@
 	#regex {$tkstr}{%* [%*]%*}{#var tkstr &1};
 	#regex {$tkstr}{[%*] %*}{#var tkstr &2};
 	#regex {$tkstr}{%*[%*]%*}{#var tkstr &1};
-	#regex {$tkstr}{everybody}{#var tkstr none;#math {critter_room}{$critter_room - 1}};
+	#NOP #regex {$tkstr}{everybody}{#var tkstr none;#math {critter_room}{$critter_room - 1}};
 	#regex {$tkstr}{under the control of}{#var tkstr none;#math {critter_room}{$critter_room - 1}};
 	#if {"$area" == "Summerset Warrens"}{
 		#regex {$tkstr}{cow}{#var tkstr cow};

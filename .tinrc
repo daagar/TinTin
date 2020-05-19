@@ -41,7 +41,8 @@
 
 
         #EVENT {SESSION DISCONNECTED} {
-            mapsave;      
+            mapsave;
+            #showme <128>Wrote map to ${mapfile}<099>   
         }
 }
 
@@ -78,7 +79,7 @@
                 }
         };
 
-        #act {^<Entering 3Kingdoms.  Enter your character name or press enter to continue>} {
+        #act {^<Entering 3%*.  Enter your character name or press enter to continue>} {
             $ses_name;
             #read .tt/.pass;
         }

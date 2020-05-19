@@ -74,6 +74,7 @@
 
 /* Data Grab Trigger */
 #var longcap off
+#var finding_here off
 
 #function cartcheck {
 	#format cart {%.20s} {%0};
@@ -217,7 +218,7 @@
 	#var area %1
 }
 
-#act {AREA RATING -> %1 [%2]}{
+#act {AREA RATING -> %1 [%2]} {
 	#var area %2
 }
 
@@ -300,16 +301,16 @@
 }
 
 #alias {mapname %1} {
-	#map name %1;
+	#map set roomname %1;
 	#map write .tt/map/${mapfile}
 }
 
-#alias {mmu}{
-	#map run {%0};
-	#map set {roomnote} {%0};
-	#map set {roomname} {%0};
-	#map write .tt/map/${mapfile};
-};
+#NOP #alias {mmu}{
+#NOP 	#map run {%0};
+#NOP 	#map set {roomnote} {%0};
+#NOP 	#map set {roomname} {%0};
+#NOP 	#map write .tt/map/${mapfile};
+#NOP };
 
 #alias {mapsave} {
 	#map write .tt/map/${mapfile};
@@ -333,19 +334,19 @@
 	!rating;
 }
 #alias {mapoff}{
-	#nop {
-	!brief on yes;
-	};
+
+	#NOP !brief on yes;
+
 	!brief on full;
 	#map flag static on;
 	#unvar mapstatic;
 	#unvar mapping;
-#nop {Biome Work in progress
-	#unsub {^%*=X=(};
-	#unsub {^+%*+%s};
-	#unsub {^|%*|%s};
-	#unsub {^ %s};
-};
+#nop Biome Work in progress;
+	#NOP #unsub {^%*=X=(};
+	#NOP #unsub {^+%*+%s};
+	#NOP #unsub {^|%*|%s};
+	#NOP #unsub {^ %s};
+
 }
 #map flag static on
 #unvar mapstatic
@@ -353,9 +354,16 @@
 #alias {ma} {#map set roomarea {$area}}
 
 #alias {notelist} {
-	#map list {roomnote} {{\w+}} {variable} {noterooms};
-	#foreach {*noterooms[]} {room} {#map get {roomnote} {notes[$room]} {$room}};
-	#var notes
+    #unvar notes;
+    #if {"%1" != ""}{
+        #map list {roomnote} {%i%*%0%*} {variable} {noterooms};
+    }{
+        #map list {roomnote} {{\w+}} {variable} {noterooms};
+    };
+   #foreach {*noterooms[]} {room} {
+	   #map get {roomnote} {notes[$room][roomnote]} {$room};
+	};
+   	#var notes
 }
 
 #NOP Search Room Nouns (built by MIP)

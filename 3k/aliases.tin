@@ -135,6 +135,14 @@
 	#echo {Corpse trigger is now $my[autocorpse][method]};
 }
 
+#alias {cof} {
+        #var my[room][current] 1;
+        #map get {roomvnum} my[room][current];
+        go morgue;
+        donate coffin;
+        #map run $my[room][current];
+}
+
 #alias {colorpalette}
 {
      #foreach {a;b;c;d;e;f} {cnt1}

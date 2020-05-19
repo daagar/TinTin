@@ -105,12 +105,6 @@
     };
     get coins;
 
-    #act {^>$} {
-        #unact {^>$};
-        #var lastround $round;
-        #var round 0
-    }
-
     #if {$my[gp2][current] < 75 && $my[bioplasts] < 20 && $bot} {
         #showme {STOPPING!};
         .stop;

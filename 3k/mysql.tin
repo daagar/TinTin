@@ -25,7 +25,7 @@
 #VAR {dbSettings[server]} {localhost};
 
 #NOP **** DB Variables to enable logging into DB vs files ****;
-#VAR {my[config][db][chat]}{1};
+#VAR {my[config][db][chat]}{0};
 #VAR {my[config][db][damage]}{1};
 #VAR {my[config][db][kill]}{1};
 #VAR {my[config][db][biome]}{1};
@@ -40,7 +40,7 @@
 		#VAR {my[config][db][enabled]}{0};
 		#echo {Database Disabled.};
 	}{
-		#VAR {my[config][db][chat]}{1};
+		#VAR {my[config][db][chat]}{0};
 		#VAR {my[config][db][damage]}{1};
 		#VAR {my[config][db][kill]}{1};
 		#VAR {my[config][db][biome]}{1};

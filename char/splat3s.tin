@@ -1,5 +1,7 @@
 #class {splat} {open}
 
+#NOP confighp HP[$CHP/$MHP] SP[$CSP/$MSP] ST[$STA] PP[$PPM] CF[$CFX] FF[$FAM] E[$MON] $STS$CRTF[$FRM] S[$SKN/$SKP] B[$BPL]
+
 #var guild changeling
 #NOP MYSQL CONNECTOR STUFF
 
@@ -14,38 +16,38 @@
 }
 #alias {show_biome_table}{
 	#format {padded_form}{%+3s}{$form_number};
-        #draw {rounded}{box} 55 -41 65 -3 {   Pokedex Results   (${padded_form}/${all_forms}): << >>};
-        #button {56;-5;56;-4}{
+        #draw {rounded}{box} 35 -41 45 -3 {   Pokedex Results   (${padded_form}/${all_forms}): << >>};
+        #button {36;-5;36;-4}{
         	#math {form_number}{$form_number + 1}{};
         	db_query_biome ${form_list[${form_number}][form]};
 	};
-        #button {56;-8;56;-7}{
+        #button {36;-8;36;-7}{
         	#math {form_number}{$form_number - 1}{};
         	db_query_biome ${form_list[${form_number}][form]};
 	};
-	#showme {Form : $biome_results[$result_number][form]} 58 -38;
-        #button {58;-40;58;-35}{db_list_biome form};
-	#showme { Type : $biome_results[$result_number][formtype]} 59 -38;
-        #button {59;-40;59;-35}{db_list_biome formtype};
-	#showme { Major: $biome_results[$result_number][major]} 60 -38;
-        #button {60;-40;60;-35}{db_list_biome major};
-	#showme { Minor: $biome_results[$result_number][minor]} 61 -38;
-        #button {61;-40;61;-35}{db_list_biome minor};
+	#showme {Form : $biome_results[$result_number][form]} 38 -38;
+        #button {38;-40;38;-35}{db_list_biome form};
+	#showme { Type : $biome_results[$result_number][formtype]} 39 -38;
+        #button {39;-40;39;-35}{db_list_biome formtype};
+	#showme { Major: $biome_results[$result_number][major]} 40 -38;
+        #button {40;-40;40;-35}{db_list_biome major};
+	#showme { Minor: $biome_results[$result_number][minor]} 41 -38;
+        #button {41;-40;61;-35}{db_list_biome minor};
 	#format {padded_room}{%-9s}{${biome_results[$result_number][roomvnum]}};
-	#showme { Room : $padded_room  (${result_number}/${result_size})} 62 -38;
-        #button {62;-40;62;-35}{db_list_biome roomvnum};
+	#showme { Room : $padded_room  (${result_number}/${result_size})} 42 -38;
+        #button {42;-40;42;-35}{db_list_biome roomvnum};
         #if {"${biome_results[$result_number][form]}" != ""}{
 		#replace {biome_results[$result_number][roomshort]}{ x7Bnightx7D}{ \x7Bnight\x7D};
 		#replace {biome_results[$result_number][roomshort]}{ x7Bdayx7D}{ \x7Bday\x7D};
 		#replace {biome_results[$result_number][roomshort]}{ x7Bduskx7D}{ \x7Bdusk\x7D};
 		#replace {biome_results[$result_number][roomshort]}{ x7Bdawnx7D}{ \x7Bdawn\x7D};
 	};
-        #showme {       [ <128>GO<088> ]      [<faa>-<088>][<afa>+<088>]} 63 -38;
-        #button {63;-16;63;-14}{bnext};
-        #button {63;-19;63;-17}{bprev};
-        #button {63;-34;63;-26}{biomego};
-	#showme {$biome_results[$result_number][roomshort]} 64 -38;
-        #button {64;-40;64;-35}{db_list_biome roomshort};
+        #showme {       [ <128>GO<088> ]      [<faa>-<088>][<afa>+<088>]} 43 -38;
+        #button {43;-16;43;-14}{bnext};
+        #button {43;-19;43;-17}{bprev};
+        #button {43;-34;43;-26}{biomego};
+	#showme {$biome_results[$result_number][roomshort]} 44 -38;
+        #button {44;-40;44;-35}{db_list_biome roomshort};
 };
 
 #alias {db_submit_biome}{
@@ -60,6 +62,8 @@
 };
 
 #alias {db_query_biome}{
+		#var form %0;
+		#if {$form == "Slime"} {#var form "puddle of slime"};
         db_submit {biome_results}{%s}{select distinct roomvnum, roomshort, form, formtype, major, minor from biome where form = `%0` order by timestamp desc limit 100;};
         #var {result_number}{1};
         #list {biome_results}{size}{result_size};
@@ -67,6 +71,8 @@
 };
 
 #alias {db_query_single_form}{
+		#var form %0;
+		#if {$form == "Slime"} {#var form "puddle of slime"};
         db_submit {form_results}{%s}{select form, formtype, major, minor from biome where form = `a %0` or form = `an %0` limit 1;};
 };
 
@@ -75,7 +81,7 @@
 	show_current_form_table;
 };
 
-#ticker {form_damage}{show_biome_table;db_query_form_damage}{30};
+#NOP #ticker {form_damage}{show_biome_table;db_query_form_damage}{30};
 	
 #alias {bnext}{
         #math {result_number}{$result_number + 1};
@@ -101,34 +107,36 @@
 #alias {autope}{
 	#if {$my[autopersevere] != 1}{
 		#var {my[autopersevere]} {1};
+		#showme <128>Auto-perseverance Enabled<099>
 	}{
 		#var {my[autopersevere]} {0};
+		#showme <128>Auto-perseverance Disabled<099>
 	}
 };
 
-#gag {You will no longer dissipate attacks against you.}
-#gag {You will no longer persevere.}
-#gag {You focus on retaining your shape.}
-#gag {You begin to concentrate on turning aside harmful attacks.}
-#gag {Your cells rapidly freeze and die}
-#gag {The supercooled regions cause your cells}
-#gag {The searing heat that you are generating is damaging}
-#gag {Cells blacken and die around your superheated regions!}
-#gag {The tiny translucent bombardier beetle hit}
-#gag {The tiny translucent wandering spider hit}
-#gag {The tiny translucent bombardier beetle sighs.}
-#gag {The tiny translucent wandering spider sighs.}
-#gag {^You instinctively know that biting this being would have no effect.}
-#gag {^You are not able to bite anything at this time!}
-#gag {%1 writhes in pain as its flesh slowly rots!}
+#NOP #gag {You will no longer dissipate attacks against you.}
+#NOP #gag {You will no longer persevere.}
+#NOP #gag {You focus on retaining your shape.}
+#NOP #gag {You begin to concentrate on turning aside harmful attacks.}
+#NOP #gag {Your cells rapidly freeze and die}
+#NOP #gag {The supercooled regions cause your cells}
+#NOP #gag {The searing heat that you are generating is damaging}
+#NOP #gag {Cells blacken and die around your superheated regions!}
+#NOP #gag {The tiny translucent bombardier beetle hit}
+#NOP #gag {The tiny translucent wandering spider hit}
+#NOP #gag {The tiny translucent bombardier beetle sighs.}
+#NOP #gag {The tiny translucent wandering spider sighs.}
+#NOP #gag {^You instinctively know that biting this being would have no effect.}
+#NOP #gag {^You are not able to bite anything at this time!}
+#NOP #gag {%1 writhes in pain as its flesh slowly rots!}
 
 
-#gag {Energy pours into you, rejuvenating lost stamina and protoplasm!}
-#gag {You resume accelerating your natural regeneration.}
-#gag {You resume radiating heat.}
-#gag {You resume radiating cold.}
-#gag {When you persevere, you will dedicate %1 of your focus on retaining your shape.}
-#gag {The chaotic energies revitalize you!}
+#NOP #gag {Energy pours into you, rejuvenating lost stamina and protoplasm!}
+#NOP #gag {You resume accelerating your natural regeneration.}
+#NOP #gag {You resume radiating heat.}
+#NOP #gag {You resume radiating cold.}
+#NOP #gag {When you persevere, you will dedicate %1 of your focus on retaining your shape.}
+#NOP #gag {The chaotic energies revitalize you!}
 
 #act {^You instinctively know that biting this being would have no effect.}{
 	#var {my[bite][status]}{1};
@@ -152,9 +160,9 @@
 #alias kk {kill $kstr}
 #alias k {kill %0}
 #alias co {
-	!give bioplast to fl;
+	!give bioplast to splat;
 	!consume bioplast;
-	!give bioplast to fl;
+	!give bioplast to splat;
 	!consume bioplast;
 };
 
@@ -276,10 +284,10 @@
 			go home;
 		};
 	};
-	#if {$my[hp][current] < 1000}{
-		!morph;
-		!morph;
-	};
+	#NOP #if {$my[hp][current] < 1000}{;
+	#NOP 	!morph;
+	#NOP 	!morph;
+	#NOP };
 	#math {my[gpdiff]}{$my[gp1][current] - $my[gp2][current]};
 	#if {$my[gpdiff] > 0}{
 		#if {$my[dissipate] != 1}{
@@ -379,17 +387,16 @@
         #format {corpses[truck]}	{%+2s} {$corpses[truck]};
         #format {corpses[coffin]}	{%+2s} {$corpses[coffin]};
         #format {corpses[freezer]}	{%+2s} {$corpses[freezer]};
-	#showme {<088>HP:${hp}/${hp_max} SP:${sp}/${sp_max} ST:${stam}%  PP:${pp}%  FF:${ff}  G2N: ${skill}%  BP:${bio}    E: $round_damage} {-4};
-	#showme {H:${my[hp][graph]} S:${my[sp][graph]} ST:${my[gp1][graph]} P:${my[gp2][graph]} F:${my[ff][graph]} G2N: $my[skill][graph] R:${relin}/${relin_r}\% E:${enemy[graph]}} {-3};
-	#showme {$mip[gline][2]} {-7};
-	#showme {$mip[gline][1]} {-6};
+	#showme {<088>HP:${hp}/${hp_max} SP:${sp}/${sp_max} ST:${stam}%  PP:${pp}%  E: $round_damage  BP:${bio}    } {-4};
+	#showme {H:${my[hp][graph]} S:${my[sp][graph]} ST:${my[gp1][graph]} P:${my[gp2][graph]} E:${enemy[graph]} R:${relin}/${relin_r}\% } {-3};
+	#showme {$mip[gline][1] $mip[gline][2]} {-6};
 }
 
 #alias {corpsetrig} {
-	!unwrap corpse;
+	#NOP !unwrap corpse;
 	#if {"$my[autocorpse][method]" == "guild"}{
-		!bioextract;
-		!give bioplast to clone;
+		#NOP !bioextract;
+		#NOP !give bioplast to clone;
 	};
 	#if {"$my[autocorpse][method]" == "nex"}{
 		!orare;
@@ -397,6 +404,12 @@
 	!wrap corpse;
 	!divvy;
 }
+
+#act {^The coffin is now full!} {
+	#if {"$my[autocorpse][method]" != "off"}{
+		cof;
+	};
+};
 
 #alias {cco}{
 	!unwrap corpse;

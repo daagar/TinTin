@@ -14,8 +14,16 @@
 	#read .tt/3k/aliases.tin;
 	#read .tt/3k/ansi.tin;
 	#read .tt/3k/assemble.tin;
-	#read .tt/3k/bots/bot_cycle.tin;
-	#read .tt/3k/bots/bot_load.tin;
+
+	#if {$mud == "3k"} {
+		#read .tt/3k/bots/bot_cycle.tin;
+		#read .tt/3k/bots/bot_load.tin;
+		#showme Loaded 3k configs
+	} {
+		#read .tt/3k/killer.tin;
+		#nop #read .tt/3k/damagetracker.tin;
+	};
+	
 	#read .tt/3k/corpses.tin;
 	#read .tt/3k/dog.tin;
 	#read .tt/3k/mapper.tin;
@@ -24,22 +32,28 @@
 	#read .tt/3k/chat.tin;
 	
 	#read .tt/3k/mip.tin;
-	#read .tt/char/${ses_name}.tin;
+	#if {$mud == "3k"} {
+		#read .tt/char/${ses_name}.tin;
+	} {
+		#read .tt/char/${ses_name}3s.tin;
+	};
+	
 	#read .tt/3k/draw.tin;
 	#NOP #nop {
 	#NOP #read .tt/3k/miphp.tin;
 	#NOP };
 	#read .tt/3k/mob_monitors.tin;
 	#read .tt/3k/trigs.tin;
-	
-	#read .tt/3k/killer.tin;
+	#if {$mud == "3s"} {
+		#read .tt/3k/killer.tin;
+	};
 	#read .tt/3k/triggers.tin;
-	#NOP #read .tt/3k/damagetracker.tin;
+	
 	#NOP #script {cat .tt/map/lastroom.tt}
 	
 }
 
 load3k;
-#NOP resume_chat;
+resume_chat;
 
 #sub {~\t} {       }

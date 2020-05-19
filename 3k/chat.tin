@@ -2,24 +2,23 @@
 #class {common_chatlog} {open}
 
 #alias {-cl} {
-        #format {datestamp} {%t} {%Y-%m-%d.log};
+    #format {datestamp} {%t} {%Y-%m-%d.log};
 	#format {timestamp} {%t} {[<268>%H<088>:<268>%M<088>] };
 	#regex {"$world"} {3s} {
 		#line log .tt/logs/3s.chat {$timestamp\}
 	} {
 		#line log .tt/logs/3k.chat {$timestamp\}
 	};
-        -xchatlog
-        }
+    -xchatlog
+}
 
-#alias {-xchatlog}
-        {
-        #class {xchatlog} {open};
-        #act {^{\S}} {#class {xchatlog} {kill}} {99};
-        #act {{^(\s)*$}} {#class {xchatlog} {kill}} {99};
-        #act {^{\s{1,40}\S}} {-cl};
-        #class {xchatlog} {close}
-        }
+#alias {-xchatlog} {
+    #class {xchatlog} {open};
+    	#act {^{\S}} {#class {xchatlog} {kill}} {99};
+    	#act {{^(\s)*$}} {#class {xchatlog} {kill}} {99};
+    	#act {^{\s{1,40}\S}} {-cl};
+    #class {xchatlog} {close}
+}
 
 #NOP #act {{^\[.*\] [A-z]+:}} {-cl}
 /* TELLS LINKTELLS AUCTION HM SHOUTS GSHOUTS CLAN PROFESSIONS CRAFTING*/

@@ -557,7 +557,7 @@
 			#list chat[log] ins -1 {${db_chat_query[$count][timestamp]} ${db_chat_query[$count][message]}};
 		};
 	}{
-		#script {tail -n 99 .tt/logs/3s.chat | awk '{print "#list chat[log] ins -1 {"$0"}"}'};
+		#NOP #script {tail -n 99 .tt/logs/${mud}.chat | awk '{print "#list chat[log] ins -1 {"$0"}"}'};
 	};
 	show_chat;
 };

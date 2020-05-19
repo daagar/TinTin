@@ -115,12 +115,12 @@
 	#showme {<088>\u2534<088>} -$hpbar[height]-$gline[height]-2 -$right_split;
 }
 
-#NOP #if {"$draw[exitpanel]" == "on"} {
-#NOP 	#draw {line} $chat[height]+$caption[height]+$exitpanel[height]+1 -$right_split+1 $chat[height]+$caption[height]+$exitpanel[height]+1 -1;
-#NOP 	show_exits
-#NOP }
+#if {"$draw[exitpanel]" == "on"} {
+	#draw {line} $chat[height]+$caption[height]+$exitpanel[height]+1 -$right_split+1 $chat[height]+$caption[height]+$exitpanel[height]+1 -1;
+	show_exits
+}
 
-#if {"$draw[canvas]" == "on"} {
+#if {"$draw[canvas]" == "on" and $mud == "3k"} {
 	botdraw
 }
 

@@ -1,0 +1,43 @@
+#class {mgags} kill
+#class {mgags} open
+
+#NOP example use: multigag {^The %w Rimalkin looks at you} {nervously.$}
+
+#var multiGagging 0;
+#var multiGagStart "";
+#var multiGagEnd "";
+#class {multiGag} kill;
+
+#alias {multigag} {
+    #action {%1} {
+        #if {$multiGagging==0} {
+            #line gag;
+            #regexp {%%0} {%2} {#NOP} {
+                #var {multiGagging} {1};
+                #var {multiGagStart} {%1};
+                #var {multiGagEnd} {%2};
+                #class {multiGag} open;
+                    #gag {%*};
+                    #action {%2} {
+                        #line gag;
+                        #class {multiGag} kill;
+                        #var {multiGagging} {0};
+                        #unaction {%2};
+                    } {1};
+                #class {multiGag} close;
+                delayedUngag;
+            };
+        };
+    };
+}
+
+#alias {delayedUngag} {
+    #delay {ungagFailsafe} {
+        #if {$multiGagging} {
+            #class {multiGag} kill;
+            #ECHO {WARNING! MULTIGAGGING FAILSAFE FIRED!};
+            #ECHO {START: $multiGagStart END: $multiGagEnd};
+            #var {multiGagging} {0};
+        };
+    } {3};
+}
