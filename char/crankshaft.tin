@@ -164,5 +164,7 @@
     }
 } {1}
 
+#alias kk {kill $kstr}
+#alias k {kill %0}
 
 #class {crankshaft} {close}
